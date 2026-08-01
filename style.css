@@ -205,6 +205,7 @@ button {
 .brand-icon {
   width: 36px;
   height: 36px;
+  flex-shrink: 0;
   background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
   border-radius: var(--radius-sm);
   display: flex;
@@ -432,6 +433,10 @@ button {
 .developer-avatar {
   width: 60px;
   height: 60px;
+  min-width: 60px;
+  min-height: 60px;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
   background: #f0f9ff;
   border: 2px solid var(--xcode-blue);
   border-radius: 50%;
