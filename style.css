@@ -745,10 +745,41 @@ button {
   transition: var(--transition-normal);
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
+a.project-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.project-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.app-icon-square {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--xcode-blue);
+  font-size: 1.25rem;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.1);
+  transition: var(--transition-fast);
+}
+
+.project-card:hover .app-icon-square {
+  background: var(--xcode-blue);
   border-color: var(--xcode-blue);
-  box-shadow: 0 8px 25px rgba(2, 132, 199, 0.12);
+  color: #ffffff;
+  transform: scale(1.05);
 }
 
 .project-top {
