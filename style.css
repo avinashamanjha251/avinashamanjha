@@ -1,42 +1,42 @@
 /* ==========================================================================
-   Avinash Aman - Senior iOS Engineer Portfolio Design System
-   Style Sheet for GitHub Pages Deployment
+   Avinash Aman - Senior iOS Engineer Portfolio
+   Minimalist Monochromatic Coding / Developer Theme
    ========================================================================== */
 
 :root {
-  --bg-primary: #090d16;
-  --bg-secondary: #111726;
-  --bg-card: rgba(255, 255, 255, 0.04);
-  --bg-card-hover: rgba(255, 255, 255, 0.07);
-  --border-color: rgba(255, 255, 255, 0.08);
-  --border-active: rgba(56, 189, 248, 0.4);
+  --bg-primary: #050505;
+  --bg-secondary: #0d0d0d;
+  --bg-card: #121212;
+  --bg-card-hover: #18181b;
+  --border-color: #27272a;
+  --border-active: #52525b;
   
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
   
-  --accent-cyan: #38bdf8;
-  --accent-blue: #3b82f6;
-  --accent-indigo: #6366f1;
-  --accent-purple: #a855f7;
-  --accent-emerald: #10b981;
+  --accent-cyan: #e4e4e7;
+  --accent-blue: #ffffff;
+  --accent-indigo: #d4d4d8;
+  --accent-purple: #a1a1aa;
+  --accent-emerald: #ffffff;
   
-  --gradient-accent: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%);
-  --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
-  --gradient-glow: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.15), transparent 70%);
+  --gradient-accent: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+  --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.005) 100%);
+  --gradient-glow: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.08), transparent 70%);
 
-  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-main: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Fira Code', monospace;
+  --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Fira Code', monospace;
 
-  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
   --radius-full: 9999px;
   
-  --shadow-glow: 0 0 25px rgba(56, 189, 248, 0.25);
-  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(255, 255, 255, 0.15);
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
 }
 
 /* Base Styles */
@@ -61,16 +61,18 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Ambient Background Lights */
+/* Subtle Grid Background & Light Accents */
 body::before {
   content: '';
   position: fixed;
-  top: -200px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1000px;
-  height: 600px;
-  background: var(--gradient-glow);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
   pointer-events: none;
   z-index: 0;
 }
@@ -78,11 +80,12 @@ body::before {
 body::after {
   content: '';
   position: fixed;
-  bottom: -200px;
-  right: -100px;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.1), transparent 70%);
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 500px;
+  background: var(--gradient-glow);
   pointer-events: none;
   z-index: 0;
 }
@@ -113,7 +116,7 @@ button {
 
 /* Typography & Badges */
 .gradient-text {
-  background: var(--gradient-accent);
+  background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -122,15 +125,15 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.35rem 1rem;
-  background: rgba(56, 189, 248, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  border-radius: var(--radius-full);
-  color: var(--accent-cyan);
-  font-size: 0.85rem;
+  padding: 0.35rem 0.85rem;
+  background: #141414;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.825rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   margin-bottom: 1rem;
 }
 
@@ -139,11 +142,12 @@ button {
   font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: 0.75rem;
+  font-family: var(--font-mono);
 }
 
 .section-subtitle {
   color: var(--text-secondary);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   max-width: 650px;
   margin-bottom: 3rem;
 }
@@ -160,7 +164,7 @@ button {
 }
 
 .navbar.scrolled {
-  background: rgba(9, 13, 22, 0.85);
+  background: rgba(5, 5, 5, 0.9);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-color);
@@ -177,23 +181,25 @@ button {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 700;
+  font-family: var(--font-mono);
   letter-spacing: -0.01em;
 }
 
 .brand-icon {
-  width: 40px;
-  height: 40px;
-  background: var(--gradient-accent);
-  border-radius: var(--radius-md);
+  width: 36px;
+  height: 36px;
+  background: #ffffff;
+  border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: #000000;
   font-weight: 800;
-  font-size: 1.1rem;
-  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+  font-size: 1.05rem;
+  font-family: var(--font-mono);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 .nav-links {
@@ -205,12 +211,13 @@ button {
 .nav-link {
   color: var(--text-secondary);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  font-family: var(--font-mono);
   transition: var(--transition-fast);
 }
 
 .nav-link:hover, .nav-link.active {
-  color: var(--text-primary);
+  color: #ffffff;
 }
 
 .nav-actions {
@@ -224,33 +231,37 @@ button {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.65rem 1.35rem;
-  border-radius: var(--radius-md);
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-sm);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  font-family: var(--font-mono);
   transition: var(--transition-fast);
 }
 
 .btn-primary {
-  background: var(--gradient-accent);
-  color: #fff;
-  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.3);
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.15);
 }
 
 .btn-primary:hover {
+  background: #e4e4e7;
+  border-color: #e4e4e7;
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(56, 189, 248, 0.45);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.25);
 }
 
 .btn-outline {
-  background: rgba(255, 255, 255, 0.05);
+  background: #121212;
   border: 1px solid var(--border-color);
-  color: var(--text-primary);
+  color: #ffffff;
 }
 
 .btn-outline:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: #18181b;
+  border-color: var(--border-active);
   transform: translateY(-2px);
 }
 
@@ -279,12 +290,13 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.4rem 1rem;
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(10, 185, 129, 0.3);
-  border-radius: var(--radius-full);
-  color: var(--accent-emerald);
-  font-size: 0.85rem;
+  padding: 0.35rem 0.85rem;
+  background: #121212;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: #ffffff;
+  font-size: 0.825rem;
+  font-family: var(--font-mono);
   font-weight: 600;
   margin-bottom: 1.5rem;
 }
@@ -292,36 +304,38 @@ button {
 .hero-badge-dot {
   width: 8px;
   height: 8px;
-  background-color: var(--accent-emerald);
+  background-color: #ffffff;
   border-radius: 50%;
-  box-shadow: 0 0 10px var(--accent-emerald);
+  box-shadow: 0 0 10px #ffffff;
   animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-  0% { transform: scale(0.95); opacity: 0.8; }
+  0% { transform: scale(0.95); opacity: 0.7; }
   50% { transform: scale(1.2); opacity: 1; }
-  100% { transform: scale(0.95); opacity: 0.8; }
+  100% { transform: scale(0.95); opacity: 0.7; }
 }
 
 .hero-title {
-  font-size: 3.75rem;
+  font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.03em;
   margin-bottom: 1rem;
+  font-family: var(--font-mono);
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   color: var(--text-secondary);
   font-weight: 600;
   margin-bottom: 1.5rem;
+  font-family: var(--font-mono);
 }
 
 .hero-description {
   color: var(--text-secondary);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.7;
   margin-bottom: 2rem;
 }
@@ -350,15 +364,17 @@ button {
 .stat-number {
   font-size: 2rem;
   font-weight: 800;
-  color: var(--text-primary);
+  color: #ffffff;
   line-height: 1;
   margin-bottom: 0.35rem;
+  font-family: var(--font-mono);
 }
 
 .stat-label {
   color: var(--text-muted);
-  font-size: 0.85rem;
+  font-size: 0.825rem;
   font-weight: 500;
+  font-family: var(--font-mono);
 }
 
 .hero-card-preview {
@@ -367,8 +383,6 @@ button {
 
 .apple-dev-card {
   background: var(--bg-card);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 2rem;
@@ -384,7 +398,7 @@ button {
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--gradient-accent);
+  background: linear-gradient(90deg, #ffffff, #52525b);
 }
 
 .card-header {
@@ -395,26 +409,29 @@ button {
 }
 
 .developer-avatar {
-  width: 64px;
-  height: 64px;
-  background: linear-gradient(135deg, #1e293b, #0f172a);
-  border: 2px solid var(--accent-cyan);
+  width: 60px;
+  height: 60px;
+  background: #18181b;
+  border: 2px solid #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.75rem;
+  font-size: 1.6rem;
+  color: #ffffff;
   box-shadow: var(--shadow-glow);
 }
 
 .developer-meta h3 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 700;
+  font-family: var(--font-mono);
 }
 
 .developer-meta p {
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
 }
 
 .card-info-list {
@@ -428,12 +445,13 @@ button {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
+  font-family: var(--font-mono);
 }
 
 .info-item i {
-  color: var(--accent-cyan);
+  color: #ffffff;
   width: 20px;
   text-align: center;
 }
@@ -446,12 +464,12 @@ button {
 
 .card-tag {
   padding: 0.25rem 0.75rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: #18181b;
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-sm);
   font-size: 0.8rem;
   font-family: var(--font-mono);
-  color: var(--text-secondary);
+  color: #ffffff;
 }
 
 /* Skills Matrix */
@@ -467,7 +485,6 @@ button {
 
 .skill-card {
   background: var(--bg-card);
-  backdrop-filter: blur(16px);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 1.75rem;
@@ -481,22 +498,24 @@ button {
 }
 
 .skill-card-icon {
-  width: 48px;
-  height: 48px;
-  background: rgba(56, 189, 248, 0.1);
-  border-radius: var(--radius-md);
+  width: 44px;
+  height: 44px;
+  background: #18181b;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent-cyan);
-  font-size: 1.5rem;
+  color: #ffffff;
+  font-size: 1.35rem;
   margin-bottom: 1.25rem;
 }
 
 .skill-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  font-family: var(--font-mono);
 }
 
 .skill-pills {
@@ -506,20 +525,21 @@ button {
 }
 
 .skill-pill {
-  padding: 0.35rem 0.85rem;
-  background: rgba(255, 255, 255, 0.05);
+  padding: 0.35rem 0.75rem;
+  background: #18181b;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  font-size: 0.85rem;
+  font-size: 0.825rem;
   color: var(--text-primary);
+  font-family: var(--font-mono);
   font-weight: 500;
   transition: var(--transition-fast);
 }
 
 .skill-pill:hover {
-  background: rgba(56, 189, 248, 0.15);
-  border-color: var(--accent-cyan);
-  color: var(--accent-cyan);
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
 }
 
 /* Experience Section */
@@ -541,7 +561,7 @@ button {
   bottom: 0;
   left: 20px;
   width: 2px;
-  background: linear-gradient(180deg, var(--accent-cyan), var(--accent-indigo), transparent);
+  background: linear-gradient(180deg, #ffffff, #52525b, transparent);
 }
 
 .timeline-item {
@@ -558,13 +578,12 @@ button {
   height: 20px;
   border-radius: 50%;
   background: var(--bg-primary);
-  border: 3px solid var(--accent-cyan);
-  box-shadow: 0 0 15px var(--accent-cyan);
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
 .timeline-content {
   background: var(--bg-card);
-  backdrop-filter: blur(16px);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 2rem;
@@ -586,21 +605,24 @@ button {
 }
 
 .role-title {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--text-primary);
+  font-family: var(--font-mono);
 }
 
 .role-company {
-  color: var(--accent-cyan);
+  color: #a1a1aa;
   font-weight: 600;
+  font-family: var(--font-mono);
 }
 
 .role-date {
   padding: 0.25rem 0.75rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: var(--radius-full);
-  font-size: 0.85rem;
+  background: #18181b;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
   color: var(--text-secondary);
   font-family: var(--font-mono);
 }
@@ -621,21 +643,23 @@ button {
 }
 
 .timeline-bullets li::before {
-  content: '▹';
+  content: '>';
   position: absolute;
   left: 0;
-  color: var(--accent-cyan);
+  color: #ffffff;
   font-weight: bold;
+  font-family: var(--font-mono);
 }
 
 .metric-badge {
   display: inline-block;
   padding: 0.15rem 0.5rem;
-  background: rgba(16, 185, 129, 0.15);
-  color: var(--accent-emerald);
+  background: #ffffff;
+  color: #000000;
   border-radius: 4px;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.825rem;
+  font-family: var(--font-mono);
   margin: 0 0.2rem;
 }
 
@@ -653,21 +677,22 @@ button {
 }
 
 .filter-btn {
-  padding: 0.5rem 1.25rem;
-  background: rgba(255, 255, 255, 0.04);
+  padding: 0.45rem 1.15rem;
+  background: #121212;
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-sm);
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
   font-weight: 500;
   transition: var(--transition-fast);
 }
 
 .filter-btn:hover, .filter-btn.active {
-  background: var(--gradient-accent);
-  color: #fff;
-  border-color: transparent;
-  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.15);
 }
 
 .projects-grid {
@@ -678,7 +703,6 @@ button {
 
 .project-card {
   background: var(--bg-card);
-  backdrop-filter: blur(16px);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 2rem;
@@ -706,8 +730,9 @@ button {
 }
 
 .project-title {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 700;
+  font-family: var(--font-mono);
 }
 
 .project-date {
@@ -730,11 +755,11 @@ button {
 }
 
 .tech-tag {
-  padding: 0.2rem 0.6rem;
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.2);
+  padding: 0.25rem 0.65rem;
+  background: #18181b;
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  color: var(--accent-cyan);
+  color: #ffffff;
   font-size: 0.78rem;
   font-family: var(--font-mono);
 }
@@ -746,10 +771,12 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  font-family: var(--font-mono);
 }
 
 .project-title-link:hover {
-  color: var(--accent-cyan);
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 .title-link-icon {
@@ -769,28 +796,28 @@ button {
   gap: 0.5rem;
   margin-top: 1rem;
   padding: 0.4rem 0.85rem;
-  font-size: 0.825rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: var(--accent-cyan);
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  color: #ffffff;
+  background: #18181b;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
   text-decoration: none;
   transition: var(--transition-fast);
 }
 
 .project-app-link:hover {
-  background: rgba(56, 189, 248, 0.2);
-  border-color: rgba(56, 189, 248, 0.5);
-  color: #ffffff;
-  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
 }
 
 .project-app-link i {
   font-size: 0.9rem;
 }
-
 
 /* Education & Extracurricular */
 .edu-section {
@@ -805,28 +832,29 @@ button {
 
 .edu-card {
   background: var(--bg-card);
-  backdrop-filter: blur(16px);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 2rem;
 }
 
 .edu-card h3 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  font-family: var(--font-mono);
 }
 
 .edu-institution {
-  color: var(--accent-cyan);
+  color: #a1a1aa;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  font-family: var(--font-mono);
 }
 
 .edu-courses {
   margin-top: 1rem;
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 0.925rem;
 }
 
 /* Contact & Footer */
@@ -835,8 +863,7 @@ button {
 }
 
 .contact-card {
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.8));
-  backdrop-filter: blur(20px);
+  background: #121212;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 4rem 2rem;
@@ -851,8 +878,8 @@ button {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: var(--gradient-accent);
+  height: 2px;
+  background: linear-gradient(90deg, #ffffff, #52525b);
 }
 
 .contact-methods {
@@ -868,7 +895,8 @@ button {
   border-top: 1px solid var(--border-color);
   text-align: center;
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
 }
 
 /* Toast Alert */
@@ -876,12 +904,12 @@ button {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-  border: 1px solid var(--accent-cyan);
+  background: #18181b;
+  color: #ffffff;
+  border: 1px solid #ffffff;
   padding: 0.85rem 1.5rem;
-  border-radius: var(--radius-md);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -890,6 +918,7 @@ button {
   transform: translateY(20px);
   transition: all 0.3s ease;
   pointer-events: none;
+  font-family: var(--font-mono);
 }
 
 .toast.show {
@@ -901,7 +930,7 @@ button {
 @media print {
   body {
     background: #ffffff !important;
-    color: #1a1a1a !important;
+    color: #000000 !important;
   }
   
   .navbar, .hero-cta, .project-filters, .mobile-menu-btn, .footer, body::before, body::after {
@@ -920,7 +949,7 @@ button {
   .skill-card, .timeline-content, .project-card, .apple-dev-card {
     background: #ffffff !important;
     border: 1px solid #ddd !important;
-    color: #1a1a1a !important;
+    color: #000000 !important;
     box-shadow: none !important;
   }
   
@@ -940,7 +969,7 @@ button {
     margin-top: 2rem;
   }
   .hero-title {
-    font-size: 3rem;
+    font-size: 2.75rem;
   }
 }
 
@@ -950,7 +979,7 @@ button {
     top: 70px;
     left: 0;
     width: 100%;
-    background: rgba(9, 13, 22, 0.98);
+    background: rgba(5, 5, 5, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
     padding: 2rem;
@@ -973,7 +1002,7 @@ button {
   }
 
   .hero-title {
-    font-size: 2.35rem;
+    font-size: 2.2rem;
   }
   
   .projects-grid {
