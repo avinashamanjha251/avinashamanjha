@@ -739,6 +739,59 @@ button {
   font-family: var(--font-mono);
 }
 
+.project-title-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.project-title-link:hover {
+  color: var(--accent-cyan);
+}
+
+.title-link-icon {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  transition: var(--transition-fast);
+}
+
+.project-title-link:hover .title-link-icon {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+.project-app-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.project-app-link:hover {
+  background: rgba(56, 189, 248, 0.2);
+  border-color: rgba(56, 189, 248, 0.5);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+  transform: translateY(-2px);
+}
+
+.project-app-link i {
+  font-size: 0.9rem;
+}
+
+
 /* Education & Extracurricular */
 .edu-section {
   padding: 6rem 0;
