@@ -1,288 +1,583 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avinash Aman | Senior iOS Engineer Portfolio</title>
+  <meta name="description" content="Portfolio of Avinash Aman, Senior iOS Engineer with 10+ years experience in Swift, SwiftUI, Objective-C, UIKit, Blockchain, and Smart Device Integration.">
+  <meta name="keywords" content="iOS Developer, Senior iOS Engineer, Swift, SwiftUI, Objective-C, Xcode, Mobile App Development, Avinash Aman">
+  <meta name="author" content="Avinash Aman">
 
-  <head>
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Avinash Aman | Senior iOS Engineer">
+  <meta property="og:description" content="Senior iOS Engineer with 10+ years building native & hybrid mobile apps across health, fintech & social platforms.">
+  <meta property="og:type" content="website">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <title>Avinash Aman</title>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
-    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/resume.min.css" rel="stylesheet">
-
-  </head>
-
-  <body id="page-top">
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">Start Bootstrap</span>
-        <span class="d-none d-lg-block">
-          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
-        </span>
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo">
+        <div class="brand-icon">AA</div>
+        <span>Avinash Aman</span>
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-          </li>
-        </ul>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline" onclick="printResume()" title="Print or Save PDF Resume">
+          <i class="fa-solid fa-file-pdf"></i> Save CV
+        </button>
+        <a href="mailto:avinashamanjha@gmail.com" class="btn btn-primary">Hire Me</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
-    </nav>
-
-    <div class="container-fluid p-0">
-
-      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-        <div class="my-auto">
-          <h1 class="mb-0">Avinash
-            <span class="text-primary">Aman</span>
-          </h1>
-          <div class="subheading mb-5">Jharkhand · India ·
-            <a href="mailto:avinashamanjha@gmail.com">avinashamanjha@gmail.com</a>
-          </div>
-          <p class="mb-5">This is a portfolio of several iOS apps I have worked on. My experience goes much further than that with experience as a software developer and consultant.</p>
-          <ul class="list-inline list-social-icons mb-0">
-            <li class="list-inline-item">
-              <a href="https://www.linkedin.com/in/avinashamanjha">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://github.com/avinashamanjha251">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
-        <div class="my-auto">
-          <h2 class="mb-5">Experience</h2>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Senior Associate iOS Developer</h3>
-              <div class="subheading mb-3">LivWell - Move. Burn. Earn. Repeat.</div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">Feb 2021 - Present</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Freelancer iOS Developer</h3>
-              <div class="subheading mb-3">Freelancer iOS Developer</div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">Oct 2017 - Feb 2021</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Junior iOS App Developer</h3>
-              <div class="subheading mb-3">AppRoutes Services Pvt. Ltd.</div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">Feb 2016 - Oct 2017</span>
-            </div>
-          </div>
-        </div>
-
-      </section>
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
-        <div class="my-auto">
-          <h2 class="mb-5">Education</h2>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">R.V.S. College of Engineering and Technology, Jamshedpur</h3>
-              <div class="subheading mb-3">Bachelor of Technology (B.Tech.) </div>
-              <div>Electronics and Communications Engineering</div>
-              <p>GPA: 7.54</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">August 2010 - July 2014</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
-        <div class="my-auto">
-          <h2 class="mb-5">Skills</h2>
-
-          <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-          <ul class="list-inline list-icons">
-            <li class="list-inline-item">
-              <i class="devicons devicons-apple"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-swift"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-appstore"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-terminal"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-github"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-firebase"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-java"></i>
-            </li>           
-            <li class="list-inline-item">
-              <i class="devicons devicons-python"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-django"></i>
-            </li>           
-            <li class="list-inline-item">
-              <i class="devicons devicons-redis"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-postgresql"></i>
-            </li>           
-            <li class="list-inline-item">
-              <i class="devicons devicons-mongodb"></i>
-            </li>
-          <div class="subheading mb-3">Workflow</div>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Mobile-First, Responsive Design</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Mobile App Testing &amp; Debugging</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Cross Functional Teams</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Agile Development &amp; Scrum</li>
-          </ul>
-        </div>
-      </section>     
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
-        <div class="my-auto">
-          <h2 class="mb-5">Interests</h2>
-          <p>Apart from being a iOS app developer, I enjoy most of my time being outdoors. I enjoy biking, driving.</p>
-          <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technolgy advancements in the app development world.</p>
-        </div>
-      </section>
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="contact">
-				<div class="my-auto">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Get in Touch</span>
-							<h2 class="colorlib-heading">Contact</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-5">
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-globe-outline"></i>
-								</div>
-								<div class="colorlib-text">
-									<p><a href="mailto:avinashamanjha@gmail.com">avinashamanjha@gmail.com</a></p>
-								</div>
-							</div>
-
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-map"></i>
-								</div>
-								<div class="colorlib-text">
-									<p>Jharkhand, India</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-7 col-md-push-1">
-							<div class="row">
-								<div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
-									<form action="mailto:avinashamanjha@gmail.com"
-                  method="POST" 
-                  enctype="multipart/form-data"
-                  name="EmailForm">
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Name">
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Email">
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Subject">
-										</div>
-										<div class="form-group">
-											<textarea name="" id="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-										</div>
-										<div class="form-group">
-                      <button type="submit"class="btn btn-primary btn-send-message" value="Submit">Send Message</button>
-										</div>
-									</form>
-								</div>								
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
     </div>
+  </nav>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Available for Senior & Lead iOS Roles
+        </div>
+        <h1 class="hero-title">
+          Senior <span class="gradient-text">iOS Engineer</span> & Mobile Architect
+        </h1>
+        <p class="hero-subtitle">
+          Building high-performance Apple Ecosystem applications with Swift, SwiftUI & Objective-C.
+        </p>
+        <p class="hero-description">
+          10+ years of hands-on experience architectural leadership, end-to-end App Store deployments, blockchain rewards, real-time chat engines, and smart wearable device integrations.
+        </p>
 
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fa-solid fa-laptop-code"></i> View Projects
+          </a>
+          <button class="btn btn-outline" onclick="copyToClipboard('avinashamanjha@gmail.com', 'Email')">
+            <i class="fa-regular fa-copy"></i> Copy Email
+          </button>
+        </div>
 
-    <!-- Custom scripts for this template -->
-    <script src="js/resume.min.js"></script>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number gradient-text">10+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number gradient-text">40%</div>
+            <div class="stat-label">DAU Growth</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number gradient-text">8+</div>
+            <div class="stat-label">Key iOS Apps</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number gradient-text">10k+</div>
+            <div class="stat-label">Active Chat Users</div>
+          </div>
+        </div>
+      </div>
 
-  </body>
+      <div class="hero-card-preview" id="about">
+        <div class="apple-dev-card">
+          <div class="card-header">
+            <div class="developer-avatar">
+              <i class="fa-brands fa-apple"></i>
+            </div>
+            <div class="developer-meta">
+              <h3>Avinash Aman</h3>
+              <p>Delhi, India • Senior iOS Specialist</p>
+            </div>
+          </div>
 
+          <div class="card-info-list">
+            <div class="info-item">
+              <i class="fa-solid fa-envelope"></i>
+              <span>avinashamanjha@gmail.com</span>
+            </div>
+            <div class="info-item">
+              <i class="fa-solid fa-phone"></i>
+              <span>+91 78274 68512</span>
+            </div>
+            <div class="info-item">
+              <i class="fa-brands fa-linkedin"></i>
+              <a href="https://linkedin.com/in/avinashamanjha" target="_blank" rel="noopener">linkedin.com/in/avinashamanjha</a>
+            </div>
+            <div class="info-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Delhi, India</span>
+            </div>
+          </div>
+
+          <div class="card-tags">
+            <span class="card-tag">Swift 5.x</span>
+            <span class="card-tag">SwiftUI</span>
+            <span class="card-tag">Combine</span>
+            <span class="card-tag">Core Data</span>
+            <span class="card-tag">WatchKit</span>
+            <span class="card-tag">Fastlane</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills Section -->
+  <section class="skills-section" id="skills">
+    <div class="container">
+      <div class="section-tag">
+        <i class="fa-solid fa-code"></i> Technical Stack
+      </div>
+      <h2 class="section-title">Core Competencies & Tooling</h2>
+      <p class="section-subtitle">
+        A comprehensive overview of programming languages, frameworks, architecture paradigms, and DevOps tools used in production.
+      </p>
+
+      <div class="skills-grid">
+        <!-- Languages -->
+        <div class="skill-card">
+          <div class="skill-card-icon">
+            <i class="fa-solid fa-terminal"></i>
+          </div>
+          <h3>Languages</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Swift</span>
+            <span class="skill-pill">SwiftUI</span>
+            <span class="skill-pill">Objective-C</span>
+          </div>
+        </div>
+
+        <!-- Frameworks -->
+        <div class="skill-card">
+          <div class="skill-card-icon">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <h3>Frameworks</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">UIKit</span>
+            <span class="skill-pill">Core Data</span>
+            <span class="skill-pill">Core Graphics</span>
+            <span class="skill-pill">Core Animation</span>
+            <span class="skill-pill">MapKit</span>
+            <span class="skill-pill">Core Location</span>
+            <span class="skill-pill">Combine</span>
+            <span class="skill-pill">WatchKit</span>
+          </div>
+        </div>
+
+        <!-- Architecture & Patterns -->
+        <div class="skill-card">
+          <div class="skill-card-icon">
+            <i class="fa-solid fa-sitemap"></i>
+          </div>
+          <h3>Architecture</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">MVVM</span>
+            <span class="skill-pill">MVC</span>
+            <span class="skill-pill">Clean Code</span>
+            <span class="skill-pill">Modular Architecture</span>
+          </div>
+        </div>
+
+        <!-- Networking & Messaging -->
+        <div class="skill-card">
+          <div class="skill-card-icon">
+            <i class="fa-solid fa-network-wired"></i>
+          </div>
+          <h3>Networking & Messaging</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">RESTful APIs</span>
+            <span class="skill-pill">JSON / XML</span>
+            <span class="skill-pill">XMPP Protocol</span>
+            <span class="skill-pill">APNS Push Notifications</span>
+            <span class="skill-pill">Cloud Messaging</span>
+          </div>
+        </div>
+
+        <!-- Tools & IDEs -->
+        <div class="skill-card">
+          <div class="skill-card-icon">
+            <i class="fa-solid fa-wrench"></i>
+          </div>
+          <h3>Tools & IDEs</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Xcode</span>
+            <span class="skill-pill">Interface Builder</span>
+            <span class="skill-pill">Instruments</span>
+            <span class="skill-pill">Auto Layout</span>
+            <span class="skill-pill">Storyboards</span>
+          </div>
+        </div>
+
+        <!-- DevOps & Package Managers -->
+        <div class="skill-card">
+          <div class="skill-card-icon">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+          </div>
+          <h3>DevOps & CI/CD</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Git / SourceTree</span>
+            <span class="skill-pill">TestFlight</span>
+            <span class="skill-pill">App Store Connect</span>
+            <span class="skill-pill">Fastlane</span>
+            <span class="skill-pill">CocoaPods</span>
+            <span class="skill-pill">SPM</span>
+          </div>
+        </div>
+
+        <!-- Other Expertise -->
+        <div class="skill-card">
+          <div class="skill-card-icon">
+            <i class="fa-solid fa-cubes"></i>
+          </div>
+          <h3>Specialized Domains</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Blockchain Rewards</span>
+            <span class="skill-pill">Smart Wearables</span>
+            <span class="skill-pill">Social APIs</span>
+            <span class="skill-pill">XCTest</span>
+            <span class="skill-pill">Agile / Scrum</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Experience Section -->
+  <section class="experience-section" id="experience">
+    <div class="container">
+      <div class="section-tag">
+        <i class="fa-solid fa-briefcase"></i> Career Journey
+      </div>
+      <h2 class="section-title">Professional Experience</h2>
+      <p class="section-subtitle">
+        Proven track record of delivering high-impact mobile solutions across startups, client projects, and product companies.
+      </p>
+
+      <div class="timeline">
+        <!-- Role 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="role-header">
+              <div>
+                <h3 class="role-title">Senior iOS Engineer</h3>
+                <div class="role-company">LivWell – Move. Burn. Earn. Repeat</div>
+              </div>
+              <span class="role-date">Feb 2021 – Present</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Spearheaded development of a blockchain-based health & wellness app using Swift and SwiftUI, introducing a coin-reward system for physical activity that increased daily active users by <span class="metric-badge">+40% DAU</span>.</li>
+              <li>Integrated smart wearable devices with social media platforms via RESTful APIs, improving user engagement metrics by <span class="metric-badge">+25% Engagement</span>.</li>
+              <li>Managed Apple Developer certificates and provisioning profiles for development and production environments, achieving <span class="metric-badge">0 Deployment Failures</span> across multiple major releases.</li>
+              <li>Implemented push notifications via APNS and cloud messaging APIs, contributing to a <span class="metric-badge">+30% Retention</span> improvement.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Role 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="role-header">
+              <div>
+                <h3 class="role-title">Freelance iOS Developer</h3>
+                <div class="role-company">Self-Employed</div>
+              </div>
+              <span class="role-date">Oct 2017 – Feb 2021</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Designed and delivered 5+ custom iOS applications for clients across fintech and social domains, focusing on rich UI/UX and robust back-end integration.</li>
+              <li>Built custom UIKit components (table views, collection views, tab bars, navigation bars), reducing client UI development time by an average of <span class="metric-badge">35% Faster UI</span>.</li>
+              <li>Integrated RESTful APIs and JSON/XML data parsing for real-time dynamic content across iPhone devices.</li>
+              <li>Maintained Git repositories using SourceTree and Atlassian; managed full TestFlight distribution and App Store submission workflows.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Role 3 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="role-header">
+              <div>
+                <h3 class="role-title">iOS Developer</h3>
+                <div class="role-company">AppRoutes Services Pvt. Ltd.</div>
+              </div>
+              <span class="role-date">Feb 2016 – Oct 2017</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Developed and maintained a suite of iOS apps across social, financial, and entertainment domains using Objective-C, Core Graphics, and MapKit.</li>
+              <li>Implemented real-time chat functionality using XMPP protocol, enabling low-latency in-app messaging for <span class="metric-badge">10,000+ Active Users</span>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Section -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <div class="section-tag">
+        <i class="fa-solid fa-mobile-screen-button"></i> Work Portfolio
+      </div>
+      <h2 class="section-title">Featured Mobile Applications</h2>
+      <p class="section-subtitle">
+        Key iOS applications engineered for scale, real-time data sync, gamification, and location services.
+      </p>
+
+      <!-- Project Filter Buttons -->
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="health">Health & Wearables</button>
+        <button class="filter-btn" data-filter="fintech">Fintech & Loyalty</button>
+        <button class="filter-btn" data-filter="messaging">Messaging & Chat</button>
+        <button class="filter-btn" data-filter="location">Location & Travel</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card" data-category="health">
+          <div class="project-top">
+            <div class="project-header">
+              <h3 class="project-title">Pebble Go</h3>
+              <span class="project-date">Jan 2023 – Present</span>
+            </div>
+            <p class="project-desc">
+              Smartwatch management application to monitor user activities, track fitness data, and maintain real-time data integrity across Apple Watch and iPhone via WatchKit & Core Data.
+            </p>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">Swift</span>
+            <span class="tech-tag">WatchKit</span>
+            <span class="tech-tag">Watch SDK</span>
+            <span class="tech-tag">Core Data</span>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card" data-category="health fintech">
+          <div class="project-top">
+            <div class="project-header">
+              <h3 class="project-title">LivWell App</h3>
+              <span class="project-date">Feb 2021 – Present</span>
+            </div>
+            <p class="project-desc">
+              Blockchain-driven platform rewarding users with coins for physical activities. Drove user health awareness through gamification, social sharing, and push notifications.
+            </p>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">Swift</span>
+            <span class="tech-tag">SwiftUI</span>
+            <span class="tech-tag">Blockchain</span>
+            <span class="tech-tag">RESTful APIs</span>
+            <span class="tech-tag">APNS</span>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card" data-category="fintech">
+          <div class="project-top">
+            <div class="project-header">
+              <h3 class="project-title">Oodles Rewards</h3>
+              <span class="project-date">Oct 2017 – Aug 2020</span>
+            </div>
+            <p class="project-desc">
+              Royalty-based cashback and retail loyalty platform integrated with retail partners. Features scalable reward tracking engine and optimized partner API integrations.
+            </p>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">Swift</span>
+            <span class="tech-tag">Objective-C</span>
+            <span class="tech-tag">RESTful APIs</span>
+            <span class="tech-tag">CocoaPods</span>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card" data-category="location">
+          <div class="project-top">
+            <div class="project-header">
+              <h3 class="project-title">Tiplr</h3>
+              <span class="project-date">Aug 2017 – Dec 2017</span>
+            </div>
+            <p class="project-desc">
+              Travel platform enabling users to discover, share, and geo-tag travel tips using Core Location and MapKit for optimized location-based travel content.
+            </p>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">Swift</span>
+            <span class="tech-tag">Core Location</span>
+            <span class="tech-tag">MapKit</span>
+            <span class="tech-tag">RESTful APIs</span>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card" data-category="messaging">
+          <div class="project-top">
+            <div class="project-header">
+              <h3 class="project-title">CiaoIM</h3>
+              <span class="project-date">Dec 2016 – Mar 2017</span>
+            </div>
+            <p class="project-desc">
+              Feature-rich instant messaging app with real-time text, audio, and video capabilities built on XMPP protocol plus customizable chat themes.
+            </p>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">Objective-C</span>
+            <span class="tech-tag">XMPP</span>
+            <span class="tech-tag">Core Data</span>
+            <span class="tech-tag">AVFoundation</span>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card" data-category="fintech">
+          <div class="project-top">
+            <div class="project-header">
+              <h3 class="project-title">SelfReliant App</h3>
+              <span class="project-date">Oct 2016 – Dec 2016</span>
+            </div>
+            <p class="project-desc">
+              Loan management application providing financial services, enhancing user financial literacy and simplifying loan tracking and repayment schedules.
+            </p>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">Swift</span>
+            <span class="tech-tag">RESTful APIs</span>
+            <span class="tech-tag">Core Data</span>
+            <span class="tech-tag">JSON</span>
+          </div>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="project-card" data-category="health">
+          <div class="project-top">
+            <div class="project-header">
+              <h3 class="project-title">CiaoPaint</h3>
+              <span class="project-date">May 2016 – Jul 2016</span>
+            </div>
+            <p class="project-desc">
+              Creative drawing app for children featuring custom brushes, color palettes, and canvas tools built on Core Graphics to enhance fine motor skill development.
+            </p>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">Objective-C</span>
+            <span class="tech-tag">Core Graphics</span>
+            <span class="tech-tag">UIKit</span>
+          </div>
+        </div>
+
+        <!-- Project 8 -->
+        <div class="project-card" data-category="location">
+          <div class="project-top">
+            <div class="project-header">
+              <h3 class="project-title">BirdieGolf App</h3>
+              <span class="project-date">Mar 2016 – May 2016</span>
+            </div>
+            <p class="project-desc">
+              Golf course discovery app using Core Location and MapKit helping users locate nearby golf courses, view community ratings, and plan rounds.
+            </p>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">Objective-C</span>
+            <span class="tech-tag">Core Location</span>
+            <span class="tech-tag">MapKit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Activities Section -->
+  <section class="edu-section" id="education">
+    <div class="container">
+      <div class="section-tag">
+        <i class="fa-solid fa-graduation-cap"></i> Background
+      </div>
+      <h2 class="section-title">Education & Extracurriculars</h2>
+
+      <div class="edu-grid">
+        <!-- Education -->
+        <div class="edu-card">
+          <h3>Bachelor of Technology (B.Tech.)</h3>
+          <div class="edu-institution">Electrical, Electronics & Communications Engineering</div>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">RVSCET, Jamshedpur • 2010 – 2014</p>
+          <div class="edu-courses">
+            <strong>Key Coursework:</strong> Data Structures, Computer Networks, Software Engineering, Object-Oriented Programming (OOP).
+          </div>
+        </div>
+
+        <!-- Extracurricular Activities -->
+        <div class="edu-card">
+          <h3>Leadership & Memberships</h3>
+          <div class="edu-institution">Professional & Community Involvement</div>
+          <ul class="timeline-bullets" style="margin-top: 1rem;">
+            <li>Member, Institution of Electronics and Telecommunication Engineers (IETE) – Sept 2013 to Sept 2015</li>
+            <li>Co-ordinator, College Annual Day Events – 2012 and 2013</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-card">
+        <h2 class="section-title">Let's Build Great iOS Apps Together</h2>
+        <p class="section-subtitle" style="margin: 0 auto 2rem;">
+          Looking for a Senior iOS Developer or Mobile Engineering Lead? Feel free to reach out via email, phone, or LinkedIn!
+        </p>
+
+        <div class="contact-methods">
+          <a href="mailto:avinashamanjha@gmail.com" class="btn btn-primary">
+            <i class="fa-solid fa-paper-plane"></i> Send Email
+          </a>
+          <button class="btn btn-outline" onclick="copyToClipboard('+917827468512', 'Phone Number')">
+            <i class="fa-solid fa-phone"></i> +91 78274 68512
+          </button>
+          <a href="https://linkedin.com/in/avinashamanjha" target="_blank" rel="noopener" class="btn btn-outline">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year">2026</span> Avinash Aman. Built for GitHub Pages hosting.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
