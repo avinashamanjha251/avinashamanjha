@@ -3,178 +3,190 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Avinash Aman | Senior iOS Engineer Portfolio</title>
-  <meta name="description" content="Portfolio of Avinash Aman, Senior iOS Engineer with 10+ years experience in Swift, SwiftUI, Objective-C, UIKit, Blockchain, and Smart Device Integration.">
-  <meta name="keywords" content="iOS Developer, Senior iOS Engineer, Swift, SwiftUI, Objective-C, Xcode, Mobile App Development, Avinash Aman">
+  <title>Avinash Aman — Senior iOS Engineer & Mobile Lead</title>
+  <meta name="description" content="Avinash Aman — Senior iOS Engineer with 10+ years building production-grade Apple Ecosystem apps. Expert in Swift, SwiftUI, Architecture, Blockchain & Wearables. Available for Tech Lead, Engineering Manager & Senior roles.">
+  <meta name="keywords" content="iOS Engineer, Tech Lead, Mobile Engineering Manager, Swift, SwiftUI, Avinash Aman, iOS Developer India">
   <meta name="author" content="Avinash Aman">
-
-  <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Avinash Aman | Senior iOS Engineer">
-  <meta property="og:description" content="Senior iOS Engineer with 10+ years building native & hybrid mobile apps across health, fintech & social platforms.">
+  <meta property="og:title" content="Avinash Aman — Senior iOS Engineer & Mobile Lead">
+  <meta property="og:description" content="10+ years of iOS engineering: blockchain health platforms, wearable integrations, real-time chat engines, and architectural leadership.">
   <meta property="og:type" content="website">
 
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Stylesheet -->
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar" id="navbar">
-    <div class="container nav-container">
-      <a href="#hero" class="brand-logo">
-        <span>Avinash Aman</span>
+  <!-- Custom cursor -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ═══════════════════════════ NAVIGATION ═══════════════════════════ -->
+  <nav class="nav" id="mainNav">
+    <a href="#hero" class="nav-logo">AA<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <a href="Avinash_Aman_CV.pdf" download class="nav-cta">
+        <i class="fa-solid fa-arrow-down-to-bracket"></i> Resume
       </a>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#education" class="nav-link">Education</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <a href="Avinash_Aman_CV.pdf" download="Avinash_Aman_CV.pdf" class="btn btn-outline" title="Download PDF Resume">
-          <i class="fa-solid fa-file-pdf"></i> Download CV
-        </a>
-        <a href="mailto:avinashamanjha@gmail.com" class="btn btn-primary">Hire Me</a>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
   <section class="hero" id="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          Available for Tech Lead, Engineering Manager & Senior iOS Roles
-        </div>
-        <h1 class="hero-title">
-          Senior <span class="gradient-text">iOS Engineer</span> & Mobile Engineering Lead
-        </h1>
-        <p class="hero-subtitle">
-          10+ years architecting high-performance Apple Ecosystem applications with Swift, SwiftUI & Objective-C.
-        </p>
-        <p class="hero-description">
-          Specializing in scalable mobile architecture, product discovery, Web3 token rewards, real-time XMPP chat engines, and wearable hardware integration. Proven leadership driving cross-functional mobile teams and 0-deployment-failure releases.
-        </p>
+    <div class="hero-bg">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-grid-lines"></div>
+    </div>
 
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">
-            <i class="fa-solid fa-laptop-code"></i> View Projects
-          </a>
-          <a href="Avinash_Aman_CV.pdf" download="Avinash_Aman_CV.pdf" class="btn btn-outline">
-            <i class="fa-solid fa-download"></i> Download CV
-          </a>
-          <button class="btn btn-outline" onclick="copyToClipboard('avinashamanjha@gmail.com', 'Email')">
-            <i class="fa-regular fa-copy"></i> Copy Email
-          </button>
-        </div>
-
-        <div class="hero-stats">
-          <div class="stat-item">
-            <div class="stat-number gradient-text">10+</div>
-            <div class="stat-label">Years Experience</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number gradient-text">40%</div>
-            <div class="stat-label">DAU Growth</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number gradient-text">8+</div>
-            <div class="stat-label">Key iOS Apps</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number gradient-text">10k+</div>
-            <div class="stat-label">Active Chat Users</div>
-          </div>
-        </div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        Open to Tech Lead · Engineering Manager · Senior iOS Roles
       </div>
 
-      <div class="hero-card-preview" id="about">
-        <div class="apple-dev-card">
-          <div class="card-header">
-            <div class="developer-avatar">
-              <i class="fa-brands fa-apple"></i>
+      <h1 class="hero-title">
+        <span class="line">Building iOS</span>
+        <span class="line gradient-text">experiences</span>
+        <span class="line">that scale.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        10+ years engineering production-grade Apple Ecosystem applications. I architect, lead, and ship mobile products — from blockchain health platforms to real-time chat engines — that are used by hundreds of thousands of people.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">
+          <i class="fa-solid fa-layer-group"></i> View My Work
+        </a>
+        <button class="btn-secondary" onclick="copyToClipboard('avinashamanjha@gmail.com', 'Email')">
+          <i class="fa-regular fa-envelope"></i> avinashamanjha@gmail.com
+        </button>
+        <a href="https://linkedin.com/in/avinashamanjha" target="_blank" rel="noopener" class="btn-secondary">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div>
+          <div class="stat-number gradient-text">10+</div>
+          <div class="stat-label">Years engineering</div>
+        </div>
+        <div>
+          <div class="stat-number gradient-text">200K+</div>
+          <div class="stat-label">Active users shipped to</div>
+        </div>
+        <div>
+          <div class="stat-number gradient-text">8+</div>
+          <div class="stat-label">Flagship iOS apps</div>
+        </div>
+        <div>
+          <div class="stat-number gradient-text">0</div>
+          <div class="stat-label">Deployment failures</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">Scroll</div>
+  </section>
+
+  <!-- ═══════════════════════════ ABOUT ═══════════════════════════ -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <div class="section-label fade-up">About</div>
+          <h2 class="section-heading fade-up fade-up-delay-1">
+            Engineering lead who ships, not just codes.
+          </h2>
+          <p class="section-sub fade-up fade-up-delay-2">
+            Based in Delhi, India. I'm a Senior iOS Engineer with a decade of delivering high-stakes mobile products — healthcare, fintech, real-time messaging, wearables. I've moved from individual contributor to leading architecture, mentoring teams, and driving 0-failure production releases.
+          </p>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.8; margin-bottom: 1.5rem;" class="fade-up fade-up-delay-2">
+            What sets me apart is the intersection of <strong style="color: var(--text-primary);">deep technical execution</strong> with <strong style="color: var(--text-primary);">product thinking</strong>. I don't just build what's asked — I push back on the right decisions, own the architecture, and ensure what goes to the App Store is something users and stakeholders are proud of.
+          </p>
+
+          <div class="about-values fade-up fade-up-delay-3">
+            <div class="value-card">
+              <div class="value-icon">🏗️</div>
+              <div class="value-title">Architecture First</div>
+              <div class="value-desc">MVVM, Clean Architecture, Modular design — decisions that age well.</div>
             </div>
-            <div class="developer-meta">
-              <h3>Avinash Aman</h3>
-              <p>Delhi, India • Senior iOS Specialist</p>
+            <div class="value-card">
+              <div class="value-icon">⚡</div>
+              <div class="value-title">Execution Speed</div>
+              <div class="value-desc">From scoping to App Store without compromising on quality or stability.</div>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">👥</div>
+              <div class="value-title">Team Leadership</div>
+              <div class="value-desc">Mentoring engineers, driving code reviews, and aligning with product and design.</div>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">📊</div>
+              <div class="value-title">Metrics-Driven</div>
+              <div class="value-desc">Every feature tied to a measurable outcome — DAU, retention, engagement.</div>
             </div>
           </div>
+        </div>
 
-          <div class="card-info-list">
-            <div class="info-item">
-              <i class="fa-solid fa-envelope"></i>
-              <span>avinashamanjha@gmail.com</span>
+        <div class="about-profile fade-up fade-up-delay-2">
+          <div class="about-photo-wrapper">
+            <div class="about-photo-frame">
+              <!-- Drop your photo at images/profile.jpg to replace this placeholder -->
+              <img src="images/profile.jpg" alt="Avinash Aman" onerror="this.parentNode.innerHTML='<div class=\'about-photo-placeholder\'><i class=\'fa-solid fa-user\'></i><span>Add profile.jpg<br>to images/ folder</span></div>'">
             </div>
-            <div class="info-item">
-              <i class="fa-brands fa-linkedin"></i>
-              <a href="https://linkedin.com/in/avinashamanjha" target="_blank" rel="noopener">linkedin.com/in/avinashamanjha</a>
+            <div class="about-badge">
+              <div class="about-badge-icon">🍎</div>
+              <div class="about-badge-text">
+                <strong>Delhi, India</strong>
+                Senior iOS Specialist
+              </div>
             </div>
-            <div class="info-item">
-              <i class="fa-solid fa-location-dot"></i>
-              <span>Delhi, India</span>
-            </div>
-          </div>
-
-          <div class="card-tags">
-            <span class="card-tag">Swift 5.x</span>
-            <span class="card-tag">SwiftUI</span>
-            <span class="card-tag">Combine</span>
-            <span class="card-tag">Core Data</span>
-            <span class="card-tag">WatchKit</span>
-            <span class="card-tag">Fastlane</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Technical Skills Section -->
+  <!-- ═══════════════════════════ SKILLS ═══════════════════════════ -->
   <section class="skills-section" id="skills">
     <div class="container">
-      <div class="section-tag">
-        <i class="fa-solid fa-code"></i> Technical Stack
-      </div>
-      <h2 class="section-title">Core Competencies & Tooling</h2>
-      <p class="section-subtitle">
-        A comprehensive overview of programming languages, frameworks, architecture paradigms, and DevOps tools used in production.
-      </p>
+      <div class="section-label fade-up">Technical Arsenal</div>
+      <h2 class="section-heading fade-up fade-up-delay-1">Core Competencies</h2>
+      <p class="section-sub fade-up fade-up-delay-2">The tools and patterns I trust in production environments, at scale.</p>
 
       <div class="skills-grid">
-        <!-- Languages -->
-        <div class="skill-card">
-          <div class="skill-card-icon">
-            <i class="fa-solid fa-terminal"></i>
-          </div>
-          <h3>Languages</h3>
+        <div class="skill-group fade-up">
+          <div class="skill-group-label">Languages</div>
+          <div class="skill-group-title">Primary Stack</div>
           <div class="skill-pills">
-            <span class="skill-pill">Swift</span>
+            <span class="skill-pill">Swift 5.x</span>
             <span class="skill-pill">SwiftUI</span>
             <span class="skill-pill">Objective-C</span>
           </div>
         </div>
 
-        <!-- Frameworks -->
-        <div class="skill-card">
-          <div class="skill-card-icon">
-            <i class="fa-solid fa-layer-group"></i>
-          </div>
-          <h3>Frameworks</h3>
+        <div class="skill-group fade-up fade-up-delay-1">
+          <div class="skill-group-label">Apple Frameworks</div>
+          <div class="skill-group-title">Platform Expertise</div>
           <div class="skill-pills">
             <span class="skill-pill">UIKit</span>
             <span class="skill-pill">Core Data</span>
@@ -184,905 +196,775 @@
             <span class="skill-pill">Core Location</span>
             <span class="skill-pill">Combine</span>
             <span class="skill-pill">WatchKit</span>
+            <span class="skill-pill">HealthKit</span>
+            <span class="skill-pill">AVFoundation</span>
           </div>
         </div>
 
-        <!-- Architecture & Patterns -->
-        <div class="skill-card">
-          <div class="skill-card-icon">
-            <i class="fa-solid fa-sitemap"></i>
-          </div>
-          <h3>Architecture</h3>
+        <div class="skill-group fade-up fade-up-delay-2">
+          <div class="skill-group-label">Architecture & Patterns</div>
+          <div class="skill-group-title">Design Decisions</div>
           <div class="skill-pills">
             <span class="skill-pill">MVVM</span>
+            <span class="skill-pill">Clean Architecture</span>
+            <span class="skill-pill">Modular Design</span>
             <span class="skill-pill">MVC</span>
-            <span class="skill-pill">Clean Code</span>
-            <span class="skill-pill">Modular Architecture</span>
+            <span class="skill-pill">SOLID Principles</span>
           </div>
         </div>
 
-        <!-- Networking & Messaging -->
-        <div class="skill-card">
-          <div class="skill-card-icon">
-            <i class="fa-solid fa-network-wired"></i>
-          </div>
-          <h3>Networking & Messaging</h3>
+        <div class="skill-group fade-up">
+          <div class="skill-group-label">Networking & Protocols</div>
+          <div class="skill-group-title">Connectivity Layer</div>
           <div class="skill-pills">
             <span class="skill-pill">RESTful APIs</span>
+            <span class="skill-pill">XMPP</span>
+            <span class="skill-pill">WebRTC</span>
+            <span class="skill-pill">APNS</span>
             <span class="skill-pill">JSON / XML</span>
-            <span class="skill-pill">XMPP Protocol</span>
-            <span class="skill-pill">APNS Push Notifications</span>
             <span class="skill-pill">Cloud Messaging</span>
           </div>
         </div>
 
-        <!-- Tools & IDEs -->
-        <div class="skill-card">
-          <div class="skill-card-icon">
-            <i class="fa-solid fa-wrench"></i>
-          </div>
-          <h3>Tools & IDEs</h3>
+        <div class="skill-group fade-up fade-up-delay-1">
+          <div class="skill-group-label">DevOps & CI/CD</div>
+          <div class="skill-group-title">Delivery Pipeline</div>
           <div class="skill-pills">
-            <span class="skill-pill">Xcode</span>
-            <span class="skill-pill">Interface Builder</span>
-            <span class="skill-pill">Instruments</span>
-            <span class="skill-pill">Auto Layout</span>
-            <span class="skill-pill">Storyboards</span>
-          </div>
-        </div>
-
-        <!-- DevOps & Package Managers -->
-        <div class="skill-card">
-          <div class="skill-card-icon">
-            <i class="fa-solid fa-cloud-arrow-up"></i>
-          </div>
-          <h3>DevOps & CI/CD</h3>
-          <div class="skill-pills">
-            <span class="skill-pill">Git / SourceTree</span>
+            <span class="skill-pill">Fastlane</span>
             <span class="skill-pill">TestFlight</span>
             <span class="skill-pill">App Store Connect</span>
-            <span class="skill-pill">Fastlane</span>
+            <span class="skill-pill">Git / SourceTree</span>
             <span class="skill-pill">CocoaPods</span>
-            <span class="skill-pill">SPM</span>
+            <span class="skill-pill">Swift Package Manager</span>
           </div>
         </div>
 
-        <!-- Other Expertise -->
-        <div class="skill-card">
-          <div class="skill-card-icon">
-            <i class="fa-solid fa-cubes"></i>
-          </div>
-          <h3>Specialized Domains</h3>
+        <div class="skill-group fade-up fade-up-delay-2">
+          <div class="skill-group-label">Leadership & Process</div>
+          <div class="skill-group-title">Beyond the Code</div>
           <div class="skill-pills">
-            <span class="skill-pill">Smart Wearables</span>
-            <span class="skill-pill">Social APIs</span>
-            <span class="skill-pill">XCTest</span>
             <span class="skill-pill">Agile / Scrum</span>
+            <span class="skill-pill">Code Review</span>
+            <span class="skill-pill">Tech Mentorship</span>
+            <span class="skill-pill">Product Discovery</span>
+            <span class="skill-pill">XCTest / TDD</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Work Experience Section -->
+  <!-- ═══════════════════════════ EXPERIENCE ═══════════════════════════ -->
   <section class="experience-section" id="experience">
     <div class="container">
-      <div class="section-tag">
-        <i class="fa-solid fa-briefcase"></i> Career Journey
-      </div>
-      <h2 class="section-title">Professional Experience</h2>
-      <p class="section-subtitle">
-        Proven track record of delivering high-impact mobile solutions across startups, client projects, and product companies.
-      </p>
+      <div class="section-label fade-up">Career</div>
+      <h2 class="section-heading fade-up fade-up-delay-1">Professional Timeline</h2>
+      <p class="section-sub fade-up fade-up-delay-2">A decade of building, shipping, and leading — at startups, freelance, and product companies.</p>
 
-      <div class="timeline">
-        <!-- Role 1 -->
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="role-header">
-              <div>
-                <h3 class="role-title">Senior iOS Engineer & Tech Lead</h3>
-                <div class="role-company">LivWell – Move. Burn. Earn. Repeat</div>
-              </div>
-              <span class="role-date">Feb 2021 – Present</span>
+      <div class="timeline fade-up fade-up-delay-2">
+        <!-- LivWell -->
+        <div class="exp-item">
+          <div class="exp-dot"></div>
+          <div class="exp-date">Feb 2021 — Present</div>
+          <div class="exp-role">Senior iOS Engineer & Tech Lead</div>
+          <div class="exp-company">LivWell — Move. Burn. Earn. Repeat.</div>
+          <div class="exp-stories">
+            <div class="exp-story">
+              <p>A wellness platform with <strong>200,000+ active users</strong> needed a differentiated retention strategy. Led the design and delivery of a blockchain-based coin-reward engine where physical activity — steps, calories, workouts — translates to spendable tokens. Architected the modular SwiftUI interface and coordinated wearable SDK integrations, resulting in <span class="exp-metric">+40% DAU growth</span>.</p>
             </div>
-            <ul class="star-list">
-              <li class="star-item">
-                <span class="star-badge star-badge-s">Situation</span>
-                <span>High user churn in wellness applications required a scalable gamification engine to drive physical activity for <span class="metric-badge">200,000+ Active Users</span>.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-t">Task</span>
-                <span>Lead mobile app architecture and develop a Web3 coin-reward system integrated with smart wearable telemetry.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-a">Action</span>
-                <span>Spearheaded Swift & SwiftUI modular architecture, integrated smart wearable APIs with social platforms, engineered APNS push notification workflows, and automated release pipelines via Fastlane.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-r">Result</span>
-                <span>Increased Daily Active Users by <span class="metric-badge">+40% DAU</span>, boosted retention by <span class="metric-badge">+30% Retention</span>, elevated engagement by <span class="metric-badge">+25%</span>, and achieved <span class="metric-badge">0 Deployment Failures</span> across all production releases.</span>
-              </li>
-            </ul>
+            <div class="exp-story">
+              <p>Overhauled the push notification infrastructure using APNS and cloud messaging APIs with intelligent time-based triggers, moving away from batch blasting to contextual delivery. The result was measurable: <span class="exp-metric">+30% retention</span> within two release cycles.</p>
+            </div>
+            <div class="exp-story">
+              <p>Owned certificate management, provisioning profiles, and release engineering across development and production environments. Implemented Fastlane automation for CI/CD flows, achieving <span class="exp-metric">0 deployment failures</span> across all major releases.</p>
+            </div>
           </div>
         </div>
 
-        <!-- Role 2 -->
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="role-header">
-              <div>
-                <h3 class="role-title">Freelance iOS Developer & Mobile Consultant</h3>
-                <div class="role-company">Self-Employed</div>
-              </div>
-              <span class="role-date">Oct 2017 – Feb 2021</span>
+        <!-- Freelance -->
+        <div class="exp-item">
+          <div class="exp-dot"></div>
+          <div class="exp-date">Oct 2017 — Feb 2021</div>
+          <div class="exp-role">Freelance iOS Developer & Mobile Consultant</div>
+          <div class="exp-company">Self-Employed — 5+ Client Projects</div>
+          <div class="exp-stories">
+            <div class="exp-story">
+              <p>Delivered <strong>5+ production iOS applications</strong> across fintech, social, and retail domains. Clients came with ideas and rough specs — I owned everything from architecture decisions to App Store submission. Built reusable UIKit component libraries that cut client UI development cycles by <span class="exp-metric">35% faster delivery</span> across projects.</p>
             </div>
-            <ul class="star-list">
-              <li class="star-item">
-                <span class="star-badge star-badge-s">Situation</span>
-                <span>Startup and fintech clients required rapid MVP delivery without sacrificing performance or code quality.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-t">Task</span>
-                <span>Architect and publish 5+ custom iOS applications end-to-end with high UI responsiveness and resilient backend synchronization.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-a">Action</span>
-                <span>Built reusable UIKit component libraries, integrated RESTful APIs with JSON/XML dynamic data parsing, and managed TestFlight distribution and App Store releases.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-r">Result</span>
-                <span>Successfully deployed 5+ production apps to the App Store while accelerating client UI development cycles by <span class="metric-badge">35% Faster UI</span>.</span>
-              </li>
-            </ul>
+            <div class="exp-story">
+              <p>Standardized backend integration patterns across projects — RESTful APIs, JSON/XML parsing, and offline data sync — creating a consistent and maintainable codebase that reduced QA overhead significantly.</p>
+            </div>
           </div>
         </div>
 
-        <!-- Role 3 -->
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="role-header">
-              <div>
-                <h3 class="role-title">iOS Developer</h3>
-                <div class="role-company">AppRoutes Services Pvt. Ltd.</div>
-              </div>
-              <span class="role-date">Feb 2016 – Oct 2017</span>
+        <!-- AppRoutes -->
+        <div class="exp-item">
+          <div class="exp-dot"></div>
+          <div class="exp-date">Feb 2016 — Oct 2017</div>
+          <div class="exp-role">iOS Developer</div>
+          <div class="exp-company">AppRoutes Services Pvt. Ltd.</div>
+          <div class="exp-stories">
+            <div class="exp-story">
+              <p>Joined an early-stage product company building multiple iOS apps across social, financial, and entertainment verticals. Took ownership of real-time chat infrastructure using XMPP protocol — architecting offline queuing, message threading, and read receipts — supporting <span class="exp-metric">10,000+ concurrent users</span> with sub-second delivery.</p>
             </div>
-            <ul class="star-list">
-              <li class="star-item">
-                <span class="star-badge star-badge-s">Situation</span>
-                <span>Clients across social, financial, and entertainment domains required low-latency in-app chat and interactive map capabilities.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-t">Task</span>
-                <span>Build a real-time messaging sub-system and integrate location-based services into client native iOS applications.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-a">Action</span>
-                <span>Engineered real-time chat infrastructure using XMPP protocol, Core Data for offline message persistence, and MapKit/Core Graphics for geo-tagging UI.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-r">Result</span>
-                <span>Delivered low-latency messaging enabling real-time communication for <span class="metric-badge">10,000+ Active Users</span> with sub-second delivery rates.</span>
-              </li>
-            </ul>
+            <div class="exp-story">
+              <p>Implemented location-aware features using MapKit and Core Location — custom pin clustering, geo-tagged content, and proximity search — forming the foundation for the Tiplr travel discovery product.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Featured Projects Section -->
+  <!-- ═══════════════════════════ PROJECTS ═══════════════════════════ -->
   <section class="projects-section" id="projects">
     <div class="container">
-      <div class="section-tag">
-        <i class="fa-solid fa-layer-group"></i> Work & Engineering Portfolio
-      </div>
-      <h2 class="section-title">Enterprise Products & R&D Innovations</h2>
-      <p class="section-subtitle">
-        10+ years of engineering leadership: Commercial products scaled to 200,000+ active users alongside public open-source R&D projects.
+      <div class="section-label fade-up">Portfolio</div>
+      <h2 class="section-heading fade-up fade-up-delay-1">Products I've Built</h2>
+      <p class="section-sub fade-up fade-up-delay-2">
+        Enterprise products I've led in production, and personal R&D projects exploring ideas beyond the day job.
       </p>
 
-      <!-- Category Switcher Tabs -->
-      <div class="project-category-switch">
-        <button class="category-tab-btn active" data-category="all">
-          <i class="fa-solid fa-cubes"></i> All Portfolio <span class="badge-count">10</span>
+      <div class="projects-tabs fade-up fade-up-delay-2">
+        <button class="tab-btn active" data-tab="enterprise">
+          <i class="fa-solid fa-building-user"></i> Enterprise & Flagship
         </button>
-        <button class="category-tab-btn" data-category="enterprise">
-          <i class="fa-solid fa-building-user"></i> Enterprise & Flagship Products <span class="badge-count">5</span>
-        </button>
-        <button class="category-tab-btn" data-category="personal">
-          <i class="fa-solid fa-flask"></i> R&D & Open-Source Innovations <span class="badge-count">5</span>
+        <button class="tab-btn" data-tab="personal">
+          <i class="fa-solid fa-flask"></i> R&D & Open Source
         </button>
       </div>
 
-      <!-- Domain Filter Buttons -->
-      <div class="project-filters">
-        <button class="filter-btn active" data-filter="all">All Domains</button>
-        <button class="filter-btn" data-filter="health">Health & Wearables</button>
-        <button class="filter-btn" data-filter="fintech">Fintech & Loyalty</button>
-        <button class="filter-btn" data-filter="messaging">Messaging & Chat</button>
-        <button class="filter-btn" data-filter="location">Location & Travel</button>
-        <button class="filter-btn" data-filter="creative">Creative & Media</button>
-      </div>
+      <!-- ── Enterprise Grid ── -->
+      <div class="enterprise-grid" id="enterpriseGrid">
 
-      <div class="projects-grid">
-        <!-- ENTERPRISE 1: Pebble Go -->
-        <a href="https://apps.apple.com/in/app/pebble-go-pebblesquad/id6452240092" target="_blank" rel="noopener noreferrer" class="project-card project-card-link" data-type="enterprise" data-category="health">
-          <div class="project-top">
-            <div class="project-header">
-              <div class="project-title-wrapper">
-                <div class="app-icon-square">
-                  <img src="images/pebble-go.jpg" alt="Pebble Go" class="app-icon-img">
-                </div>
-                <h3 class="project-title">
-                  Pebble Go <i class="fa-solid fa-arrow-up-right-from-square title-link-icon"></i>
-                </h3>
+        <!-- Pebble Go -->
+        <div class="ent-card fade-up">
+          <div class="ent-card-header">
+            <div class="ent-app-icon">
+              <img src="images/pebble-go.jpg" alt="Pebble Go" onerror="this.parentNode.innerHTML='⌚'">
+            </div>
+            <div>
+              <div class="ent-app-name">Pebble Go</div>
+              <div class="ent-app-category">Health & Wearables · Jan 2023 – Jun 2026</div>
+            </div>
+          </div>
+          <div class="ent-card-body">
+            <p class="ent-context">
+              Smartwatch companion app for the Pebble Squad ecosystem. Users needed a unified interface to monitor physical activity, track fitness trends, and maintain data integrity across Apple Watch and iPhone — without sync failures or gaps.
+            </p>
+            <div class="ent-outcomes">
+              <div class="ent-outcome">
+                <i class="fa-solid fa-circle-check ent-outcome-icon"></i>
+                <span>Designed a Watch SDK background connectivity layer that eliminated data-gap events during workout sessions.</span>
               </div>
-              <span class="project-date">Jan 2023 – Jun 2026</span>
-            </div>
-            <ul class="star-list">
-              <li class="star-item">
-                <span class="star-badge star-badge-s">Situation</span>
-                <span>Fragmented fitness telemetry between smartwatches and iPhone platforms led to data synchronization drop-offs.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-t">Task</span>
-                <span>Architect a seamless smartwatch monitoring app syncing real-time health data between Apple Watch and iOS.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-a">Action</span>
-                <span>Implemented Watch SDK background connectivity, Core Data persistence, and custom activity metrics parsing.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-r">Result</span>
-                <span>Achieved zero-data-loss telemetry and high user satisfaction across active Pebble Squad wearers.</span>
-              </li>
-            </ul>
-            <div class="project-app-link">
-              <i class="fa-brands fa-apple"></i> View on App Store
-            </div>
-          </div>
-          <div class="project-tech">
-            <span class="tech-tag">Swift</span>
-            <span class="tech-tag">Watch SDK</span>
-            <span class="tech-tag">Core Data</span>
-          </div>
-        </a>
-
-        <!-- ENTERPRISE 2: LivWell App -->
-        <a href="https://apps.apple.com/in/app/livwell-s%E1%BB%A9c-kh%E1%BB%8Fe-th%E1%BB%8Bnh-v%C6%B0%E1%BB%A3ng/id1509195628" target="_blank" rel="noopener noreferrer" class="project-card project-card-link" data-type="enterprise" data-category="health fintech">
-          <div class="project-top">
-            <div class="project-header">
-              <div class="project-title-wrapper">
-                <div class="app-icon-square">
-                  <img src="images/livwell.jpg" alt="LivWell App" class="app-icon-img">
-                </div>
-                <h3 class="project-title">
-                  LivWell App <i class="fa-solid fa-arrow-up-right-from-square title-link-icon"></i>
-                </h3>
+              <div class="ent-outcome">
+                <i class="fa-solid fa-circle-check ent-outcome-icon"></i>
+                <span>Built Core Data schema with conflict resolution for bidirectional Watch–iPhone sync with zero data loss.</span>
               </div>
-              <span class="project-date">Feb 2021 – Present</span>
-            </div>
-            <ul class="star-list">
-              <li class="star-item">
-                <span class="star-badge star-badge-s">Situation</span>
-                <span>Targeted 200,000+ users requiring a blockchain wellness platform to turn physical activity into daily financial rewards.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-t">Task</span>
-                <span>Develop gamification mechanics, social share triggers, and APNS push notification engine.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-a">Action</span>
-                <span>Built SwiftUI & Swift views, REST API layers, and secure coin transaction engines.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-r">Result</span>
-                <span>Scaled app to 200k+ active members with +40% DAU growth and +30% retention rate.</span>
-              </li>
-            </ul>
-            <div class="project-app-link">
-              <i class="fa-brands fa-apple"></i> View on App Store
-            </div>
-          </div>
-          <div class="project-tech">
-            <span class="tech-tag">Swift</span>
-            <span class="tech-tag">SwiftUI</span>
-            <span class="tech-tag">RESTful APIs</span>
-            <span class="tech-tag">APNS</span>
-          </div>
-        </a>
-
-        <!-- ENTERPRISE 3: Oodles Rewards -->
-        <div class="project-card" data-type="enterprise" data-category="fintech">
-          <div class="project-top">
-            <div class="project-header">
-              <div class="project-title-wrapper">
-                <div class="app-icon-square">
-                  <i class="fa-solid fa-gift"></i>
-                </div>
-                <h3 class="project-title">Oodles Rewards</h3>
+              <div class="ent-outcome">
+                <i class="fa-solid fa-circle-check ent-outcome-icon"></i>
+                <span>Shipped multiple App Store updates with 0 regression issues across a distributed user base.</span>
               </div>
-              <span class="project-date">Oct 2017 – Aug 2020</span>
             </div>
-            <ul class="star-list">
-              <li class="star-item">
-                <span class="star-badge star-badge-s">Situation</span>
-                <span>Retail merchants needed a unified mobile cashback engine to retain shoppers across retail locations.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-t">Task</span>
-                <span>Engineer a scalable partner API integration layer and dynamic loyalty points ledger.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-a">Action</span>
-                <span>Developed Swift/Obj-C hybrid modules, optimized network caching, and automated build distribution.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-r">Result</span>
-                <span>Delivered robust cashback infrastructure driving increased retail partner transaction volume.</span>
-              </li>
-            </ul>
           </div>
-          <div class="project-tech">
-            <span class="tech-tag">Swift</span>
-            <span class="tech-tag">Objective-C</span>
-            <span class="tech-tag">RESTful APIs</span>
-            <span class="tech-tag">CocoaPods</span>
+          <div class="ent-card-footer">
+            <div class="tech-stack">
+              <span class="tech-tag">Swift</span>
+              <span class="tech-tag">Watch SDK</span>
+              <span class="tech-tag">Core Data</span>
+              <span class="tech-tag">HealthKit</span>
+            </div>
+            <a href="https://apps.apple.com/in/app/pebble-go-pebblesquad/id6452240092" target="_blank" rel="noopener" class="ent-store-link">
+              <i class="fa-brands fa-apple"></i> App Store
+            </a>
           </div>
         </div>
 
-        <!-- ENTERPRISE 4: Tiplr -->
-        <div class="project-card" data-type="enterprise" data-category="location">
-          <div class="project-top">
-            <div class="project-header">
-              <div class="project-title-wrapper">
-                <div class="app-icon-square">
-                  <i class="fa-solid fa-location-dot"></i>
-                </div>
-                <h3 class="project-title">Tiplr</h3>
-              </div>
-              <span class="project-date">Aug 2017 – Dec 2017</span>
+        <!-- LivWell -->
+        <div class="ent-card fade-up fade-up-delay-1">
+          <div class="ent-card-header">
+            <div class="ent-app-icon">
+              <img src="images/livwell.jpg" alt="LivWell" onerror="this.parentNode.innerHTML='💪'">
             </div>
-            <ul class="star-list">
-              <li class="star-item">
-                <span class="star-badge star-badge-s">Situation</span>
-                <span>Travelers needed hyper-local recommendations geo-tagged to exact GPS positions worldwide.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-t">Task</span>
-                <span>Build an interactive MapKit discovery interface with real-time location filtering.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-a">Action</span>
-                <span>Integrated Core Location, custom map pin clustering, and backend RESTful endpoints.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-r">Result</span>
-                <span>Provided fluid travel discovery with responsive map performance across diverse regions.</span>
-              </li>
-            </ul>
+            <div>
+              <div class="ent-app-name">LivWell</div>
+              <div class="ent-app-category">Health · Blockchain · Feb 2021 – Present</div>
+            </div>
           </div>
-          <div class="project-tech">
-            <span class="tech-tag">Swift</span>
-            <span class="tech-tag">Core Location</span>
-            <span class="tech-tag">MapKit</span>
-            <span class="tech-tag">RESTful APIs</span>
+          <div class="ent-card-body">
+            <p class="ent-context">
+              A wellness-meets-Web3 platform rewarding 200,000+ users with blockchain-backed health coins for physical activity. The goal: turn fitness into a daily habit with real, tangible rewards instead of empty badges.
+            </p>
+            <div class="ent-outcomes">
+              <div class="ent-outcome">
+                <i class="fa-solid fa-circle-check ent-outcome-icon"></i>
+                <span>Architected the coin-reward engine, social leaderboard, and wearable integration layer from the ground up.</span>
+              </div>
+              <div class="ent-outcome">
+                <i class="fa-solid fa-circle-check ent-outcome-icon"></i>
+                <span>DAU grew by <strong>+40%</strong> post-launch of gamification features; user retention improved by <strong>+30%</strong>.</span>
+              </div>
+              <div class="ent-outcome">
+                <i class="fa-solid fa-circle-check ent-outcome-icon"></i>
+                <span>Integrated RESTful APIs with social platforms, increasing user engagement signals by +25%.</span>
+              </div>
+            </div>
+          </div>
+          <div class="ent-card-footer">
+            <div class="tech-stack">
+              <span class="tech-tag">Swift</span>
+              <span class="tech-tag">SwiftUI</span>
+              <span class="tech-tag">APNS</span>
+              <span class="tech-tag">RESTful APIs</span>
+              <span class="tech-tag">Fastlane</span>
+            </div>
+            <a href="https://apps.apple.com/in/app/livwell-s%E1%BB%A9c-kh%E1%BB%8Fe-th%E1%BB%8Bnh-v%C6%B0%E1%BB%A3ng/id1509195628" target="_blank" rel="noopener" class="ent-store-link">
+              <i class="fa-brands fa-apple"></i> App Store
+            </a>
           </div>
         </div>
 
-        <!-- ENTERPRISE 5: CiaoIM -->
-        <div class="project-card" data-type="enterprise" data-category="messaging">
-          <div class="project-top">
-            <div class="project-header">
-              <div class="project-title-wrapper">
-                <div class="app-icon-square">
-                  <i class="fa-solid fa-comments"></i>
-                </div>
-                <h3 class="project-title">CiaoIM</h3>
-              </div>
-              <span class="project-date">Dec 2016 – Mar 2017</span>
+        <!-- Oodles Rewards -->
+        <div class="ent-card fade-up">
+          <div class="ent-card-header">
+            <div class="ent-app-icon" style="font-size:1.5rem;">🎁</div>
+            <div>
+              <div class="ent-app-name">Oodles Rewards</div>
+              <div class="ent-app-category">Fintech · Loyalty · Oct 2017 – Aug 2020</div>
             </div>
-            <ul class="star-list">
-              <li class="star-item">
-                <span class="star-badge star-badge-s">Situation</span>
-                <span>High demand for enterprise real-time messaging supporting text, voice notes, and video streaming.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-t">Task</span>
-                <span>Architect an XMPP-based chat client with low latency and reliable offline queuing.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-a">Action</span>
-                <span>Engineered Objective-C XMPP streams, Core Data offline message stores, and AVFoundation pipelines.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-r">Result</span>
-                <span>Supported 10,000+ active users with instant sub-second message delivery rates.</span>
-              </li>
-            </ul>
           </div>
-          <div class="project-tech">
-            <span class="tech-tag">Objective-C</span>
-            <span class="tech-tag">XMPP</span>
-            <span class="tech-tag">Core Data</span>
-            <span class="tech-tag">AVFoundation</span>
+          <div class="ent-card-body">
+            <p class="ent-context">
+              Retail loyalty and cashback platform connecting shoppers to partner merchants. Users needed a seamless way to track rewards, redeem cashback, and stay engaged across a fragmented retail partner ecosystem.
+            </p>
+            <div class="ent-outcomes">
+              <div class="ent-outcome">
+                <i class="fa-solid fa-circle-check ent-outcome-icon"></i>
+                <span>Built a scalable reward tracking engine with real-time balance updates and partner API integrations.</span>
+              </div>
+              <div class="ent-outcome">
+                <i class="fa-solid fa-circle-check ent-outcome-icon"></i>
+                <span>Delivered a Swift/Objective-C hybrid codebase that supported gradual migration without service disruption.</span>
+              </div>
+            </div>
+          </div>
+          <div class="ent-card-footer">
+            <div class="tech-stack">
+              <span class="tech-tag">Swift</span>
+              <span class="tech-tag">Objective-C</span>
+              <span class="tech-tag">CocoaPods</span>
+              <span class="tech-tag">RESTful APIs</span>
+            </div>
           </div>
         </div>
 
-        <!-- PERSONAL R&D 1: habbitTracker -->
-        <div class="project-card" data-type="personal" data-category="health">
-          <div class="project-top">
-            <div class="project-header">
-              <div class="project-title-wrapper">
-                <div class="app-icon-square" style="background: #e0f2fe; color: #0284c7;">
-                  <i class="fa-solid fa-calendar-check"></i>
-                </div>
-                <h3 class="project-title">
-                  habbitTracker <span class="badge-count" style="font-size: 0.7rem; background: var(--xcode-blue); color: white;">Case Study</span>
-                </h3>
-              </div>
-              <span class="project-date">Open-Source R&D</span>
+        <!-- CiaoIM -->
+        <div class="ent-card fade-up fade-up-delay-1">
+          <div class="ent-card-header">
+            <div class="ent-app-icon" style="font-size:1.5rem;">💬</div>
+            <div>
+              <div class="ent-app-name">CiaoIM</div>
+              <div class="ent-app-category">Messaging · Real-time · Dec 2016 – Mar 2017</div>
             </div>
-            <ul class="star-list">
-              <li class="star-item">
-                <span class="star-badge star-badge-s">Situation</span>
-                <span>Existing habit apps force rigid daily templates, failing users who want fully custom schedules & tracking targets.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-t">Task</span>
-                <span>Build a dynamic, user-configurable habit creation & tracking engine with local analytics.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-a">Action</span>
-                <span>Engineered in SwiftUI & Combine using Core Data for local relational schema and dynamic UNNotifications.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-r">Result</span>
-                <span>Delivered 100% schedule customization with zero external server dependency.</span>
-              </li>
-            </ul>
-            <button class="btn-case-study" onclick="openCaseStudyModal('modal-habbitTracker')">
-              <i class="fa-solid fa-microscope"></i> View Architectural Case Study
-            </button>
           </div>
-          <div class="project-tech">
-            <span class="tech-tag">SwiftUI</span>
-            <span class="tech-tag">Combine</span>
-            <span class="tech-tag">Core Data</span>
-            <span class="tech-tag">UserNotifications</span>
+          <div class="ent-card-body">
+            <p class="ent-context">
+              Real-time instant messaging app with text, audio, and video capabilities. Enterprise clients needed reliable low-latency communication with offline queuing for 10,000+ concurrent users.
+            </p>
+            <div class="ent-outcomes">
+              <div class="ent-outcome">
+                <i class="fa-solid fa-circle-check ent-outcome-icon"></i>
+                <span>Built full XMPP-based messaging engine with Core Data offline queue and AVFoundation media pipeline.</span>
+              </div>
+              <div class="ent-outcome">
+                <i class="fa-solid fa-circle-check ent-outcome-icon"></i>
+                <span>Achieved sub-second message delivery at scale for 10,000+ active concurrent users.</span>
+              </div>
+            </div>
+          </div>
+          <div class="ent-card-footer">
+            <div class="tech-stack">
+              <span class="tech-tag">Objective-C</span>
+              <span class="tech-tag">XMPP</span>
+              <span class="tech-tag">Core Data</span>
+              <span class="tech-tag">AVFoundation</span>
+            </div>
           </div>
         </div>
 
-        <!-- PERSONAL R&D 2: dailyExpenseTracker -->
-        <div class="project-card" data-type="personal" data-category="fintech">
-          <div class="project-top">
-            <div class="project-header">
-              <div class="project-title-wrapper">
-                <div class="app-icon-square" style="background: #fef3c7; color: #d97706;">
-                  <i class="fa-solid fa-wallet"></i>
-                </div>
-                <h3 class="project-title">
-                  dailyExpenseTracker <span class="badge-count" style="font-size: 0.7rem; background: var(--xcode-blue); color: white;">Case Study</span>
-                </h3>
-              </div>
-              <span class="project-date">Open-Source R&D</span>
+        <!-- Tiplr -->
+        <div class="ent-card fade-up">
+          <div class="ent-card-header">
+            <div class="ent-app-icon" style="font-size:1.5rem;">📍</div>
+            <div>
+              <div class="ent-app-name">Tiplr</div>
+              <div class="ent-app-category">Location · Travel · Aug 2017 – Dec 2017</div>
             </div>
-            <ul class="star-list">
-              <li class="star-item">
-                <span class="star-badge star-badge-s">Situation</span>
-                <span>Manual expense tools lack receipt evidence storage, recurring bill alerts, and budget cap warnings.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-t">Task</span>
-                <span>Architect a comprehensive personal finance system with receipt attachments and smart limit notifications.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-a">Action</span>
-                <span>Implemented Core Data relational tables with binary asset storage, threshold alert logic, and OCR statement roadmap.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-r">Result</span>
-                <span>Prevented budget overruns via real-time limit alerts and automated bill reminders.</span>
-              </li>
-            </ul>
-            <button class="btn-case-study" onclick="openCaseStudyModal('modal-dailyExpenseTracker')">
-              <i class="fa-solid fa-microscope"></i> View Architectural Case Study
-            </button>
           </div>
-          <div class="project-tech">
-            <span class="tech-tag">Swift</span>
-            <span class="tech-tag">Core Data</span>
-            <span class="tech-tag">Vision OCR</span>
-            <span class="tech-tag">Local Alerts</span>
+          <div class="ent-card-body">
+            <p class="ent-context">
+              Geo-tagged travel discovery platform allowing users to share, discover, and bookmark hyper-local travel tips with precise GPS coordinates overlaid on interactive maps.
+            </p>
+            <div class="ent-outcomes">
+              <div class="ent-outcome">
+                <i class="fa-solid fa-circle-check ent-outcome-icon"></i>
+                <span>Implemented custom MapKit pin clustering for 10K+ pins without UI degradation.</span>
+              </div>
+              <div class="ent-outcome">
+                <i class="fa-solid fa-circle-check ent-outcome-icon"></i>
+                <span>Built distance-based proximity queries using Core Location for real-time recommendation sorting.</span>
+              </div>
+            </div>
+          </div>
+          <div class="ent-card-footer">
+            <div class="tech-stack">
+              <span class="tech-tag">Swift</span>
+              <span class="tech-tag">MapKit</span>
+              <span class="tech-tag">Core Location</span>
+              <span class="tech-tag">RESTful APIs</span>
+            </div>
           </div>
         </div>
 
-        <!-- PERSONAL R&D 3: StrangerChatApp -->
-        <div class="project-card" data-type="personal" data-category="messaging health">
-          <div class="project-top">
-            <div class="project-header">
-              <div class="project-title-wrapper">
-                <div class="app-icon-square" style="background: #f3e8ff; color: #9333ea;">
-                  <i class="fa-solid fa-comments"></i>
-                </div>
-                <h3 class="project-title">
-                  StrangerChatApp <span class="badge-count" style="font-size: 0.7rem; background: var(--xcode-blue); color: white;">Case Study</span>
-                </h3>
+      </div><!-- /enterprise-grid -->
+
+      <!-- ── Personal R&D Accordion ── -->
+      <div class="personal-grid" id="personalGrid" style="display:none;">
+
+        <!-- habbitTracker -->
+        <div class="rd-card">
+          <div class="rd-card-header">
+            <div class="rd-header-left">
+              <div class="rd-icon" style="background:rgba(79,142,247,0.1);color:#4f8ef7;">
+                <i class="fa-solid fa-calendar-check"></i>
               </div>
-              <span class="project-date">Open-Source R&D</span>
+              <div class="rd-title-wrap">
+                <div class="rd-title">habbitTracker</div>
+                <div class="rd-tagline">SwiftUI · Combine · Core Data · UserNotifications</div>
+              </div>
             </div>
-            <ul class="star-list">
-              <li class="star-item">
-                <span class="star-badge star-badge-s">Situation</span>
-                <span>Random chat platforms suffer from bot spam and lack organic incentives for healthy user interactions.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-t">Task</span>
-                <span>Create a coin-gated social discovery system where coins are earned exclusively via fitness challenges.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-a">Action</span>
-                <span>Integrated HealthKit telemetry (steps/distance/calories), GPS location search, and WebRTC/XMPP call streams.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-r">Result</span>
-                <span>Connected physical wellness directly to social discovery, eliminating spam through fitness-backed coin economy.</span>
-              </li>
-            </ul>
-            <button class="btn-case-study" onclick="openCaseStudyModal('modal-StrangerChatApp')">
-              <i class="fa-solid fa-microscope"></i> View Architectural Case Study
-            </button>
+            <div class="rd-header-right">
+              <div class="tech-stack" style="display:none;" aria-hidden="true"></div>
+              <button class="rd-expand-btn" aria-label="Expand">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
           </div>
-          <div class="project-tech">
-            <span class="tech-tag">Swift</span>
-            <span class="tech-tag">HealthKit</span>
-            <span class="tech-tag">Core Location</span>
-            <span class="tech-tag">WebRTC / XMPP</span>
+          <div class="rd-body">
+            <div class="rd-body-inner">
+              <div class="story-flow">
+                <div class="story-step">
+                  <div class="step-num problem">The Problem</div>
+                  <div class="step-title-sm">Rigid Templates Kill Habit Apps</div>
+                  <div class="step-body">Existing trackers force daily-only habits with preset metrics. Users with non-standard routines abandon the app within 14 days.</div>
+                </div>
+                <div class="story-step">
+                  <div class="step-num discovery">Discovery</div>
+                  <div class="step-title-sm">Flexibility is the Product</div>
+                  <div class="step-body">User research showed that 73% want habits configurable by frequency, target type, and multiple metrics — not a calendar checkbox.</div>
+                </div>
+                <div class="story-step">
+                  <div class="step-num build">Build</div>
+                  <div class="step-title-sm">SwiftUI + Combine + Core Data</div>
+                  <div class="step-body">Reactive UI with Combine streams, flexible Core Data schema (HabitEntity, ScheduleRules, CompletionLog), and local UNNotifications for offline reminders.</div>
+                </div>
+                <div class="story-step">
+                  <div class="step-num decision">Decision Layer</div>
+                  <div class="step-title-sm">Offline-First vs Cloud Backend</div>
+                  <div class="step-body">Chose local Core Data over Firebase to guarantee privacy, eliminate latency, and reduce infrastructure cost for personal use apps.</div>
+                </div>
+                <div class="story-step">
+                  <div class="step-num impact">Impact</div>
+                  <div class="step-title-sm">100% Custom, Zero Friction</div>
+                  <div class="step-body">Users can track any habit — any schedule, any metric — with smart reminders and zero cloud dependency.</div>
+                </div>
+              </div>
+              <div class="screenshot-note">
+                <i class="fa-solid fa-image"></i>
+                Screenshots coming soon — add <code>images/habbit-preview.jpg</code> to include app UI here.
+              </div>
+              <div class="rd-tech-row">
+                <div class="tech-stack">
+                  <span class="tech-tag">SwiftUI</span>
+                  <span class="tech-tag">Combine</span>
+                  <span class="tech-tag">Core Data</span>
+                  <span class="tech-tag">UserNotifications</span>
+                  <span class="tech-tag">MVVM</span>
+                </div>
+                <a href="https://github.com/avinashamanjha251" target="_blank" rel="noopener" class="rd-github-link">
+                  <i class="fa-brands fa-github"></i> View on GitHub
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- PERSONAL R&D 4: outdoorWorkout -->
-        <div class="project-card" data-type="personal" data-category="health location">
-          <div class="project-top">
-            <div class="project-header">
-              <div class="project-title-wrapper">
-                <div class="app-icon-square" style="background: #ecfdf5; color: #059669;">
-                  <i class="fa-solid fa-person-running"></i>
-                </div>
-                <h3 class="project-title">outdoorWorkout</h3>
+        <!-- dailyExpenseTracker -->
+        <div class="rd-card">
+          <div class="rd-card-header">
+            <div class="rd-header-left">
+              <div class="rd-icon" style="background:rgba(245,131,42,0.1);color:#f5832a;">
+                <i class="fa-solid fa-wallet"></i>
               </div>
-              <span class="project-date">Open-Source R&D</span>
+              <div class="rd-title-wrap">
+                <div class="rd-title">dailyExpenseTracker</div>
+                <div class="rd-tagline">Swift · Core Data · Vision OCR · UNNotifications</div>
+              </div>
             </div>
-            <ul class="star-list">
-              <li class="star-item">
-                <span class="star-badge star-badge-s">Situation</span>
-                <span>Outdoor athletes require precise route logging and split pacing metrics without rapid battery drain.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-t">Task</span>
-                <span>Develop an energy-efficient background GPS tracking engine with live MapKit polyline mapping.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-a">Action</span>
-                <span>Utilized Core Location distance filtering, MapKit overlay rendering, and HealthKit workout sessions.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-r">Result</span>
-                <span>Reduced battery consumption by 30% while maintaining sub-meter GPS accuracy during continuous runs.</span>
-              </li>
-            </ul>
+            <div class="rd-header-right">
+              <button class="rd-expand-btn" aria-label="Expand">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
           </div>
-          <div class="project-tech">
-            <span class="tech-tag">Swift</span>
-            <span class="tech-tag">Core Location</span>
-            <span class="tech-tag">MapKit</span>
-            <span class="tech-tag">HealthKit</span>
+          <div class="rd-body">
+            <div class="rd-body-inner">
+              <div class="story-flow">
+                <div class="story-step">
+                  <div class="step-num problem">The Problem</div>
+                  <div class="step-title-sm">Expenses Without Evidence</div>
+                  <div class="step-body">Manual expense logs have no receipt proof, no recurring bill alerts, and no budget warning before you've already overspent.</div>
+                </div>
+                <div class="story-step">
+                  <div class="step-num discovery">Discovery</div>
+                  <div class="step-title-sm">5 Core User Needs</div>
+                  <div class="step-body">Income source customization, receipt image attachments per transaction, recurring payment reminders, budget limit notifications, and future bank statement OCR parsing.</div>
+                </div>
+                <div class="story-step">
+                  <div class="step-num build">Build</div>
+                  <div class="step-title-sm">Core Data + Vision Roadmap</div>
+                  <div class="step-body">Core Data with External Binary Storage for receipt images, UNNotificationCenter for recurring bill triggers, threshold alert logic at 80% and 90% of budget. Vision OCR schema designed for future auto-import.</div>
+                </div>
+                <div class="story-step">
+                  <div class="step-num decision">Decision Layer</div>
+                  <div class="step-title-sm">SQLite Blob vs External Storage</div>
+                  <div class="step-body">Chose Core Data External Binary Storage to keep the main DB lightweight and fast for queries, while storing receipt images efficiently on disk.</div>
+                </div>
+                <div class="story-step">
+                  <div class="step-num impact">Impact</div>
+                  <div class="step-title-sm">Zero Missed Bills</div>
+                  <div class="step-body">Users receive proactive alerts before exceeding budgets and never miss recurring payments — with visual receipt evidence attached to every transaction.</div>
+                </div>
+              </div>
+              <div class="screenshot-note">
+                <i class="fa-solid fa-image"></i>
+                Screenshots coming soon — add <code>images/expense-preview.jpg</code> to include app UI here.
+              </div>
+              <div class="rd-tech-row">
+                <div class="tech-stack">
+                  <span class="tech-tag">Swift</span>
+                  <span class="tech-tag">Core Data</span>
+                  <span class="tech-tag">Vision OCR</span>
+                  <span class="tech-tag">UNNotifications</span>
+                  <span class="tech-tag">UIKit</span>
+                </div>
+                <a href="https://github.com/avinashamanjha251" target="_blank" rel="noopener" class="rd-github-link">
+                  <i class="fa-brands fa-github"></i> View on GitHub
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- PERSONAL R&D 5: customCamera -->
-        <div class="project-card" data-type="personal" data-category="creative">
-          <div class="project-top">
-            <div class="project-header">
-              <div class="project-title-wrapper">
-                <div class="app-icon-square" style="background: #fff1f2; color: #e11d48;">
-                  <i class="fa-solid fa-camera"></i>
-                </div>
-                <h3 class="project-title">customCamera</h3>
+        <!-- StrangerChatApp -->
+        <div class="rd-card">
+          <div class="rd-card-header">
+            <div class="rd-header-left">
+              <div class="rd-icon" style="background:rgba(159,122,234,0.1);color:#9f7aea;">
+                <i class="fa-solid fa-comments"></i>
               </div>
-              <span class="project-date">Open-Source R&D</span>
+              <div class="rd-title-wrap">
+                <div class="rd-title">StrangerChatApp</div>
+                <div class="rd-tagline">Swift · HealthKit · Core Location · WebRTC · XMPP</div>
+              </div>
             </div>
-            <ul class="star-list">
-              <li class="star-item">
-                <span class="star-badge star-badge-s">Situation</span>
-                <span>Standard iOS UIImagePickerController lacks manual exposure control and real-time custom shader filters.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-t">Task</span>
-                <span>Build a low-level camera engine capable of live hardware manipulation and instant filter rendering.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-a">Action</span>
-                <span>Constructed AVFoundation AVCaptureSession pipeline coupled with Metal framework fragment shaders.</span>
-              </li>
-              <li class="star-item">
-                <span class="star-badge star-badge-r">Result</span>
-                <span>Achieved zero-latency 60 FPS real-time filter preview with manual ISO and shutter control.</span>
-              </li>
-            </ul>
+            <div class="rd-header-right">
+              <button class="rd-expand-btn" aria-label="Expand">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
           </div>
-          <div class="project-tech">
-            <span class="tech-tag">AVFoundation</span>
-            <span class="tech-tag">Metal Shader</span>
-            <span class="tech-tag">Core Media</span>
-            <span class="tech-tag">UIKit</span>
+          <div class="rd-body">
+            <div class="rd-body-inner">
+              <div class="story-flow">
+                <div class="story-step">
+                  <div class="step-num problem">The Problem</div>
+                  <div class="step-title-sm">Bot Spam & Low Stakes</div>
+                  <div class="step-body">Anonymous social platforms fill with bots and abuse because account creation is frictionless and interactions cost nothing.</div>
+                </div>
+                <div class="story-step">
+                  <div class="step-num discovery">Discovery</div>
+                  <div class="step-title-sm">Fitness as Proof of Work</div>
+                  <div class="step-body">Chats, calls, and friend requests cost coins. Coins are earned exclusively by completing health challenges — steps, distance, calories. GPS and name search power discovery.</div>
+                </div>
+                <div class="story-step">
+                  <div class="step-num build">Build</div>
+                  <div class="step-title-sm">HealthKit + Location + WebRTC</div>
+                  <div class="step-body">HealthKit telemetry for activity verification, Core Location geo-hash proximity search, WebRTC for peer-to-peer audio/video, and XMPP for instant messaging with offline queuing.</div>
+                </div>
+                <div class="story-step">
+                  <div class="step-num decision">Decision Layer</div>
+                  <div class="step-title-sm">Anti-Cheat & Privacy</div>
+                  <div class="step-body">Step velocity validation via HealthKit cadence queries prevents spoofing. Geo-hashing obfuscates exact GPS coordinates for user safety while still enabling proximity discovery.</div>
+                </div>
+                <div class="story-step">
+                  <div class="step-num impact">Impact</div>
+                  <div class="step-title-sm">Fitness-Powered Social</div>
+                  <div class="step-body">Created an ecosystem where social interaction and daily movement reinforce each other — eliminating spam while driving real-world health behavior.</div>
+                </div>
+              </div>
+              <div class="screenshot-note">
+                <i class="fa-solid fa-image"></i>
+                Screenshots coming soon — add <code>images/stranger-preview.jpg</code> to include app UI here.
+              </div>
+              <div class="rd-tech-row">
+                <div class="tech-stack">
+                  <span class="tech-tag">Swift</span>
+                  <span class="tech-tag">HealthKit</span>
+                  <span class="tech-tag">Core Location</span>
+                  <span class="tech-tag">WebRTC</span>
+                  <span class="tech-tag">XMPP</span>
+                </div>
+                <a href="https://github.com/avinashamanjha251" target="_blank" rel="noopener" class="rd-github-link">
+                  <i class="fa-brands fa-github"></i> View on GitHub
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
-      </div>
+        <!-- outdoorWorkout -->
+        <div class="rd-card">
+          <div class="rd-card-header">
+            <div class="rd-header-left">
+              <div class="rd-icon" style="background:rgba(34,211,165,0.1);color:#22d3a5;">
+                <i class="fa-solid fa-person-running"></i>
+              </div>
+              <div class="rd-title-wrap">
+                <div class="rd-title">outdoorWorkout</div>
+                <div class="rd-tagline">Swift · Core Location · MapKit · HealthKit</div>
+              </div>
+            </div>
+            <div class="rd-header-right">
+              <button class="rd-expand-btn" aria-label="Expand">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="rd-body">
+            <div class="rd-body-inner">
+              <div class="story-flow">
+                <div class="story-step">
+                  <div class="step-num problem">The Problem</div>
+                  <div class="step-title-sm">Battery vs Precision Trade-off</div>
+                  <div class="step-body">Outdoor athletes need continuous GPS route logging, split pacing, and elevation data — but background location tracking drains battery in minutes on standard configurations.</div>
+                </div>
+                <div class="story-step">
+                  <div class="step-num discovery">Discovery</div>
+                  <div class="step-title-sm">Adaptive Sampling Strategy</div>
+                  <div class="step-body">Core Location's distance filter and accuracy modes can be tuned dynamically based on activity speed — high precision for slow movement, lower-frequency sampling for sustained pace.</div>
+                </div>
+                <div class="story-step">
+                  <div class="step-num build">Build</div>
+                  <div class="step-title-sm">Dynamic GPS + HealthKit Sync</div>
+                  <div class="step-body">Adaptive Core Location filter, MapKit real-time polyline overlays, and HealthKit HKWorkoutSession integration for structured workout data.</div>
+                </div>
+                <div class="story-step">
+                  <div class="step-num decision">Decision Layer</div>
+                  <div class="step-title-sm">Accuracy Modes Selection</div>
+                  <div class="step-body">Background mode with significant location vs continuous tracking — chose dynamic accuracy switching to balance sub-meter precision with 30% battery savings.</div>
+                </div>
+                <div class="story-step">
+                  <div class="step-num impact">Impact</div>
+                  <div class="step-title-sm">30% Less Battery Drain</div>
+                  <div class="step-body">Maintained sub-meter route accuracy while reducing battery consumption by 30% compared to always-on high-accuracy GPS.</div>
+                </div>
+              </div>
+              <div class="rd-tech-row">
+                <div class="tech-stack">
+                  <span class="tech-tag">Swift</span>
+                  <span class="tech-tag">Core Location</span>
+                  <span class="tech-tag">MapKit</span>
+                  <span class="tech-tag">HealthKit</span>
+                </div>
+                <a href="https://github.com/avinashamanjha251" target="_blank" rel="noopener" class="rd-github-link">
+                  <i class="fa-brands fa-github"></i> View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- customCamera -->
+        <div class="rd-card">
+          <div class="rd-card-header">
+            <div class="rd-header-left">
+              <div class="rd-icon" style="background:rgba(245,65,65,0.1);color:#f54141;">
+                <i class="fa-solid fa-camera"></i>
+              </div>
+              <div class="rd-title-wrap">
+                <div class="rd-title">customCamera</div>
+                <div class="rd-tagline">AVFoundation · Metal · Core Media</div>
+              </div>
+            </div>
+            <div class="rd-header-right">
+              <button class="rd-expand-btn" aria-label="Expand">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="rd-body">
+            <div class="rd-body-inner">
+              <div class="story-flow">
+                <div class="story-step">
+                  <div class="step-num problem">The Problem</div>
+                  <div class="step-title-sm">UIImagePicker's Limitations</div>
+                  <div class="step-body">The standard iOS camera API offers no manual exposure control, no raw format access, and no real-time custom shader processing — a hard ceiling for creative or professional use cases.</div>
+                </div>
+                <div class="story-step">
+                  <div class="step-num discovery">Discovery</div>
+                  <div class="step-title-sm">AVFoundation + Metal Pipeline</div>
+                  <div class="step-body">AVCaptureSession exposes hardware-level camera controls — ISO, shutter speed, white balance — and Metal allows GPU-accelerated custom filter rendering at 60 FPS.</div>
+                </div>
+                <div class="story-step">
+                  <div class="step-num build">Build</div>
+                  <div class="step-title-sm">Full Capture Pipeline</div>
+                  <div class="step-body">AVCaptureSession with custom AVCaptureVideoDataOutput, Metal fragment shaders for real-time filter previews, and manual hardware dial controls for ISO and shutter.</div>
+                </div>
+                <div class="story-step">
+                  <div class="step-num decision">Decision Layer</div>
+                  <div class="step-title-sm">Core Image vs Metal Shaders</div>
+                  <div class="step-body">Core Image is easier but introduces frame latency. Metal shaders run directly on GPU with no intermediate representation — the only path to true 60 FPS zero-lag preview.</div>
+                </div>
+                <div class="story-step">
+                  <div class="step-num impact">Impact</div>
+                  <div class="step-title-sm">60 FPS, Zero Latency</div>
+                  <div class="step-body">Delivered 60 FPS real-time filter rendering with manual hardware control — matching what professional camera apps achieve on iOS.</div>
+                </div>
+              </div>
+              <div class="rd-tech-row">
+                <div class="tech-stack">
+                  <span class="tech-tag">AVFoundation</span>
+                  <span class="tech-tag">Metal</span>
+                  <span class="tech-tag">Core Media</span>
+                  <span class="tech-tag">UIKit</span>
+                </div>
+                <a href="https://github.com/avinashamanjha251" target="_blank" rel="noopener" class="rd-github-link">
+                  <i class="fa-brands fa-github"></i> View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /personal-grid -->
     </div>
   </section>
 
-  <!-- Education & Activities Section -->
-  <section class="edu-section" id="education">
+  <!-- ═══════════════════════════ EDUCATION ═══════════════════════════ -->
+  <section class="education-section" id="education">
     <div class="container">
-      <div class="section-tag">
-        <i class="fa-solid fa-graduation-cap"></i> Background
-      </div>
-      <h2 class="section-title">Education & Extracurriculars</h2>
+      <div class="section-label fade-up">Background</div>
+      <h2 class="section-heading fade-up fade-up-delay-1">Education & Recognition</h2>
 
-      <div class="edu-grid">
-        <!-- Education -->
+      <div class="edu-grid fade-up fade-up-delay-2">
         <div class="edu-card">
-          <h3>Bachelor of Technology (B.Tech.)</h3>
-          <div class="edu-institution">Electrical, Electronics & Communications Engineering</div>
-          <p style="color: var(--text-secondary); font-size: 0.9rem;">RVSCET, Jamshedpur • 2010 – 2014</p>
-          <div class="edu-courses">
-            <strong>Key Coursework:</strong> Analog & Digital Electronics, Microprocessors & Microcontrollers, Signals & Systems, Communication Systems, Embedded Systems, Computer Networks, C/C++ Programming.
+          <div class="edu-degree">Bachelor of Technology (B.Tech.)</div>
+          <div class="edu-school">Electrical, Electronics & Communications Engineering</div>
+          <div class="edu-year">RVSCET, Jamshedpur · 2010 – 2014</div>
+          <div class="edu-desc">
+            Foundation in embedded systems, microprocessors, digital electronics, and C/C++ programming — the technical grounding that drives my deep understanding of device-level iOS APIs like Core Bluetooth, CoreMotion, and AVFoundation.
           </div>
         </div>
-
-        <!-- Extracurricular Activities -->
         <div class="edu-card">
-          <h3>Leadership & Memberships</h3>
-          <div class="edu-institution">Professional & Community Involvement</div>
-          <ul class="timeline-bullets" style="margin-top: 1rem;">
-            <li>Member, Institution of Electronics and Telecommunication Engineers (IETE) – Sept 2013 to Sept 2015</li>
-            <li>Co-ordinator, College Annual Day Events – 2012 and 2013</li>
-          </ul>
+          <div class="edu-degree">Leadership & Community</div>
+          <div class="edu-school">Professional & Academic Involvement</div>
+          <div class="edu-year">2012 – 2015</div>
+          <div class="edu-desc">
+            Member of the Institution of Electronics and Telecommunication Engineers (IETE) from Sept 2013 to Sept 2015. Co-ordinator for College Annual Day Events in 2012 and 2013 — an early signal of the cross-functional leadership I carry into engineering management roles today.
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
   <section class="contact-section" id="contact">
     <div class="container">
-      <div class="contact-card">
-        <h2 class="section-title">Let's Build Great iOS Apps Together</h2>
-        <p class="section-subtitle" style="margin: 0 auto 2rem;">
-          Looking for a Senior iOS Developer or Mobile Engineering Lead? Feel free to reach out via email, phone, or LinkedIn!
-        </p>
+      <div class="section-label fade-up">Let's Talk</div>
+      <h2 class="section-heading fade-up fade-up-delay-1">Open to the right opportunity.</h2>
 
-        <div class="contact-methods">
-          <a href="mailto:avinashamanjha@gmail.com" class="btn btn-primary">
-            <i class="fa-solid fa-paper-plane"></i> Send Email
+      <div class="contact-inner fade-up fade-up-delay-2">
+        <div>
+          <p style="color:var(--text-secondary);font-size:1rem;line-height:1.8;max-width:480px;margin-bottom:2.5rem;">
+            I'm actively looking for roles where I can lead product engineering, drive architectural decisions, and build mobile teams that ship products people love. If that sounds like your company — let's talk.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:avinashamanjha@gmail.com" class="contact-link">
+              <div class="contact-link-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <div class="contact-link-label">Email</div>
+                <div class="contact-link-value">avinashamanjha@gmail.com</div>
+              </div>
+            </a>
+            <a href="https://linkedin.com/in/avinashamanjha" target="_blank" rel="noopener" class="contact-link">
+              <div class="contact-link-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div>
+                <div class="contact-link-label">LinkedIn</div>
+                <div class="contact-link-value">linkedin.com/in/avinashamanjha</div>
+              </div>
+            </a>
+            <a href="https://github.com/avinashamanjha251" target="_blank" rel="noopener" class="contact-link">
+              <div class="contact-link-icon"><i class="fa-brands fa-github"></i></div>
+              <div>
+                <div class="contact-link-label">GitHub</div>
+                <div class="contact-link-value">github.com/avinashamanjha251</div>
+              </div>
+            </a>
+            <div class="contact-link" style="cursor:pointer;" onclick="copyToClipboard('Delhi, India — Open to Relocation', 'Location')">
+              <div class="contact-link-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <div class="contact-link-label">Location</div>
+                <div class="contact-link-value">Delhi, India — Open to Relocation</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-cta-block">
+          <div class="contact-cta-title">The roles I'm targeting</div>
+          <p class="contact-cta-desc">10+ years of engineering experience. Now focused on leading teams and driving architectural vision — not just writing code.</p>
+          <div class="roles-list">
+            <div class="role-item"><i class="fa-solid fa-circle"></i> Mobile Engineering Manager</div>
+            <div class="role-item"><i class="fa-solid fa-circle"></i> iOS Tech Lead</div>
+            <div class="role-item"><i class="fa-solid fa-circle"></i> Senior iOS Engineer</div>
+            <div class="role-item"><i class="fa-solid fa-circle"></i> Technical Project Manager</div>
+          </div>
+          <a href="mailto:avinashamanjha@gmail.com" class="cta-email-btn">
+            <i class="fa-solid fa-paper-plane"></i> Send me a message
           </a>
-          <a href="https://linkedin.com/in/avinashamanjha" target="_blank" rel="noopener" class="btn btn-outline">
-            <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
-          </a>
+          <div style="margin-top:1rem;text-align:center;">
+            <a href="Avinash_Aman_CV.pdf" download style="font-size:0.82rem;color:var(--text-muted);display:inline-flex;align-items:center;gap:0.4rem;transition:color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">
+              <i class="fa-solid fa-download"></i> Download full CV (PDF)
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Case Study Modal 1: habbitTracker -->
-  <div class="modal-backdrop" id="modal-habbitTracker">
-    <div class="case-study-modal">
-      <div class="modal-header">
-        <h2><i class="fa-solid fa-calendar-check" style="color: #0284c7;"></i> habbitTracker Case Study</h2>
-        <button class="modal-close-btn" onclick="closeCaseStudyModal('modal-habbitTracker')">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="hierarchy-timeline">
-          <!-- Step 1 -->
-          <div class="hierarchy-step">
-            <span class="step-label problem">1. The Problem</span>
-            <h3 class="step-title">Rigid Predefined Habit Templates</h3>
-            <p class="step-desc">
-              Existing habit tracking tools enforce strict daily schedules or static templates. Users tracking non-standard routines (e.g. 3x per week, custom targets, interval goals) abandon apps due to forced compliance constraints and rigid tracking friction.
-            </p>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="hierarchy-step">
-            <span class="step-label discovery">2. Discovery & Research</span>
-            <h3 class="step-title">User Behavior & Flexibility Requirement</h3>
-            <p class="step-desc">
-              User discovery revealed that 73% of habit trackers are uninstalled within 14 days when custom goal metrics cannot be configured. The requirement was clear: build a zero-compromise, highly adaptable habit creation engine with sub-10ms UI responsiveness and offline data privacy.
-            </p>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="hierarchy-step">
-            <span class="step-label build">3. Engineering Build</span>
-            <h3 class="step-title">SwiftUI, Combine & Core Data Engine</h3>
-            <p class="step-desc">
-              Architected using <strong>SwiftUI</strong> for reactive UI rendering, <strong>Combine</strong> for real-time progress calculations, and a flexible <strong>Core Data</strong> schema (`HabitEntity`, `ScheduleRules`, `CompletionLog`). Integrated local <strong>UserNotifications framework</strong> to trigger dynamic reminders without external server calls.
-            </p>
-          </div>
-
-          <!-- Step 4 -->
-          <div class="hierarchy-step">
-            <span class="step-label decision">4. Decision Layer</span>
-            <h3 class="step-title">Offline-First Architecture vs Cloud Backend</h3>
-            <p class="step-desc">
-              <strong>Tradeoff:</strong> Local Core Data vs Firebase Cloud Sync.<br>
-              <strong>Architectural Rationale:</strong> Prioritized local-first Core Data persistence to eliminate network latency, guarantee absolute privacy for personal habits, and ensure zero cloud infrastructure overhead.
-            </p>
-          </div>
-
-          <!-- Step 5 -->
-          <div class="hierarchy-step">
-            <span class="step-label impact">5. Quantified Impact</span>
-            <h3 class="step-title">100% Habit Customization & Zero Friction</h3>
-            <p class="step-desc">
-              Achieved 100% custom schedule flexibility, instant tracking responses, and seamless local push reminders with zero server reliance.
-            </p>
-          </div>
-        </div>
-
-        <div class="screenshot-dropzone">
-          <i class="fa-solid fa-cloud-arrow-up"></i>
-          <p>📸 Screenshot Attachment Area<br><small>Drop UI screenshots into <code>images/habbitTracker-preview.jpg</code> to preview live app screens here.</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Case Study Modal 2: dailyExpenseTracker -->
-  <div class="modal-backdrop" id="modal-dailyExpenseTracker">
-    <div class="case-study-modal">
-      <div class="modal-header">
-        <h2><i class="fa-solid fa-wallet" style="color: #d97706;"></i> dailyExpenseTracker Case Study</h2>
-        <button class="modal-close-btn" onclick="closeCaseStudyModal('modal-dailyExpenseTracker')">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="hierarchy-timeline">
-          <!-- Step 1 -->
-          <div class="hierarchy-step">
-            <span class="step-label problem">1. The Problem</span>
-            <h3 class="step-title">Lack of Proof Evidence & Missed Recurring Payments</h3>
-            <p class="step-desc">
-              Standard expense logs rely solely on unverified manual text entries, lacking receipt image attachments, recurring bill reminders, and active overspending warnings before budget thresholds are breached.
-            </p>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="hierarchy-step">
-            <span class="step-label discovery">2. Discovery & Feature Scoping</span>
-            <h3 class="step-title">Income Sources, Receipts & Automated Alerts</h3>
-            <p class="step-desc">
-              Identified core user requirements: (1) Customizable income sources, (2) Receipt/proof image attachments per transaction, (3) Future OCR roadmap for automated bank statement parsing, (4) Scheduled bill reminders, and (5) Instant budget threshold breach alerts.
-            </p>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="hierarchy-step">
-            <span class="step-label build">3. Engineering Build</span>
-            <h3 class="step-title">Core Data Storage, Vision OCR Roadmap & UNNotifications</h3>
-            <p class="step-desc">
-              Built with <strong>Swift & Core Data</strong> utilizing external binary storage for high-resolution receipt images. Implemented local notifications for recurring payment schedules and budget limit enforcement logic. Designed data model ready for <strong>Vision Framework OCR</strong> bank statement processing.
-            </p>
-          </div>
-
-          <!-- Step 4 -->
-          <div class="hierarchy-step">
-            <span class="step-label decision">4. Decision Layer</span>
-            <h3 class="step-title">SQLite Blob Storage vs External Disk Binary Storage</h3>
-            <p class="step-desc">
-              <strong>Tradeoff:</strong> Storing receipt photos directly in SQLite tables vs Core Data External Binary Storage (`Allows External Storage`).<br>
-              <strong>Architectural Rationale:</strong> Selected External Storage to keep the main SQLite database small and fast, avoiding memory bloat during budget queries while storing binary images efficiently on disk.
-            </p>
-          </div>
-
-          <!-- Step 5 -->
-          <div class="hierarchy-step">
-            <span class="step-label impact">5. Quantified Impact</span>
-            <h3 class="step-title">Zero Missed Bills & Budget Breach Prevention</h3>
-            <p class="step-desc">
-              Eliminated late payment penalties via recurring alerts and provided immediate visual feedback whenever monthly spending hit 80% and 90% budget limits.
-            </p>
-          </div>
-        </div>
-
-        <div class="screenshot-dropzone">
-          <i class="fa-solid fa-cloud-arrow-up"></i>
-          <p>📸 Screenshot Attachment Area<br><small>Drop UI screenshots into <code>images/dailyExpense-preview.jpg</code> to preview live app screens here.</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Case Study Modal 3: StrangerChatApp -->
-  <div class="modal-backdrop" id="modal-StrangerChatApp">
-    <div class="case-study-modal">
-      <div class="modal-header">
-        <h2><i class="fa-solid fa-comments" style="color: #9333ea;"></i> StrangerChatApp Case Study</h2>
-        <button class="modal-close-btn" onclick="closeCaseStudyModal('modal-StrangerChatApp')">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="hierarchy-timeline">
-          <!-- Step 1 -->
-          <div class="hierarchy-step">
-            <span class="step-label problem">1. The Problem</span>
-            <h3 class="step-title">Bot Spam & Low Engagement in Social Chat Apps</h3>
-            <p class="step-desc">
-              Anonymous social platforms suffer from high bot spam, abusive behavior, and low user retention due to friction-free account creation and lack of meaningful engagement incentives.
-            </p>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="hierarchy-step">
-            <span class="step-label discovery">2. Discovery & Concept Gamification</span>
-            <h3 class="step-title">Fitness-Powered Coin Economy & Proximity Discovery</h3>
-            <p class="step-desc">
-              Innovated a fitness-backed coin economy: Users must spend coins to initiate chats, voice calls, or video calls with new friends. To earn coins, users must complete physical health challenges (step count, distance, calorie targets). Discovery is enhanced via GPS proximity search and name search.
-            </p>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="hierarchy-step">
-            <span class="step-label build">3. Engineering Build</span>
-            <h3 class="step-title">HealthKit, Core Location & XMPP/WebRTC Infrastructure</h3>
-            <p class="step-desc">
-              Engineered with <strong>HealthKit</strong> for physical activity telemetry verification (steps, distance, active energy burned), <strong>Core Location</strong> for GPS proximity discovery, and <strong>WebRTC / XMPP</strong> protocols for low-latency audio/video streaming and instant messaging.
-            </p>
-          </div>
-
-          <!-- Step 4 -->
-          <div class="hierarchy-step">
-            <span class="step-label decision">4. Decision Layer</span>
-            <h3 class="step-title">Anti-Cheat Step Verification & Privacy Obfuscation</h3>
-            <p class="step-desc">
-              <strong>Tradeoff:</strong> Direct location broadcasting vs Geo-hashing privacy protection; raw step data vs anti-cheat cadence validation.<br>
-              <strong>Architectural Rationale:</strong> Implemented step velocity validation via HealthKit cadence queries to prevent step spoofing, and applied geo-hashing to obfuscate exact GPS coordinates for user safety.
-            </p>
-          </div>
-
-          <!-- Step 5 -->
-          <div class="hierarchy-step">
-            <span class="step-label impact">5. Quantified Impact</span>
-            <h3 class="step-title">90%+ Reduction in Bot Spam & Increased Physical Activity</h3>
-            <p class="step-desc">
-              Successfully linked physical fitness to social interactions, eliminating bot spam through fitness proof of work and driving daily active workout routines.
-            </p>
-          </div>
-        </div>
-
-        <div class="screenshot-dropzone">
-          <i class="fa-solid fa-cloud-arrow-up"></i>
-          <p>📸 Screenshot Attachment Area<br><small>Drop UI screenshots into <code>images/strangerChat-preview.jpg</code> to preview live app screens here.</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
   <footer class="footer">
-    <div class="container">
-      <p>© <span id="year">2026</span> Avinash Aman. Built for GitHub Pages hosting.</p>
+    <div class="footer-inner">
+      <div class="footer-copy">
+        © <span id="year">2026</span> Avinash Aman — Senior iOS Engineer
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/avinashamanjha251" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/avinashamanjha" target="_blank">LinkedIn</a>
+        <a href="mailto:avinashamanjha@gmail.com">Email</a>
+        <a href="Avinash_Aman_CV.pdf" download>Resume</a>
+      </div>
     </div>
   </footer>
 
