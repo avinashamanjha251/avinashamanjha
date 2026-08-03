@@ -48,21 +48,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Project Filtering
-  const filterBtns = document.querySelectorAll('.filter-btn');
+  // Category Switcher (Enterprise vs Personal R&D)
+  const categoryBtns = document.querySelectorAll('.category-tab-btn');
   const projectCards = document.querySelectorAll('.project-card');
 
-  filterBtns.forEach(btn => {
+  categoryBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Remove active from all buttons
-      filterBtns.forEach(b => b.classList.remove('active'));
+      categoryBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      const filter = btn.getAttribute('data-filter');
-
+      const selectedCategory = btn.getAttribute('data-category');
+      
       projectCards.forEach(card => {
-        const categories = card.getAttribute('data-category').split(' ');
-        if (filter === 'all' || categories.includes(filter)) {
+        const cardType = card.getAttribute('data-type');
+        if (selectedCategory === 'all' || cardType === selectedCategory) {
           card.style.display = 'flex';
           setTimeout(() => {
             card.style.opacity = '1';
@@ -77,6 +76,77 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+  });
+
+  // Project Domain Filtering (Health, Fintech, Messaging, Location, Creative)
+  const filterBtns = document.querySelectorAll('.filter-btn');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+      const activeCategory = document.querySelector('.category-tab-btn.active')?.getAttribute('data-category') || 'all';
+
+      projectCards.forEach(card => {
+        const categories = (card.getAttribute('data-category') || '').split(' ');
+        const cardType = card.getAttribute('data-type');
+        
+        const categoryMatch = (activeCategory === 'all' || cardType === activeCategory);
+        const filterMatch = (filter === 'all' || categories.includes(filter));
+
+        if (categoryMatch && filterMatch) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 50);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(10px)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 200);
+        }
+      });
+    });
+  });
+
+  // Case Study Modal Handlers
+  window.openCaseStudyModal = function(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  window.closeCaseStudyModal = function(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  };
+
+  // Close modal on backdrop click or ESC key
+  document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
+    backdrop.addEventListener('click', (e) => {
+      if (e.target === backdrop) {
+        backdrop.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-backdrop.active').forEach(backdrop => {
+        backdrop.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    }
   });
 
   // Copy to Clipboard Utility
@@ -112,3 +182,4 @@ document.addEventListener('DOMContentLoaded', () => {
     window.print();
   };
 });
+
