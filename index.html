@@ -12,7 +12,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -20,6 +20,110 @@
 
 <div id="cursor"></div>
 <div id="cursor-ring"></div>
+
+<!-- ═══════════════ INTRO OVERLAY ═══════════════ -->
+<div id="intro-overlay">
+  <!-- Ambient sparkles -->
+  <div class="intro-spark"></div>
+  <div class="intro-spark"></div>
+  <div class="intro-spark"></div>
+  <div class="intro-spark"></div>
+
+  <!-- Profile photo -->
+  <div class="intro-photo-wrap">
+    <div class="intro-photo-ring-1"></div>
+    <div class="intro-photo-ring-2"></div>
+    <img class="intro-photo-img" src="images/profile.png" alt="Avinash Aman">
+    <div class="intro-photo-glow"></div>
+  </div>
+
+  <!-- Full-body avatar SVG (appears on first interaction) -->
+  <svg class="intro-body-svg" id="intro-body-svg" viewBox="0 0 260 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="bodyg" cx="50%" cy="0%" r="100%">
+        <stop offset="0%" stop-color="#2d1b69"/>
+        <stop offset="100%" stop-color="#1a0f3a"/>
+      </radialGradient>
+      <filter id="glow-f" x="-30%" y="-30%" width="160%" height="160%">
+        <feGaussianBlur stdDeviation="5" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <linearGradient id="laptopg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#7c3aed"/>
+        <stop offset="100%" stop-color="#a855f7"/>
+      </linearGradient>
+    </defs>
+
+    <!-- Shoulders / neck connect -->
+    <path d="M90 14 Q130 2 170 14 L178 40 Q130 28 82 40 Z" fill="#1a1535"/>
+
+    <!-- Torso -->
+    <rect x="75" y="36" width="110" height="90" rx="18" fill="url(#bodyg)" stroke="rgba(124,58,237,0.3)" stroke-width="1"/>
+
+    <!-- Left arm (resting on laptop) -->
+    <path d="M75 55 Q50 78 46 118" stroke="#1d1440" stroke-width="20" stroke-linecap="round" fill="none"/>
+    <circle cx="46" cy="124" r="11" fill="#d4a27a"/>
+
+    <!-- Right waving arm group -->
+    <g id="wave-arm-g">
+      <path d="M185 52 Q215 32 228 8" stroke="#1d1440" stroke-width="20" stroke-linecap="round" fill="none"/>
+      <!-- Hand -->
+      <ellipse cx="231" cy="5" rx="13" ry="12" fill="#d4a27a"/>
+      <!-- Fingers -->
+      <line x1="222" y1="-3" x2="218" y2="-11" stroke="#d4a27a" stroke-width="5" stroke-linecap="round"/>
+      <line x1="228" y1="-5" x2="226" y2="-14" stroke="#d4a27a" stroke-width="5" stroke-linecap="round"/>
+      <line x1="234" y1="-5" x2="234" y2="-14" stroke="#d4a27a" stroke-width="5" stroke-linecap="round"/>
+      <line x1="239" y1="-2" x2="241" y2="-10" stroke="#d4a27a" stroke-width="5" stroke-linecap="round"/>
+    </g>
+
+    <!-- Laptop base -->
+    <rect x="38" y="126" width="184" height="12" rx="6" fill="url(#laptopg)" opacity="0.85" filter="url(#glow-f)"/>
+
+    <!-- Laptop screen -->
+    <rect x="58" y="78" width="144" height="90" rx="8" fill="#0a0612" stroke="url(#laptopg)" stroke-width="1.5"/>
+    <rect x="65" y="85" width="130" height="76" rx="5" fill="#0f0b20"/>
+
+    <!-- Screen code lines -->
+    <rect x="72" y="93" width="55" height="3" rx="1.5" fill="#7c3aed" opacity="0.8"/>
+    <rect x="72" y="101" width="80" height="3" rx="1.5" fill="#a855f7" opacity="0.6"/>
+    <rect x="80" y="109" width="45" height="3" rx="1.5" fill="#f0abfc" opacity="0.5"/>
+    <rect x="72" y="117" width="70" height="3" rx="1.5" fill="#7c3aed" opacity="0.7"/>
+    <rect x="80" y="125" width="35" height="3" rx="1.5" fill="#a855f7" opacity="0.5"/>
+    <rect x="72" y="133" width="60" height="3" rx="1.5" fill="#34d399" opacity="0.6"/>
+    <rect x="80" y="141" width="50" height="3" rx="1.5" fill="#7c3aed" opacity="0.5"/>
+
+    <!-- Screen cursor blink -->
+    <rect x="132" y="141" width="2" height="8" rx="1" fill="#a855f7">
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- Sitting legs -->
+    <rect x="85" y="122" width="90" height="60" rx="12" fill="#120f22"/>
+
+    <!-- Floating glow under laptop -->
+    <ellipse cx="130" cy="160" rx="70" ry="12" fill="rgba(124,58,237,0.2)" filter="url(#glow-f)"/>
+
+    <!-- Ambient particles -->
+    <circle cx="22" cy="60" r="3" fill="#a855f7" opacity="0.7">
+      <animate attributeName="cy" values="60;50;60" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="240" cy="90" r="2.5" fill="#f0abfc" opacity="0.6">
+      <animate attributeName="cy" values="90;80;90" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.1;0.6" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="35" cy="155" r="4" fill="#7c3aed" opacity="0.4">
+      <animate attributeName="cy" values="155;145;155" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+  </svg>
+
+  <!-- Name + hint -->
+  <div class="intro-name">
+    <h2>Avinash Aman</h2>
+    <p>Senior iOS Engineer · Tech Lead</p>
+  </div>
+  <div class="intro-hint">Move anywhere to continue</div>
+</div>
 
 <!-- ═══════════════ NAV ═══════════════ -->
 <nav class="nav" id="mainNav">
@@ -738,18 +842,40 @@
 <!-- ═══════════════ CASE STUDIES ═══════════════ -->
 <section class="casestudy-section" id="casestudies">
   <div class="container">
-    <div class="cs-header reveal">
-      <div>
-        <div class="section-label">In-depth</div>
-        <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3.5rem);font-weight:800;letter-spacing:-0.03em;line-height:1.05;color:var(--text-primary);">Case Studies</h2>
-        <p style="color:var(--text-secondary);font-size:0.95rem;margin-top:0.75rem;max-width:440px;line-height:1.75;">Deep-dives into how I discovered, designed, and shipped solutions — from problem to impact.</p>
-      </div>
-      <div class="cs-nav">
-        <button class="cs-nav-btn active" data-cs="cs-habbit">📅 habbitTracker</button>
-        <button class="cs-nav-btn" data-cs="cs-expense">💸 dailyExpense</button>
-        <button class="cs-nav-btn" data-cs="cs-stranger">💬 StrangerChat</button>
-      </div>
+    <!-- Case Studies Header + Folder Tabs -->
+    <div class="cs-header-top reveal">
+      <div class="section-label">In-depth</div>
+      <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3.5rem);font-weight:800;letter-spacing:-0.04em;line-height:1.05;color:var(--text-primary);margin-bottom:0.5rem;">Case Studies</h2>
+      <p style="color:var(--text-secondary);font-size:0.95rem;max-width:440px;line-height:1.75;">Deep-dives into how I discovered, designed, and shipped solutions — from problem to production impact.</p>
     </div>
+
+    <!-- Folder Tabs strip -->
+    <div class="cs-tabs-strip reveal d1">
+      <button class="cs-tab active" data-cs="cs-habbit">
+        <div class="cs-tab-row1">
+          <span class="cs-tab-num">01</span>
+          <span class="cs-tab-title">habbitTracker</span>
+        </div>
+        <div class="cs-tab-desc">SwiftUI · Core Data · Combine</div>
+      </button>
+      <button class="cs-tab" data-cs="cs-expense">
+        <div class="cs-tab-row1">
+          <span class="cs-tab-num">02</span>
+          <span class="cs-tab-title">dailyExpense</span>
+        </div>
+        <div class="cs-tab-desc">Swift · Vision OCR · Notifications</div>
+      </button>
+      <button class="cs-tab" data-cs="cs-stranger">
+        <div class="cs-tab-row1">
+          <span class="cs-tab-num">03</span>
+          <span class="cs-tab-title">StrangerChat</span>
+        </div>
+        <div class="cs-tab-desc">HealthKit · WebRTC · XMPP</div>
+      </button>
+    </div>
+
+    <!-- Tab content area -->
+    <div class="cs-tab-content-area">
 
     <!-- ─ habbitTracker ─ -->
     <article class="cs-article active" id="cs-habbit">
@@ -944,9 +1070,11 @@
           </div>
         </div>
       </div>
-    </article>
+    </article><!-- /cs-stranger -->
 
-  </div>
+    </div><!-- /cs-tab-content-area -->
+
+  </div><!-- /container -->
 </section>
 
 <!-- ═══════════════ EDUCATION ═══════════════ -->
