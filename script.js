@@ -1,53 +1,50 @@
 /* ============================================================
-   AVINASH AMAN — script.js V2
-   Intro overlay · Custom cursor · Scroll reveal
-   Project tabs · R&D accordion · Case study tabs · Toast
+   AVINASH AMAN — script.js V5
+   Intro: profile photo wave emoji → morph-right blend
+   Slot-roll stat counters on hero enter
+   Case study carousel — CSS scroll-snap, auto-swipe
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ══════════════════════════════════════
-     INTRO OVERLAY
+     INTRO OVERLAY — photo wave → morph right → reveal
   ══════════════════════════════════════ */
-  const overlay    = document.getElementById('intro-overlay');
-  const bodySvg    = document.getElementById('intro-body-svg');
-  let introTriggered = false;
+  const overlay      = document.getElementById('intro-overlay');
+  let   introTriggered = false;
 
   function triggerIntro() {
-    if (introTriggered) return;
+    if (introTriggered || !overlay) return;
     introTriggered = true;
 
-    // 1. Reveal the body SVG (slides up from below the face)
-    if (bodySvg) {
-      bodySvg.classList.add('show');
-      // 2. Start wave animation after SVG is visible
-      setTimeout(() => {
-        bodySvg.classList.add('waving');
-      }, 500);
-    }
+    // Animate the wave-hand emoji
+    const waveHand = document.getElementById('introWaveHand');
+    if (waveHand) waveHand.classList.add('waving');
 
-    // 3. After waving, dismiss the overlay
+    // After the wave is clearly visible (~1.6s), start morph-right
+    setTimeout(() => {
+      if (overlay) overlay.classList.add('morphing');
+    }, 1600);
+
+    // After morph completes, fade overlay and clean up
     setTimeout(() => {
       if (overlay) {
         overlay.classList.add('exit');
-        // Remove from DOM after animation ends
-        overlay.addEventListener('animationend', () => {
+        overlay.addEventListener('transitionend', () => {
           overlay.style.display = 'none';
           document.body.style.overflow = '';
         }, { once: true });
       }
-    }, 2200);
+    }, 2500);
   }
 
-  // Lock scroll while intro is shown
   if (overlay) {
     document.body.style.overflow = 'hidden';
-    // Listen for ANY user gesture
-    const gestures = ['mousemove', 'mousedown', 'touchstart', 'keydown', 'scroll'];
-    gestures.forEach(evt => {
-      window.addEventListener(evt, triggerIntro, { once: true, passive: true });
-    });
-    // Auto-dismiss after 6 seconds if user is idle
+    const gestures = ['mousemove', 'mousedown', 'touchstart', 'keydown'];
+    gestures.forEach(evt =>
+      window.addEventListener(evt, triggerIntro, { once: true, passive: true })
+    );
+    // Auto-dismiss after 6s if user stays idle
     setTimeout(triggerIntro, 6000);
   }
 
@@ -70,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(animateRing);
   })();
 
-  // Expand cursor on interactive elements
   document.querySelectorAll('a, button, [onclick], .rd-trigger, .cs-tab, .tab, .val-card, .ent-card').forEach(el => {
     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-expanded'));
     el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-expanded'));
@@ -89,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (link) link.classList.toggle('active', y >= top && y < top + sec.offsetHeight);
     });
   }
-
   window.addEventListener('scroll', () => {
     nav?.classList.toggle('scrolled', window.scrollY > 60);
     updateScrollSpy();
@@ -126,16 +121,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
-
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
   /* ══════════════════════════════════════
-     PROJECT TABS (Enterprise / R&D)
+     PROJECT TABS
   ══════════════════════════════════════ */
   const projTabs = document.querySelectorAll('[data-tab]');
   const entGrid  = document.getElementById('entGrid');
   const rdList   = document.getElementById('rdList');
-
   projTabs.forEach(t => t.addEventListener('click', () => {
     projTabs.forEach(b => b.classList.remove('active'));
     t.classList.add('active');
@@ -152,18 +145,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const item   = trigger.closest('.rd-item');
       const panel  = item.querySelector('.rd-panel');
       const isOpen = item.classList.contains('open');
-
-      // Close all first
       document.querySelectorAll('.rd-item').forEach(i => {
         i.classList.remove('open');
         i.querySelector('.rd-panel')?.classList.remove('open');
       });
-
-      // Open clicked if it was closed
-      if (!isOpen) {
-        item.classList.add('open');
-        panel?.classList.add('open');
-      }
+      if (!isOpen) { item.classList.add('open'); panel?.classList.add('open'); }
     });
   });
 
@@ -172,30 +158,71 @@ document.addEventListener('DOMContentLoaded', () => {
   ══════════════════════════════════════ */
   const csTabs     = document.querySelectorAll('.cs-tab');
   const csArticles = document.querySelectorAll('.cs-article');
-
   csTabs.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Update tab active state
       csTabs.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
-      // Show matching article
-      const target = btn.dataset.cs;
-      csArticles.forEach(a => {
-        a.classList.remove('active');
-        a.style.display = 'none';
-      });
-      const active = document.getElementById(target);
+      csArticles.forEach(a => { a.classList.remove('active'); a.style.display = 'none'; });
+      const active = document.getElementById(btn.dataset.cs);
       if (active) {
         active.style.display = 'block';
         active.classList.add('active');
-        // Re-trigger reveal animations inside the newly shown article
-        active.querySelectorAll('.reveal:not(.visible)').forEach(el => {
-          revealObs.observe(el);
-        });
+        active.querySelectorAll('.reveal:not(.visible)').forEach(el => revealObs.observe(el));
       }
     });
   });
+
+  /* ══════════════════════════════════════
+     SLOT-ROLL STAT COUNTERS
+     Each time hero section enters viewport, rolls and settles
+  ══════════════════════════════════════ */
+  const statConfig = [
+    { id: 'stat1', end: 10,  suffix: '+',   label: 'Years engineering' },
+    { id: 'stat2', end: 200, suffix: 'K+',  label: 'Active users' },
+    { id: 'stat3', end: 8,   suffix: '+',   label: 'Flagship apps' },
+    { id: 'stat4', end: 0,   suffix: '',    label: 'Deployment failures' },
+  ];
+
+  function slotRoll(el, end, suffix) {
+    const rollDuration   = 900;
+    const settleDuration = 900;
+    const startTime = performance.now();
+    const maxRand = Math.max(end * 3, 50);
+
+    function tick(now) {
+      const elapsed = now - startTime;
+      if (elapsed < rollDuration) {
+        const rand = Math.floor(Math.random() * maxRand);
+        el.textContent = rand + suffix;
+      } else if (elapsed < rollDuration + settleDuration) {
+        const progress = (elapsed - rollDuration) / settleDuration;
+        const eased    = 1 - Math.pow(1 - progress, 4);
+        el.textContent = Math.round(eased * end) + suffix;
+      } else {
+        el.textContent = end + suffix;
+        return;
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function runSlotRolls() {
+    statConfig.forEach(({ id, end, suffix }) => {
+      const el = document.getElementById(id);
+      if (el) slotRoll(el, end, suffix);
+    });
+  }
+
+  const heroSection = document.getElementById('hero');
+  if (heroSection) {
+    const heroObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) runSlotRolls();
+      });
+    }, { threshold: 0.4 });
+    heroObs.observe(heroSection);
+  }
 
   /* ══════════════════════════════════════
      TOAST UTILITY
@@ -220,40 +247,74 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ══════════════════════════════════════
-     FOOTER YEAR
+     CASE STUDY CAROUSELS
+     CSS scroll-snap: each slide = 100% of track width (frame width)
+     No transform math — browser handles snapping natively
   ══════════════════════════════════════ */
+  function initCarousels() {
+    document.querySelectorAll('.cs-carousel').forEach(carousel => {
+      const track         = carousel.querySelector('.cs-carousel-track');
+      const dotsContainer = carousel.querySelector('.cs-carousel-dots');
+      const slides        = carousel.querySelectorAll('.cs-slide');
+
+      if (!slides.length || !track) return;
+
+      const count = slides.length;
+      let current = 0;
+      let timer   = null;
+
+      // Build dot indicators dynamically
+      slides.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.className = 'cs-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => { goTo(i); resetTimer(); });
+        dotsContainer.appendChild(dot);
+      });
+
+      function setActiveDot(index) {
+        dotsContainer.querySelectorAll('.cs-dot')
+          .forEach((d, i) => d.classList.toggle('active', i === index));
+      }
+
+      function goTo(index) {
+        const next    = ((index % count) + count) % count;
+        const isWrap  = (current === count - 1 && next === 0);
+
+        if (isWrap) {
+          // Instant jump so we don't scroll backwards through all slides
+          track.scrollLeft = 0;
+        } else {
+          track.scrollTo({ left: next * track.offsetWidth, behavior: 'smooth' });
+        }
+
+        current = next;
+        setActiveDot(current);
+      }
+
+      function resetTimer() {
+        clearInterval(timer);
+        if (count > 1) timer = setInterval(() => goTo(current + 1), 3200);
+      }
+
+      // Keep dots in sync when user swipes manually
+      track.addEventListener('scroll', () => {
+        const w = track.offsetWidth;
+        if (!w) return;
+        const i = Math.round(track.scrollLeft / w);
+        if (i !== current && i >= 0 && i < count) {
+          current = i;
+          setActiveDot(current);
+          resetTimer();
+        }
+      }, { passive: true });
+
+      // Start auto-swipe
+      resetTimer();
+    });
+  }
+  initCarousels();
+
+  /* Footer year */
   const yr = document.getElementById('year');
   if (yr) yr.textContent = new Date().getFullYear();
-
-  /* ══════════════════════════════════════
-     HERO STAT COUNTER ANIMATION
-  ══════════════════════════════════════ */
-  function animateCount(el, end, suffix) {
-    if (!el) return;
-    let start = 0;
-    const dur = 1400;
-    const startTime = performance.now();
-    function step(now) {
-      const progress = Math.min((now - startTime) / dur, 1);
-      const eased    = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.round(eased * end) + suffix;
-      if (progress < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-
-  const statsEl = document.querySelector('.hero-stats');
-  if (statsEl) {
-    new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        animateCount(document.getElementById('stat1'),  10,  '+');
-        animateCount(document.getElementById('stat2'), 200, 'K+');
-        animateCount(document.getElementById('stat3'),   8,  '+');
-        // stat4 stays "0 failures"
-        const s4 = document.getElementById('stat4');
-        if (s4) s4.textContent = '0';
-      }
-    }, { threshold: 0.5 }).observe(statsEl);
-  }
-
 });

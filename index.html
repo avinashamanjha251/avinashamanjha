@@ -1,1169 +1,1460 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Avinash Aman — Senior iOS Engineer & Mobile Lead</title>
-  <meta name="description" content="Avinash Aman — Senior iOS Engineer with 10+ years building production-grade Apple Ecosystem apps. Expert in Swift, SwiftUI, Architecture, Blockchain & Wearables. Available for Tech Lead & Engineering Manager roles.">
+  <title>Avinash Aman - Senior iOS Engineer & Mobile Lead</title>
+  <meta name="description"
+    content="Avinash Aman - Senior iOS Engineer with 10+ years building production-grade Apple Ecosystem apps. Expert in Swift, SwiftUI, Architecture, Blockchain & Wearables. Available for Tech Lead & Engineering Manager roles.">
   <meta name="author" content="Avinash Aman">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Avinash Aman — Senior iOS Engineer">
-  <meta property="og:description" content="10+ years of iOS engineering: blockchain health platforms, wearable integrations, real-time chat engines, architectural leadership.">
+  <meta property="og:title" content="Avinash Aman - Senior iOS Engineer">
+  <meta property="og:description"
+    content="10+ years of iOS engineering: blockchain health platforms, wearable integrations, real-time chat engines, architectural leadership.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
 
-<!-- ═══════════════ INTRO OVERLAY ═══════════════ -->
-<div id="intro-overlay">
-  <!-- Ambient sparkles -->
-  <div class="intro-spark"></div>
-  <div class="intro-spark"></div>
-  <div class="intro-spark"></div>
-  <div class="intro-spark"></div>
+  <!-- ═══════════════ INTRO OVERLAY ═══════════════ -->
+  <div id="intro-overlay">
+    <!-- Ambient sparkles -->
+    <div class="intro-spark"></div>
+    <div class="intro-spark"></div>
+    <div class="intro-spark"></div>
+    <div class="intro-spark"></div>
+    <div class="intro-spark"></div>
+    <div class="intro-spark"></div>
 
-  <!-- Profile photo -->
-  <div class="intro-photo-wrap">
-    <div class="intro-photo-ring-1"></div>
-    <div class="intro-photo-ring-2"></div>
-    <img class="intro-photo-img" src="images/profile.png" alt="Avinash Aman">
-    <div class="intro-photo-glow"></div>
+    <!-- Core: profile photo + wave hand (this whole block morphs right) -->
+    <div id="intro-core">
+      <div class="intro-photo-wrap">
+        <div class="intro-photo-ring"></div>
+        <div class="intro-photo-ring-2"></div>
+        <div class="intro-orbit-dot"></div>
+        <div class="intro-photo-frame">
+          <img src="images/profile.png" alt="Avinash Aman">
+        </div>
+        <div class="intro-wave-hand" id="introWaveHand">👋</div>
+        <div class="intro-photo-glow"></div>
+      </div>
+      <!-- Name + title -->
+      <div class="intro-name">
+        <h2>Avinash Aman</h2>
+        <p>Senior iOS Engineer &middot; iOS Lead</p>
+      </div>
+    </div><!-- /#intro-core -->
+
+    <div class="intro-hint">Move anywhere to enter</div>
   </div>
 
-  <!-- Full-body avatar SVG (appears on first interaction) -->
-  <svg class="intro-body-svg" id="intro-body-svg" viewBox="0 0 260 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <radialGradient id="bodyg" cx="50%" cy="0%" r="100%">
-        <stop offset="0%" stop-color="#2d1b69"/>
-        <stop offset="100%" stop-color="#1a0f3a"/>
-      </radialGradient>
-      <filter id="glow-f" x="-30%" y="-30%" width="160%" height="160%">
-        <feGaussianBlur stdDeviation="5" result="blur"/>
-        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-      </filter>
-      <linearGradient id="laptopg" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#7c3aed"/>
-        <stop offset="100%" stop-color="#a855f7"/>
-      </linearGradient>
-    </defs>
-
-    <!-- Shoulders / neck connect -->
-    <path d="M90 14 Q130 2 170 14 L178 40 Q130 28 82 40 Z" fill="#1a1535"/>
-
-    <!-- Torso -->
-    <rect x="75" y="36" width="110" height="90" rx="18" fill="url(#bodyg)" stroke="rgba(124,58,237,0.3)" stroke-width="1"/>
-
-    <!-- Left arm (resting on laptop) -->
-    <path d="M75 55 Q50 78 46 118" stroke="#1d1440" stroke-width="20" stroke-linecap="round" fill="none"/>
-    <circle cx="46" cy="124" r="11" fill="#d4a27a"/>
-
-    <!-- Right waving arm group -->
-    <g id="wave-arm-g">
-      <path d="M185 52 Q215 32 228 8" stroke="#1d1440" stroke-width="20" stroke-linecap="round" fill="none"/>
-      <!-- Hand -->
-      <ellipse cx="231" cy="5" rx="13" ry="12" fill="#d4a27a"/>
-      <!-- Fingers -->
-      <line x1="222" y1="-3" x2="218" y2="-11" stroke="#d4a27a" stroke-width="5" stroke-linecap="round"/>
-      <line x1="228" y1="-5" x2="226" y2="-14" stroke="#d4a27a" stroke-width="5" stroke-linecap="round"/>
-      <line x1="234" y1="-5" x2="234" y2="-14" stroke="#d4a27a" stroke-width="5" stroke-linecap="round"/>
-      <line x1="239" y1="-2" x2="241" y2="-10" stroke="#d4a27a" stroke-width="5" stroke-linecap="round"/>
-    </g>
-
-    <!-- Laptop base -->
-    <rect x="38" y="126" width="184" height="12" rx="6" fill="url(#laptopg)" opacity="0.85" filter="url(#glow-f)"/>
-
-    <!-- Laptop screen -->
-    <rect x="58" y="78" width="144" height="90" rx="8" fill="#0a0612" stroke="url(#laptopg)" stroke-width="1.5"/>
-    <rect x="65" y="85" width="130" height="76" rx="5" fill="#0f0b20"/>
-
-    <!-- Screen code lines -->
-    <rect x="72" y="93" width="55" height="3" rx="1.5" fill="#7c3aed" opacity="0.8"/>
-    <rect x="72" y="101" width="80" height="3" rx="1.5" fill="#a855f7" opacity="0.6"/>
-    <rect x="80" y="109" width="45" height="3" rx="1.5" fill="#f0abfc" opacity="0.5"/>
-    <rect x="72" y="117" width="70" height="3" rx="1.5" fill="#7c3aed" opacity="0.7"/>
-    <rect x="80" y="125" width="35" height="3" rx="1.5" fill="#a855f7" opacity="0.5"/>
-    <rect x="72" y="133" width="60" height="3" rx="1.5" fill="#34d399" opacity="0.6"/>
-    <rect x="80" y="141" width="50" height="3" rx="1.5" fill="#7c3aed" opacity="0.5"/>
-
-    <!-- Screen cursor blink -->
-    <rect x="132" y="141" width="2" height="8" rx="1" fill="#a855f7">
-      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
-    </rect>
-
-    <!-- Sitting legs -->
-    <rect x="85" y="122" width="90" height="60" rx="12" fill="#120f22"/>
-
-    <!-- Floating glow under laptop -->
-    <ellipse cx="130" cy="160" rx="70" ry="12" fill="rgba(124,58,237,0.2)" filter="url(#glow-f)"/>
-
-    <!-- Ambient particles -->
-    <circle cx="22" cy="60" r="3" fill="#a855f7" opacity="0.7">
-      <animate attributeName="cy" values="60;50;60" dur="2.5s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.5s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="240" cy="90" r="2.5" fill="#f0abfc" opacity="0.6">
-      <animate attributeName="cy" values="90;80;90" dur="3s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.6;0.1;0.6" dur="3s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="35" cy="155" r="4" fill="#7c3aed" opacity="0.4">
-      <animate attributeName="cy" values="155;145;155" dur="3.5s" repeatCount="indefinite"/>
-    </circle>
-  </svg>
-
-  <!-- Name + hint -->
-  <div class="intro-name">
-    <h2>Avinash Aman</h2>
-    <p>Senior iOS Engineer · Tech Lead</p>
-  </div>
-  <div class="intro-hint">Move anywhere to continue</div>
-</div>
-
-<!-- ═══════════════ NAV ═══════════════ -->
-<nav class="nav" id="mainNav">
-  <a href="#hero" class="nav-logo">AA<span class="dot">.</span></a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#about" class="nav-link">About</a></li>
-    <li><a href="#skills" class="nav-link">Skills</a></li>
-    <li><a href="#experience" class="nav-link">Experience</a></li>
-    <li><a href="#projects" class="nav-link">Projects</a></li>
-    <li><a href="#casestudies" class="nav-link">Case Studies</a></li>
-    <li><a href="#contact" class="nav-link">Contact</a></li>
-  </ul>
-  <div style="display:flex;align-items:center;gap:1rem;">
-    <a href="Avinash_Aman_CV.pdf" download class="nav-cta">
-      <i class="fa-solid fa-arrow-down-to-bracket"></i> Resume
-    </a>
-    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-  </div>
-</nav>
-
-<!-- ═══════════════ HERO ═══════════════ -->
-<section class="hero" id="hero">
-  <!-- Background -->
-  <div class="hero-bg">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-    <div class="hero-grid-lines"></div>
-  </div>
-
-  <!-- Left: Text content -->
-  <div class="hero-content">
-    <div class="hero-badge">
-      <span class="badge-dot"></span>
-      Available · Tech Lead · Engineering Manager · Senior iOS
-    </div>
-
-    <h1 class="hero-title">
-      <span class="block">Building</span>
-      <span class="block indent violet-text">iOS that</span>
-      <span class="block">matters.</span>
-    </h1>
-
-    <p class="hero-sub">
-      10+ years engineering production-grade Apple Ecosystem apps — from blockchain health platforms to real-time social engines. I architect, lead, and ship.
-    </p>
-
-    <div class="hero-actions">
-      <a href="#projects" class="btn-primary">
-        <i class="fa-solid fa-layer-group"></i> View My Work
+  <!-- ═══════════════ NAV ═══════════════ -->
+  <nav class="nav" id="mainNav">
+    <a href="#hero" class="nav-logo">AA<span class="dot">.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#casestudies" class="nav-link">Case Studies</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <a href="Avinash_Aman_CV.pdf" download class="nav-cta">
+        <i class="fa-solid fa-arrow-down-to-bracket"></i> Resume
       </a>
-      <a href="#casestudies" class="btn-ghost">
-        <i class="fa-solid fa-book-open"></i> Case Studies
-      </a>
-      <button class="btn-ghost" onclick="copyToClipboard('avinashamanjha@gmail.com','Email')">
-        <i class="fa-regular fa-envelope"></i> Email Me
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars"></i>
       </button>
     </div>
+  </nav>
 
-    <div class="hero-stats">
-      <div>
-        <div class="stat-val violet-text" id="stat1">10+</div>
-        <div class="stat-lbl">Years engineering</div>
-      </div>
-      <div>
-        <div class="stat-val violet-text" id="stat2">200K+</div>
-        <div class="stat-lbl">Active users shipped to</div>
-      </div>
-      <div>
-        <div class="stat-val violet-text" id="stat3">8+</div>
-        <div class="stat-lbl">Flagship apps</div>
-      </div>
-      <div>
-        <div class="stat-val violet-text" id="stat4">0</div>
-        <div class="stat-lbl">Deployment failures</div>
-      </div>
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="hero" id="hero">
+    <!-- Background -->
+    <div class="hero-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="hero-grid-lines"></div>
     </div>
-  </div>
 
-  <!-- Right: Profile -->
-  <div class="hero-profile-pane">
-    <div class="profile-float-inner">
-      <div class="profile-wrap">
-        <div class="profile-ring"></div>
-        <div class="profile-ring-2"></div>
-        <div class="orbit-dot"></div>
-        <div class="orbit-dot"></div>
-        <div class="profile-img-frame">
-          <img src="images/profile.png" alt="Avinash Aman" />
-        </div>
-        <div class="profile-glow"></div>
+    <!-- Left: Text content -->
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available · Tech Lead · Engineering Manager · Senior iOS
       </div>
-    </div>
-  </div>
 
-  <div class="scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
-</section>
+      <h1 class="hero-title">
+        <span class="block">Building</span>
+        <span class="block indent violet-text">iOS that</span>
+        <span class="block">matters.</span>
+      </h1>
 
-<!-- ═══════════════ MARQUEE TICKER ═══════════════ -->
-<div class="marquee-section" aria-hidden="true">
-  <div class="marquee-track">
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Swift 5.x</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> SwiftUI</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> UIKit</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Core Data</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> HealthKit</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Combine</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> AVFoundation</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> WatchKit</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> MapKit</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> WebRTC</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> XMPP</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Metal</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> MVVM + Clean</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Fastlane</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Core Location</span>
-    <span class="marquee-sep">·</span>
-    <!-- Duplicate for infinite loop -->
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Swift 5.x</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> SwiftUI</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> UIKit</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Core Data</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> HealthKit</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Combine</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> AVFoundation</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> WatchKit</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> MapKit</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> WebRTC</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> XMPP</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Metal</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> MVVM + Clean</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Fastlane</span>
-    <span class="marquee-sep">·</span>
-    <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Core Location</span>
-    <span class="marquee-sep">·</span>
-  </div>
-</div>
-
-<!-- ═══════════════ ABOUT ═══════════════ -->
-<section class="about-section" id="about">
-  <div class="about-editorial">
-    <div class="about-left-rail">
-      <span class="rail-label">About Me</span>
-    </div>
-    <div class="about-right-content">
-      <div class="section-label reveal">Who I Am</div>
-      <h2 class="about-headline reveal d1">
-        Engineering lead<br>who ships,<br><span class="violet-text">not just codes.</span>
-      </h2>
-      <p class="about-body-text reveal d2">
-        Based in <strong>Delhi, India</strong>. I'm a Senior iOS Engineer with a decade of delivering high-stakes mobile products — healthcare, blockchain, real-time messaging, wearables. I've grown from individual contributor to <strong>leading architecture, mentoring teams</strong>, and driving zero-failure production releases.
-      </p>
-      <p class="about-body-text reveal d3">
-        What sets me apart is the intersection of <strong>deep technical execution</strong> with <strong>product thinking</strong>. I push back on the right decisions, own the architecture end-to-end, and ensure what reaches the App Store is something users and stakeholders are genuinely proud of.
+      <p class="hero-sub">
+        10+ years engineering production-grade Apple Ecosystem apps - from blockchain health platforms to real-time
+        social engines. I architect, lead, and ship.
       </p>
 
-      <div class="values-row">
-        <div class="val-card reveal">
-          <div class="val-icon">🏗️</div>
-          <div class="val-name">Architecture First</div>
-          <div class="val-desc">MVVM, Clean Architecture, Modular design — built to age well under scale.</div>
-        </div>
-        <div class="val-card reveal d1">
-          <div class="val-icon">⚡</div>
-          <div class="val-name">Execution Speed</div>
-          <div class="val-desc">From scoping to App Store without sacrificing quality or stability.</div>
-        </div>
-        <div class="val-card reveal d2">
-          <div class="val-icon">👥</div>
-          <div class="val-name">Team Leadership</div>
-          <div class="val-desc">Mentoring, code reviews, and aligning engineering with product vision.</div>
-        </div>
-        <div class="val-card reveal d3">
-          <div class="val-icon">📊</div>
-          <div class="val-name">Metrics-Driven</div>
-          <div class="val-desc">Every feature tied to a measurable business outcome — DAU, retention, engagement.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ SKILLS ═══════════════ -->
-<section class="skills-section" id="skills">
-  <div class="container">
-    <div class="section-label reveal">Technical Arsenal</div>
-    <h2 class="section-heading reveal d1" style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3.5rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:1rem;line-height:1.05;">Core Competencies</h2>
-    <p style="color:var(--text-secondary);font-size:1rem;max-width:500px;line-height:1.75;margin-bottom:3rem;" class="reveal d2">The tools and patterns I trust in production environments — at scale, under pressure.</p>
-
-    <div class="skills-grid">
-      <div class="skill-group reveal">
-        <div class="sk-cat">Languages</div>
-        <div class="sk-title">Primary Stack</div>
-        <div class="pill-row">
-          <span class="pill">Swift 5.x</span><span class="pill">SwiftUI</span><span class="pill">Objective-C</span>
-        </div>
-      </div>
-      <div class="skill-group reveal d1">
-        <div class="sk-cat">Apple Frameworks</div>
-        <div class="sk-title">Platform Expertise</div>
-        <div class="pill-row">
-          <span class="pill">UIKit</span><span class="pill">Core Data</span><span class="pill">Core Graphics</span><span class="pill">Core Animation</span><span class="pill">MapKit</span><span class="pill">Core Location</span><span class="pill">Combine</span><span class="pill">WatchKit</span><span class="pill">HealthKit</span><span class="pill">AVFoundation</span>
-        </div>
-      </div>
-      <div class="skill-group reveal d2">
-        <div class="sk-cat">Architecture & Patterns</div>
-        <div class="sk-title">Design Decisions</div>
-        <div class="pill-row">
-          <span class="pill">MVVM</span><span class="pill">Clean Architecture</span><span class="pill">Modular Design</span><span class="pill">MVC</span><span class="pill">SOLID Principles</span>
-        </div>
-      </div>
-      <div class="skill-group reveal">
-        <div class="sk-cat">Networking & Protocols</div>
-        <div class="sk-title">Connectivity Layer</div>
-        <div class="pill-row">
-          <span class="pill">RESTful APIs</span><span class="pill">XMPP</span><span class="pill">WebRTC</span><span class="pill">APNS</span><span class="pill">JSON/XML</span>
-        </div>
-      </div>
-      <div class="skill-group reveal d1">
-        <div class="sk-cat">DevOps & CI/CD</div>
-        <div class="sk-title">Delivery Pipeline</div>
-        <div class="pill-row">
-          <span class="pill">Fastlane</span><span class="pill">TestFlight</span><span class="pill">App Store Connect</span><span class="pill">Git</span><span class="pill">CocoaPods</span><span class="pill">Swift PM</span>
-        </div>
-      </div>
-      <div class="skill-group reveal d2">
-        <div class="sk-cat">Leadership & Process</div>
-        <div class="sk-title">Beyond the Code</div>
-        <div class="pill-row">
-          <span class="pill">Agile / Scrum</span><span class="pill">Code Review</span><span class="pill">Tech Mentorship</span><span class="pill">Product Discovery</span><span class="pill">XCTest / TDD</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ EXPERIENCE ═══════════════ -->
-<section class="exp-section" id="experience">
-  <div class="container">
-    <div class="section-label reveal">Career</div>
-    <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3.5rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:1rem;line-height:1.05;color:var(--text-primary);" class="reveal d1">Professional Timeline</h2>
-    <p style="color:var(--text-secondary);font-size:1rem;max-width:500px;line-height:1.75;margin-bottom:4rem;" class="reveal d2">A decade of building, shipping, and leading — at startups, freelance, and product companies.</p>
-
-    <div class="exp-list">
-      <!-- LivWell -->
-      <div class="exp-entry reveal">
-        <div class="exp-date-col">
-          <div class="exp-yr">Feb 2021<br>— Present</div>
-        </div>
-        <div class="exp-body">
-          <div class="exp-role">Senior iOS Engineer & Tech Lead</div>
-          <div class="exp-co">LivWell — Move. Burn. Earn. Repeat.</div>
-          <div class="story-card">
-            <p>A wellness platform with <strong>200,000+ active users</strong> needed a differentiated retention strategy. Led the design and delivery of a blockchain-based coin-reward engine where physical activity translates to spendable tokens. Architected the modular SwiftUI interface and coordinated wearable SDK integrations, resulting in <span class="metric">+40% DAU growth</span>.</p>
-          </div>
-          <div class="story-card">
-            <p>Overhauled the push notification infrastructure — moving from batch blasts to intelligent, contextual delivery using APNS and cloud messaging APIs with time-based triggers. Result: <span class="metric">+30% retention</span> within two release cycles.</p>
-          </div>
-          <div class="story-card">
-            <p>Owned the entire release engineering pipeline — certificates, provisioning profiles, CI/CD flows via <strong>Fastlane</strong> automation — achieving <span class="metric">0 deployment failures</span> across all major releases.</p>
-          </div>
-        </div>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">
+          <i class="fa-solid fa-layer-group"></i> View My Work
+        </a>
+        <a href="#casestudies" class="btn-ghost">
+          <i class="fa-solid fa-book-open"></i> Case Studies
+        </a>
+        <button class="btn-ghost" onclick="copyToClipboard('avinashamanjha@gmail.com','Email')">
+          <i class="fa-regular fa-envelope"></i> Email Me
+        </button>
       </div>
 
-      <!-- Freelance -->
-      <div class="exp-entry reveal">
-        <div class="exp-date-col">
-          <div class="exp-yr">Oct 2017<br>— Feb 2021</div>
-        </div>
-        <div class="exp-body">
-          <div class="exp-role">Freelance iOS Developer & Mobile Consultant</div>
-          <div class="exp-co">Self-Employed — 5+ Client Projects</div>
-          <div class="story-card">
-            <p>Delivered <strong>5+ production iOS applications</strong> across fintech, social, and retail domains. I owned everything from architecture decisions to App Store submission. Built reusable UIKit component libraries that cut client UI development cycles by <span class="metric">35% faster delivery</span> across engagements.</p>
-          </div>
-          <div class="story-card">
-            <p>Standardised backend integration patterns across projects — RESTful APIs, JSON/XML parsing, and offline data sync — creating consistent, maintainable codebases that significantly reduced QA overhead.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- AppRoutes -->
-      <div class="exp-entry reveal">
-        <div class="exp-date-col">
-          <div class="exp-yr">Feb 2016<br>— Oct 2017</div>
-        </div>
-        <div class="exp-body">
-          <div class="exp-role">iOS Developer</div>
-          <div class="exp-co">AppRoutes Services Pvt. Ltd.</div>
-          <div class="story-card">
-            <p>Took ownership of real-time chat infrastructure using <strong>XMPP protocol</strong> — architecting offline queuing, message threading, and read receipts — supporting <span class="metric">10,000+ concurrent users</span> with sub-second delivery.</p>
-          </div>
-          <div class="story-card">
-            <p>Implemented location-aware features using <strong>MapKit and Core Location</strong> — custom pin clustering, geo-tagged content, and proximity search — forming the foundation for the Tiplr travel discovery product.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ PROJECTS ═══════════════ -->
-<section class="projects-section" id="projects">
-  <div class="container">
-    <div class="section-label reveal">Portfolio</div>
-    <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3.5rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:1rem;line-height:1.05;color:var(--text-primary);" class="reveal d1">Products I've Built</h2>
-    <p style="color:var(--text-secondary);font-size:1rem;max-width:500px;line-height:1.75;margin-bottom:2.5rem;" class="reveal d2">Enterprise products I've led in production, and personal R&D projects exploring ideas beyond the day job.</p>
-
-    <div class="proj-tabs reveal d2">
-      <button class="tab active" data-tab="enterprise">
-        <i class="fa-solid fa-building-user"></i> Enterprise & Flagship
-      </button>
-      <button class="tab" data-tab="rd">
-        <i class="fa-solid fa-flask-vial"></i> R&D & Open Source
-      </button>
-    </div>
-
-    <!-- ── Enterprise ── -->
-    <div class="ent-grid" id="entGrid">
-      <!-- Pebble Go -->
-      <div class="ent-card reveal">
-        <div class="ent-head">
-          <div class="app-icon">
-            <img src="images/pebble-go.jpg" alt="Pebble Go" onerror="this.parentNode.innerHTML='⌚'">
-          </div>
-          <div>
-            <div class="app-name">Pebble Go</div>
-            <div class="app-cat">Health & Wearables · Jan 2023 – Jun 2026</div>
-          </div>
-        </div>
-        <div class="ent-body">
-          <p class="ent-context">Smartwatch companion for the Pebble Squad ecosystem. Users needed a unified interface to monitor physical activity and maintain data integrity across Apple Watch and iPhone — without sync failures.</p>
-          <div class="outcomes">
-            <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Background connectivity layer that eliminated data-gap events during workout sessions.</span></div>
-            <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Core Data schema with conflict resolution for bidirectional Watch–iPhone sync with zero data loss.</span></div>
-            <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Zero regression across all App Store updates on distributed user base.</span></div>
-          </div>
-        </div>
-        <div class="ent-foot">
-          <div class="tags"><span class="tag">Swift</span><span class="tag">Watch SDK</span><span class="tag">Core Data</span><span class="tag">HealthKit</span></div>
-          <a href="https://apps.apple.com/in/app/pebble-go-pebblesquad/id6452240092" target="_blank" rel="noopener" class="store-link"><i class="fa-brands fa-apple"></i> App Store</a>
-        </div>
-      </div>
-
-      <!-- LivWell -->
-      <div class="ent-card reveal d1">
-        <div class="ent-head">
-          <div class="app-icon">
-            <img src="images/livwell.jpg" alt="LivWell" onerror="this.parentNode.innerHTML='💪'">
-          </div>
-          <div>
-            <div class="app-name">LivWell</div>
-            <div class="app-cat">Health · Blockchain · Feb 2021 – Present</div>
-          </div>
-        </div>
-        <div class="ent-body">
-          <p class="ent-context">Wellness-meets-Web3 platform rewarding 200,000+ users with blockchain-backed health coins for physical activity — turning fitness into a daily habit with tangible rewards.</p>
-          <div class="outcomes">
-            <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Architected coin-reward engine, social leaderboard, and wearable integration from scratch.</span></div>
-            <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>DAU grew <strong>+40%</strong> post-launch; user retention improved <strong>+30%</strong>.</span></div>
-            <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Social API integrations lifted engagement signals by +25%.</span></div>
-          </div>
-        </div>
-        <div class="ent-foot">
-          <div class="tags"><span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">APNS</span><span class="tag">Fastlane</span></div>
-          <a href="https://apps.apple.com/in/app/livwell-s%E1%BB%A9c-kh%E1%BB%8Fe-th%E1%BB%8Bnh-v%C6%B0%E1%BB%A3ng/id1509195628" target="_blank" rel="noopener" class="store-link"><i class="fa-brands fa-apple"></i> App Store</a>
-        </div>
-      </div>
-
-      <!-- Oodles -->
-      <div class="ent-card reveal d2">
-        <div class="ent-head">
-          <div class="app-icon" style="font-size:1.4rem;">🎁</div>
-          <div>
-            <div class="app-name">Oodles Rewards</div>
-            <div class="app-cat">Fintech · Loyalty · Oct 2017 – Aug 2020</div>
-          </div>
-        </div>
-        <div class="ent-body">
-          <p class="ent-context">Retail loyalty and cashback platform connecting shoppers to partner merchants. Users needed a seamless way to track rewards and redeem cashback across a fragmented ecosystem.</p>
-          <div class="outcomes">
-            <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Scalable reward tracking engine with real-time balance updates and partner API integrations.</span></div>
-            <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Swift/Objective-C hybrid codebase supporting gradual migration without service disruption.</span></div>
-          </div>
-        </div>
-        <div class="ent-foot">
-          <div class="tags"><span class="tag">Swift</span><span class="tag">Objective-C</span><span class="tag">CocoaPods</span></div>
-        </div>
-      </div>
-
-      <!-- CiaoIM -->
-      <div class="ent-card reveal">
-        <div class="ent-head">
-          <div class="app-icon" style="font-size:1.4rem;">💬</div>
-          <div>
-            <div class="app-name">CiaoIM</div>
-            <div class="app-cat">Messaging · Real-time · Dec 2016 – Mar 2017</div>
-          </div>
-        </div>
-        <div class="ent-body">
-          <p class="ent-context">Enterprise real-time IM with text, audio, and video for 10,000+ concurrent users. Needed reliable low-latency communication with offline queuing.</p>
-          <div class="outcomes">
-            <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Full XMPP messaging engine with Core Data offline queue and AVFoundation media pipeline.</span></div>
-            <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Sub-second message delivery at scale — 10,000+ concurrent active users.</span></div>
-          </div>
-        </div>
-        <div class="ent-foot">
-          <div class="tags"><span class="tag">Objective-C</span><span class="tag">XMPP</span><span class="tag">Core Data</span><span class="tag">AVFoundation</span></div>
-        </div>
-      </div>
-
-      <!-- Tiplr -->
-      <div class="ent-card reveal d1">
-        <div class="ent-head">
-          <div class="app-icon" style="font-size:1.4rem;">📍</div>
-          <div>
-            <div class="app-name">Tiplr</div>
-            <div class="app-cat">Location · Travel · Aug 2017 – Dec 2017</div>
-          </div>
-        </div>
-        <div class="ent-body">
-          <p class="ent-context">Geo-tagged travel discovery platform — users share, discover, and bookmark hyper-local tips with precise GPS overlaid on interactive maps.</p>
-          <div class="outcomes">
-            <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Custom MapKit pin clustering for 10K+ pins without UI degradation.</span></div>
-            <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Distance-based proximity queries using Core Location for real-time recommendation sorting.</span></div>
-          </div>
-        </div>
-        <div class="ent-foot">
-          <div class="tags"><span class="tag">Swift</span><span class="tag">MapKit</span><span class="tag">Core Location</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── R&D Accordion ── -->
-    <div class="rd-list" id="rdList" style="display:none;">
-      <!-- habbitTracker -->
-      <div class="rd-item">
-        <div class="rd-trigger">
-          <div class="rd-left">
-            <div class="rd-ico" style="background:rgba(124,58,237,0.1);color:var(--violet-light);"><i class="fa-solid fa-calendar-check"></i></div>
-            <div>
-              <div class="rd-name">habbitTracker</div>
-              <div class="rd-sub">SwiftUI · Combine · Core Data · UserNotifications</div>
-            </div>
-          </div>
-          <button class="rd-toggle"><i class="fa-solid fa-plus"></i></button>
-        </div>
-        <div class="rd-panel">
-          <div class="rd-panel-inner">
-            <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;margin-bottom:1.5rem;">
-              <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#f87171;margin-bottom:0.5rem;">The Problem</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">Rigid Templates Kill Habit Apps</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Existing trackers force daily-only habits with preset metrics. Users abandon within 14 days.</div>
-              </div>
-              <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#60a5fa;margin-bottom:0.5rem;">Discovery</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">Flexibility is the Product</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">73% of users want habits configurable by frequency, target type, and multiple metrics.</div>
-              </div>
-              <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#a78bfa;margin-bottom:0.5rem;">Build</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">SwiftUI + Combine + Core Data</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Reactive UI with Combine streams, flexible schema, and local UNNotifications for offline reminders.</div>
-              </div>
-              <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--orange-accent);margin-bottom:0.5rem;">Decision Layer</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">Offline-First vs Cloud</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Chose Core Data over Firebase for privacy, zero latency, and no infrastructure cost.</div>
-              </div>
-              <div style="padding:1.2rem 1rem;">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--green-accent);margin-bottom:0.5rem;">Impact</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">100% Custom, Zero Friction</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Track any habit, any schedule, any metric — with smart reminders and zero cloud dependency.</div>
-              </div>
-            </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
-              <div class="tags"><span class="tag">SwiftUI</span><span class="tag">Combine</span><span class="tag">Core Data</span><span class="tag">UserNotifications</span><span class="tag">MVVM</span></div>
-              <a href="https://github.com/avinashamanjha251" target="_blank" class="store-link"><i class="fa-brands fa-github"></i> GitHub</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- dailyExpenseTracker -->
-      <div class="rd-item">
-        <div class="rd-trigger">
-          <div class="rd-left">
-            <div class="rd-ico" style="background:rgba(251,146,60,0.1);color:var(--orange-accent);"><i class="fa-solid fa-wallet"></i></div>
-            <div>
-              <div class="rd-name">dailyExpenseTracker</div>
-              <div class="rd-sub">Swift · Core Data · Vision OCR · UNNotifications</div>
-            </div>
-          </div>
-          <button class="rd-toggle"><i class="fa-solid fa-plus"></i></button>
-        </div>
-        <div class="rd-panel">
-          <div class="rd-panel-inner">
-            <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;margin-bottom:1.5rem;">
-              <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#f87171;margin-bottom:0.5rem;">The Problem</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">Expenses Without Evidence</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Manual logs have no receipt proof, no recurring bill alerts, no budget warning before overspending.</div>
-              </div>
-              <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#60a5fa;margin-bottom:0.5rem;">Discovery</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">5 Core User Needs</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Income tracking, receipt attachments, recurring reminders, budget limit alerts, and future OCR import.</div>
-              </div>
-              <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#a78bfa;margin-bottom:0.5rem;">Build</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">Core Data + Vision Roadmap</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">External Binary Storage for receipts, UNNotificationCenter for recurring bills, threshold alerts at 80% and 90% of budget.</div>
-              </div>
-              <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--orange-accent);margin-bottom:0.5rem;">Decision Layer</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">SQLite Blob vs External Storage</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">External Binary Storage keeps DB lightweight for fast queries while storing receipt images efficiently on disk.</div>
-              </div>
-              <div style="padding:1.2rem 1rem;">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--green-accent);margin-bottom:0.5rem;">Impact</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">Zero Missed Bills</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Proactive budget alerts and recurring payment reminders with visual receipt evidence per transaction.</div>
-              </div>
-            </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
-              <div class="tags"><span class="tag">Swift</span><span class="tag">Core Data</span><span class="tag">Vision OCR</span><span class="tag">UNNotifications</span></div>
-              <a href="https://github.com/avinashamanjha251" target="_blank" class="store-link"><i class="fa-brands fa-github"></i> GitHub</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- StrangerChatApp -->
-      <div class="rd-item">
-        <div class="rd-trigger">
-          <div class="rd-left">
-            <div class="rd-ico" style="background:rgba(167,139,250,0.1);color:#a78bfa;"><i class="fa-solid fa-comments"></i></div>
-            <div>
-              <div class="rd-name">StrangerChatApp</div>
-              <div class="rd-sub">Swift · HealthKit · Core Location · WebRTC · XMPP</div>
-            </div>
-          </div>
-          <button class="rd-toggle"><i class="fa-solid fa-plus"></i></button>
-        </div>
-        <div class="rd-panel">
-          <div class="rd-panel-inner">
-            <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;margin-bottom:1.5rem;">
-              <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#f87171;margin-bottom:0.5rem;">The Problem</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">Bot Spam & Low Stakes</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Anonymous platforms fill with bots because account creation is frictionless and interactions cost nothing.</div>
-              </div>
-              <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#60a5fa;margin-bottom:0.5rem;">Discovery</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">Fitness as Proof of Work</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Chats, calls, and friend requests cost coins earned exclusively by completing health challenges.</div>
-              </div>
-              <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#a78bfa;margin-bottom:0.5rem;">Build</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">HealthKit + Location + WebRTC</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">HealthKit for activity verification, Core Location geo-hash proximity, WebRTC for audio/video, XMPP for messaging.</div>
-              </div>
-              <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--orange-accent);margin-bottom:0.5rem;">Decision Layer</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">Anti-Cheat & Privacy</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Step velocity validation prevents spoofing. Geo-hashing obfuscates exact coordinates while enabling proximity discovery.</div>
-              </div>
-              <div style="padding:1.2rem 1rem;">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--green-accent);margin-bottom:0.5rem;">Impact</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">Fitness-Powered Social</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Social interaction and daily movement reinforce each other — eliminating spam while driving real-world health behavior.</div>
-              </div>
-            </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
-              <div class="tags"><span class="tag">Swift</span><span class="tag">HealthKit</span><span class="tag">Core Location</span><span class="tag">WebRTC</span><span class="tag">XMPP</span></div>
-              <a href="https://github.com/avinashamanjha251" target="_blank" class="store-link"><i class="fa-brands fa-github"></i> GitHub</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- outdoorWorkout -->
-      <div class="rd-item">
-        <div class="rd-trigger">
-          <div class="rd-left">
-            <div class="rd-ico" style="background:rgba(52,211,153,0.1);color:var(--green-accent);"><i class="fa-solid fa-person-running"></i></div>
-            <div>
-              <div class="rd-name">outdoorWorkout</div>
-              <div class="rd-sub">Swift · Core Location · MapKit · HealthKit</div>
-            </div>
-          </div>
-          <button class="rd-toggle"><i class="fa-solid fa-plus"></i></button>
-        </div>
-        <div class="rd-panel">
-          <div class="rd-panel-inner">
-            <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;margin-bottom:1.5rem;">
-              <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#f87171;margin-bottom:0.5rem;">The Problem</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">Battery vs Precision</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Continuous GPS route logging and elevation data drain battery in minutes on standard config.</div>
-              </div>
-              <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#60a5fa;margin-bottom:0.5rem;">Discovery</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">Adaptive Sampling</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Core Location's distance filter and accuracy modes can tune dynamically based on activity speed.</div>
-              </div>
-              <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#a78bfa;margin-bottom:0.5rem;">Build</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">Dynamic GPS + HealthKit</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Adaptive Core Location filter, MapKit real-time polyline overlays, and HKWorkoutSession integration.</div>
-              </div>
-              <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--orange-accent);margin-bottom:0.5rem;">Decision Layer</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">Accuracy Mode Switch</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Dynamic accuracy switching to balance sub-meter precision with significant battery savings.</div>
-              </div>
-              <div style="padding:1.2rem 1rem;">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--green-accent);margin-bottom:0.5rem;">Impact</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">30% Less Battery</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Sub-meter route accuracy with 30% less battery drain vs always-on high-accuracy GPS.</div>
-              </div>
-            </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
-              <div class="tags"><span class="tag">Swift</span><span class="tag">Core Location</span><span class="tag">MapKit</span><span class="tag">HealthKit</span></div>
-              <a href="https://github.com/avinashamanjha251" target="_blank" class="store-link"><i class="fa-brands fa-github"></i> GitHub</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- customCamera -->
-      <div class="rd-item">
-        <div class="rd-trigger">
-          <div class="rd-left">
-            <div class="rd-ico" style="background:rgba(248,113,113,0.1);color:#f87171;"><i class="fa-solid fa-camera"></i></div>
-            <div>
-              <div class="rd-name">customCamera</div>
-              <div class="rd-sub">AVFoundation · Metal · Core Media</div>
-            </div>
-          </div>
-          <button class="rd-toggle"><i class="fa-solid fa-plus"></i></button>
-        </div>
-        <div class="rd-panel">
-          <div class="rd-panel-inner">
-            <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;margin-bottom:1.5rem;">
-              <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#f87171;margin-bottom:0.5rem;">The Problem</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">UIImagePicker's Ceiling</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">No manual exposure control, no raw format access, no real-time shader processing.</div>
-              </div>
-              <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#60a5fa;margin-bottom:0.5rem;">Discovery</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">AVFoundation + Metal</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">AVCaptureSession exposes hardware-level camera controls. Metal allows GPU-accelerated filter rendering at 60 FPS.</div>
-              </div>
-              <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#a78bfa;margin-bottom:0.5rem;">Build</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">Full Capture Pipeline</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">AVCaptureVideoDataOutput, Metal fragment shaders for real-time previews, manual hardware ISO and shutter controls.</div>
-              </div>
-              <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--orange-accent);margin-bottom:0.5rem;">Decision Layer</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">Core Image vs Metal</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Metal shaders run directly on GPU — the only path to true 60 FPS zero-lag preview.</div>
-              </div>
-              <div style="padding:1.2rem 1rem;">
-                <div style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--green-accent);margin-bottom:0.5rem;">Impact</div>
-                <div style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">60 FPS, Zero Latency</div>
-                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Real-time filter rendering with full manual hardware control — matching professional camera apps on iOS.</div>
-              </div>
-            </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
-              <div class="tags"><span class="tag">AVFoundation</span><span class="tag">Metal</span><span class="tag">Core Media</span><span class="tag">UIKit</span></div>
-              <a href="https://github.com/avinashamanjha251" target="_blank" class="store-link"><i class="fa-brands fa-github"></i> GitHub</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div><!-- /rdList -->
-  </div>
-</section>
-
-<!-- ═══════════════ CASE STUDIES ═══════════════ -->
-<section class="casestudy-section" id="casestudies">
-  <div class="container">
-    <!-- Case Studies Header + Folder Tabs -->
-    <div class="cs-header-top reveal">
-      <div class="section-label">In-depth</div>
-      <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3.5rem);font-weight:800;letter-spacing:-0.04em;line-height:1.05;color:var(--text-primary);margin-bottom:0.5rem;">Case Studies</h2>
-      <p style="color:var(--text-secondary);font-size:0.95rem;max-width:440px;line-height:1.75;">Deep-dives into how I discovered, designed, and shipped solutions — from problem to production impact.</p>
-    </div>
-
-    <!-- Folder Tabs strip -->
-    <div class="cs-tabs-strip reveal d1">
-      <button class="cs-tab active" data-cs="cs-habbit">
-        <div class="cs-tab-row1">
-          <span class="cs-tab-num">01</span>
-          <span class="cs-tab-title">habbitTracker</span>
-        </div>
-        <div class="cs-tab-desc">SwiftUI · Core Data · Combine</div>
-      </button>
-      <button class="cs-tab" data-cs="cs-expense">
-        <div class="cs-tab-row1">
-          <span class="cs-tab-num">02</span>
-          <span class="cs-tab-title">dailyExpense</span>
-        </div>
-        <div class="cs-tab-desc">Swift · Vision OCR · Notifications</div>
-      </button>
-      <button class="cs-tab" data-cs="cs-stranger">
-        <div class="cs-tab-row1">
-          <span class="cs-tab-num">03</span>
-          <span class="cs-tab-title">StrangerChat</span>
-        </div>
-        <div class="cs-tab-desc">HealthKit · WebRTC · XMPP</div>
-      </button>
-    </div>
-
-    <!-- Tab content area -->
-    <div class="cs-tab-content-area">
-
-    <!-- ─ habbitTracker ─ -->
-    <article class="cs-article active" id="cs-habbit">
-      <div class="cs-top-row reveal">
+      <div class="hero-stats">
         <div>
-          <div class="section-label">Case Study — 01</div>
-          <h3 class="cs-app-name"><span class="violet-text">habbit</span><br>Tracker</h3>
-          <p class="cs-tagline">
-            A habit tracking app that doesn't tell you what habits to track or how often — giving users total ownership over their routines for the first time.
-          </p>
-          <div class="cs-meta-grid">
-            <div class="cs-meta-item">
-              <div class="cs-meta-label">Platform</div>
-              <div class="cs-meta-val">iOS 16+ · SwiftUI</div>
-            </div>
-            <div class="cs-meta-item">
-              <div class="cs-meta-label">Architecture</div>
-              <div class="cs-meta-val">MVVM · Combine · Core Data</div>
-            </div>
-            <div class="cs-meta-item">
-              <div class="cs-meta-label">Key Challenge</div>
-              <div class="cs-meta-val">Flexible schema vs performance</div>
-            </div>
-          </div>
+          <div class="stat-val violet-text" id="stat1">10+</div>
+          <div class="stat-lbl">Years engineering</div>
         </div>
-        <div class="cs-preview-frame">
-          <img src="images/habbit-preview.jpg" alt="habbitTracker preview" onerror="this.parentNode.innerHTML='<div class=\'cs-preview-note\'><i class=\'fa-solid fa-mobile-screen-button\'></i><span>Add images/habbit-preview.jpg<br>to display app screenshot here</span></div>'">
-        </div>
-      </div>
-      <div class="cs-journey reveal d1">
-        <div class="cs-journey-line"></div>
-        <div class="cs-steps">
-          <div class="cs-step">
-            <div class="cs-step-dot-wrap"><div class="cs-step-dot"></div></div>
-            <div class="cs-step-num s1">The Problem</div>
-            <div class="cs-step-head">Every habit app assumes it knows you</div>
-            <div class="cs-step-body">Streaks for daily push-ups. Weekly meditation. Rigid presets. Real users have custom rhythms — run MWF, meditate weekends, journal when inspired. When the app doesn't bend, users stop using it. Existing solutions have a drop-off rate exceeding 70% after day 14.</div>
-          </div>
-          <div class="cs-step">
-            <div class="cs-step-dot-wrap"><div class="cs-step-dot"></div></div>
-            <div class="cs-step-num s2">Discovery</div>
-            <div class="cs-step-head">Three configurations decide success</div>
-            <div class="cs-step-body">Through personal use and pattern analysis, I found three variables determine habit adherence: <strong>schedule flexibility</strong> (not just daily), <strong>metric type</strong> (count, duration, boolean, numeric), and <strong>contextual reminders</strong> (not fixed-time alerts). Most apps only solve one.</div>
-          </div>
-          <div class="cs-step">
-            <div class="cs-step-dot-wrap"><div class="cs-step-dot"></div></div>
-            <div class="cs-step-num s3">Build</div>
-            <div class="cs-step-head">Reactive schema that flexes with users</div>
-            <div class="cs-step-body">Core Data entity model: <code>HabitEntity</code> (name, iconKey, colorHex), <code>ScheduleRule</code> (weekdays bitmask, interval, startDate), <code>CompletionLog</code> (date, metricValue). Combine binds the ViewModel to the SwiftUI view layer with zero boilerplate. UNNotificationCenter schedules per-rule reminders offline — no backend needed.</div>
-          </div>
-          <div class="cs-step">
-            <div class="cs-step-dot-wrap"><div class="cs-step-dot"></div></div>
-            <div class="cs-step-num s4">Decision Layer</div>
-            <div class="cs-step-head">Why offline-first over Firebase</div>
-            <div class="cs-step-body">Firebase would require an account, a network round-trip for every log, and raised privacy concerns for personal routine data. Core Data runs entirely on-device — under 2ms query time for habit history, zero cold-start latency, and no monthly cost. iCloud sync is a future enhancement via NSPersistentCloudKitContainer.</div>
-          </div>
-          <div class="cs-step">
-            <div class="cs-step-dot-wrap"><div class="cs-step-dot"></div></div>
-            <div class="cs-step-num s5">Impact</div>
-            <div class="cs-step-head">Zero friction, any routine</div>
-            <div class="cs-step-body">Users can configure any habit — 3x weekly, every 4 days, weekends only — with any metric and smart contextual reminders. The app adapts to the user's life instead of forcing the user to adapt to the app. No server. No account. No excuses.</div>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- ─ dailyExpenseTracker ─ -->
-    <article class="cs-article" id="cs-expense">
-      <div class="cs-top-row reveal">
         <div>
-          <div class="section-label">Case Study — 02</div>
-          <h3 class="cs-app-name"><span class="violet-text">daily</span><br>Expense</h3>
-          <p class="cs-tagline">
-            An expense tracker that treats every transaction as evidence — with proactive budget alerts, receipt attachments, and a roadmap to auto-import from bank statements via OCR.
-          </p>
-          <div class="cs-meta-grid">
-            <div class="cs-meta-item">
-              <div class="cs-meta-label">Platform</div>
-              <div class="cs-meta-val">iOS 15+ · Swift / UIKit</div>
-            </div>
-            <div class="cs-meta-item">
-              <div class="cs-meta-label">Data Layer</div>
-              <div class="cs-meta-val">Core Data · External Binary</div>
-            </div>
-            <div class="cs-meta-item">
-              <div class="cs-meta-label">Key Challenge</div>
-              <div class="cs-meta-val">Receipt image storage strategy</div>
-            </div>
-          </div>
+          <div class="stat-val violet-text" id="stat2">200K+</div>
+          <div class="stat-lbl">Active users shipped to</div>
         </div>
-        <div class="cs-preview-frame">
-          <img src="images/expense-preview.jpg" alt="dailyExpense preview" onerror="this.parentNode.innerHTML='<div class=\'cs-preview-note\'><i class=\'fa-solid fa-mobile-screen-button\'></i><span>Add images/expense-preview.jpg<br>to display app screenshot here</span></div>'">
-        </div>
-      </div>
-      <div class="cs-journey reveal d1">
-        <div class="cs-journey-line"></div>
-        <div class="cs-steps">
-          <div class="cs-step">
-            <div class="cs-step-dot-wrap"><div class="cs-step-dot"></div></div>
-            <div class="cs-step-num s1">The Problem</div>
-            <div class="cs-step-head">Logs without accountability</div>
-            <div class="cs-step-body">Manual expense apps are retrospective by nature — you record what you already spent and learn nothing until it's too late. No receipt evidence means disputed claims during audits. No recurring reminders means missed subscription renewals. No proactive alerts means budget overrun discovered at month-end.</div>
-          </div>
-          <div class="cs-step">
-            <div class="cs-step-dot-wrap"><div class="cs-step-dot"></div></div>
-            <div class="cs-step-num s2">Discovery</div>
-            <div class="cs-step-head">Five user needs mapped to features</div>
-            <div class="cs-step-body">1) Income logging with source tags (salary, freelance, rental). 2) Expense entries with multi-image receipt proof. 3) Recurring payment reminders (subscriptions, EMIs, rent). 4) Budget threshold alerts at 80% and 90% spend. 5) Future: auto-import transactions via Vision OCR parsing of uploaded bank statements.</div>
-          </div>
-          <div class="cs-step">
-            <div class="cs-step-dot-wrap"><div class="cs-step-dot"></div></div>
-            <div class="cs-step-num s3">Build</div>
-            <div class="cs-step-head">Core Data with External Binary Storage</div>
-            <div class="cs-step-body"><code>TransactionEntity</code> stores amount, category, date, and notes. Receipt images use Core Data's External Binary Storage attribute — keeping the SQLite file under 10MB while images are managed on disk automatically. <code>UNNotificationCenter</code> schedules recurring reminders per transaction. Budget engine runs threshold evaluation on every new entry.</div>
-          </div>
-          <div class="cs-step">
-            <div class="cs-step-dot-wrap"><div class="cs-step-dot"></div></div>
-            <div class="cs-step-num s4">Decision Layer</div>
-            <div class="cs-step-head">Why not store images as BLOB in SQLite</div>
-            <div class="cs-step-body">Storing images inline causes Core Data to load every row's binary data during fetch — dramatically slowing list queries as the database grows. External Binary Storage offloads files to the file system, keeping DB reads under 5ms even at 1000+ transactions, while Core Data still manages the lifecycle and cleanup automatically.</div>
-          </div>
-          <div class="cs-step">
-            <div class="cs-step-dot-wrap"><div class="cs-step-dot"></div></div>
-            <div class="cs-step-num s5">Impact</div>
-            <div class="cs-step-head">Never miss a bill. Never lose a receipt.</div>
-            <div class="cs-step-body">Users receive proactive alerts before exceeding budgets, get reminded of every recurring payment before it hits, and have a timestamped image trail for every expense. The Vision OCR pipeline is architected and ready — bank statement auto-import will drop manual data entry to near zero.</div>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- ─ StrangerChatApp ─ -->
-    <article class="cs-article" id="cs-stranger">
-      <div class="cs-top-row reveal">
         <div>
-          <div class="section-label">Case Study — 03</div>
-          <h3 class="cs-app-name"><span class="violet-text">Stranger</span><br>Chat</h3>
-          <p class="cs-tagline">
-            A social discovery app where your social currency is earned through real physical activity — making bot-spam structurally impossible and turning fitness into a social habit.
-          </p>
-          <div class="cs-meta-grid">
-            <div class="cs-meta-item">
-              <div class="cs-meta-label">Platform</div>
-              <div class="cs-meta-val">iOS 15+ · Swift</div>
-            </div>
-            <div class="cs-meta-item">
-              <div class="cs-meta-label">Protocols</div>
-              <div class="cs-meta-val">WebRTC · XMPP · HealthKit</div>
-            </div>
-            <div class="cs-meta-item">
-              <div class="cs-meta-label">Key Challenge</div>
-              <div class="cs-meta-val">Anti-cheat step verification</div>
-            </div>
-          </div>
+          <div class="stat-val violet-text" id="stat3">8+</div>
+          <div class="stat-lbl">Flagship apps</div>
         </div>
-        <div class="cs-preview-frame">
-          <img src="images/stranger-preview.jpg" alt="StrangerChat preview" onerror="this.parentNode.innerHTML='<div class=\'cs-preview-note\'><i class=\'fa-solid fa-mobile-screen-button\'></i><span>Add images/stranger-preview.jpg<br>to display app screenshot here</span></div>'">
+        <div>
+          <div class="stat-val violet-text" id="stat4">0</div>
+          <div class="stat-lbl">Deployment failures</div>
         </div>
-      </div>
-      <div class="cs-journey reveal d1">
-        <div class="cs-journey-line"></div>
-        <div class="cs-steps">
-          <div class="cs-step">
-            <div class="cs-step-dot-wrap"><div class="cs-step-dot"></div></div>
-            <div class="cs-step-num s1">The Problem</div>
-            <div class="cs-step-head">Frictionless = worthless</div>
-            <div class="cs-step-body">Every anonymous chat app faces the same failure: bots, abuse, and dead conversations because there is no cost to participate. Existing platforms respond with human moderation — expensive, slow, and imperfect. The fundamental issue is that interactions carry no weight.</div>
-          </div>
-          <div class="cs-step">
-            <div class="cs-step-dot-wrap"><div class="cs-step-dot"></div></div>
-            <div class="cs-step-num s2">Discovery</div>
-            <div class="cs-step-head">Physical effort as social capital</div>
-            <div class="cs-step-body">The insight: make social interactions cost something real that a bot cannot fake — physical movement. Steps, distance, and calories burned are verified via HealthKit and converted into an in-app coin balance. Text conversations, audio/video calls, and friend requests each deduct coins. Earn more by moving more.</div>
-          </div>
-          <div class="cs-step">
-            <div class="cs-step-dot-wrap"><div class="cs-step-dot"></div></div>
-            <div class="cs-step-num s3">Build</div>
-            <div class="cs-step-head">Four integrated systems</div>
-            <div class="cs-step-body"><strong>HealthKit telemetry</strong> — reads HKQuantityType.stepCount and HKWorkoutActivityType with cadence validation. <strong>Core Location geo-hash</strong> — converts GPS to geohash for proximity search without exposing exact coordinates. <strong>WebRTC peer-to-peer</strong> — audio and video call channels with STUN/TURN server configuration. <strong>XMPP with Core Data</strong> — text messaging with offline queue, read receipts, and thread management.</div>
-          </div>
-          <div class="cs-step">
-            <div class="cs-step-dot-wrap"><div class="cs-step-dot"></div></div>
-            <div class="cs-step-num s4">Decision Layer</div>
-            <div class="cs-step-head">Preventing step spoofing</div>
-            <div class="cs-step-body">A naive implementation trusts the HealthKit step count — easily gamed by shaking the phone. The solution: <strong>step cadence validation</strong> using CMPedometer alongside HKWorkoutSession — cross-referencing step frequency, accelerometer rhythm, and session duration. Implausible step rates (>5 steps/second sustained) are flagged and zeroed. Geo-hash radius is obfuscated to prevent exact location triangulation.</div>
-          </div>
-          <div class="cs-step">
-            <div class="cs-step-dot-wrap"><div class="cs-step-dot"></div></div>
-            <div class="cs-step-num s5">Impact</div>
-            <div class="cs-step-head">Movement powers connection</div>
-            <div class="cs-step-body">The app creates a natural feedback loop: active users earn more coins, can make more connections, which motivates more movement. Bot accounts cannot accumulate coins without genuine physical activity. The ecosystem is self-reinforcing — real users attract real users, spam costs too much to be worth it.</div>
-          </div>
-        </div>
-      </div>
-    </article><!-- /cs-stranger -->
-
-    </div><!-- /cs-tab-content-area -->
-
-  </div><!-- /container -->
-</section>
-
-<!-- ═══════════════ EDUCATION ═══════════════ -->
-<section class="edu-section" id="education">
-  <div class="container">
-    <div class="section-label reveal">Background</div>
-    <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,3rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:2.5rem;line-height:1.05;color:var(--text-primary);" class="reveal d1">Education & Recognition</h2>
-    <div class="edu-grid">
-      <div class="edu-card reveal">
-        <div class="edu-deg">B.Tech — Electrical, Electronics & Communications</div>
-        <div class="edu-school">RVSCET, Jamshedpur</div>
-        <div class="edu-yr">2010 – 2014</div>
-        <div class="edu-desc">Foundation in embedded systems, microprocessors, and C/C++ — the technical grounding that drives my deep understanding of device-level iOS APIs like Core Bluetooth, CoreMotion, and AVFoundation.</div>
-      </div>
-      <div class="edu-card reveal d1">
-        <div class="edu-deg">Leadership & Community</div>
-        <div class="edu-school">Professional & Academic Involvement</div>
-        <div class="edu-yr">2012 – 2015</div>
-        <div class="edu-desc">Member of IETE (Institution of Electronics and Telecommunication Engineers) 2013–2015. Co-ordinator for College Annual Day Events 2012 and 2013 — an early signal of the cross-functional leadership I carry into engineering management roles today.</div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ═══════════════ CONTACT ═══════════════ -->
-<section class="contact-section" id="contact">
-  <div class="container">
-    <div class="contact-spotlight">
-      <div class="contact-eyebrow reveal">Let's Talk</div>
-      <h2 class="contact-headline reveal d1">
-        Open to the<br><span class="violet-text">right role.</span>
-      </h2>
-      <p class="contact-sub reveal d2">
-        10+ years of iOS engineering. Now focused on leading teams and driving architectural vision. If you're building something ambitious on Apple platforms — let's connect.
+    <!-- Right: Profile -->
+    <!-- Profile pane with floating context badges -->
+    <div class="hero-profile-pane">
+      <div class="profile-context">
+        <!-- Floating info badges -->
+        <div class="profile-badge pb-tl">
+          <span class="pb-icon">🏗️</span> iOS Architect
+        </div>
+        <div class="profile-badge pb-tr">
+          <span class="pb-icon">⚡</span> 10+ Years
+        </div>
+        <div class="profile-badge pb-bl">
+          <span class="pb-icon">👥</span> 200K+ Users
+        </div>
+        <div class="profile-badge pb-br">
+          <span class="pb-dot"></span> Open to Work
+        </div>
+
+        <div class="profile-float-inner">
+          <div class="profile-wrap">
+            <div class="profile-ring"></div>
+            <div class="profile-ring-2"></div>
+            <div class="orbit-dot"></div>
+            <div class="orbit-dot"></div>
+            <div class="profile-img-frame">
+              <img src="images/profile.png" alt="Avinash Aman" />
+            </div>
+            <div class="profile-glow"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span> </span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ MARQUEE TICKER ═══════════════ -->
+  <div class="marquee-section" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Swift 5.x</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> SwiftUI</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> UIKit</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Core Data</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> HealthKit</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Combine</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> AVFoundation</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> WatchKit</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> MapKit</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> WebRTC</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> XMPP</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Metal</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> MVVM + Clean</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Fastlane</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Core Location</span>
+      <span class="marquee-sep">·</span>
+      <!-- Duplicate for infinite loop -->
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Swift 5.x</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> SwiftUI</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> UIKit</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Core Data</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> HealthKit</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Combine</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> AVFoundation</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> WatchKit</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> MapKit</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> WebRTC</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> XMPP</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Metal</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> MVVM + Clean</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Fastlane</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Core Location</span>
+      <span class="marquee-sep">·</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════ ABOUT ═══════════════ -->
+  <section class="about-section" id="about">
+    <div class="about-editorial">
+      <div class="about-left-rail">
+        <span class="rail-label">About Me</span>
+      </div>
+      <div class="about-right-content">
+        <div class="section-label reveal">Who I Am</div>
+        <h2 class="about-headline reveal d1">
+          Engineering lead<br>who ships,<br><span class="violet-text">not just codes.</span>
+        </h2>
+        <p class="about-body-text reveal d2">
+          Based in <strong>Delhi, India</strong>. I'm a Senior iOS Engineer with a decade of delivering high-stakes
+          mobile products - healthcare, blockchain, real-time messaging, wearables. I've grown from individual
+          contributor to <strong>leading architecture, mentoring teams</strong>, and driving zero-failure production
+          releases.
+        </p>
+        <p class="about-body-text reveal d3">
+          What sets me apart is the intersection of <strong>deep technical execution</strong> with <strong>product
+            thinking</strong>. I push back on the right decisions, own the architecture end-to-end, and ensure what
+          reaches the App Store is something users and stakeholders are genuinely proud of.
+        </p>
+
+        <div class="values-row">
+          <div class="val-card reveal">
+            <div class="val-icon">🏗️</div>
+            <div class="val-name">Architecture First</div>
+            <div class="val-desc">MVVM, Clean Architecture, Modular design - built to age well under scale.</div>
+          </div>
+          <div class="val-card reveal d1">
+            <div class="val-icon">⚡</div>
+            <div class="val-name">Execution Speed</div>
+            <div class="val-desc">From scoping to App Store without sacrificing quality or stability.</div>
+          </div>
+          <div class="val-card reveal d2">
+            <div class="val-icon">👥</div>
+            <div class="val-name">Team Leadership</div>
+            <div class="val-desc">Mentoring, code reviews, and aligning engineering with product vision.</div>
+          </div>
+          <div class="val-card reveal d3">
+            <div class="val-icon">📊</div>
+            <div class="val-name">Metrics-Driven</div>
+            <div class="val-desc">Every feature tied to a measurable business outcome - DAU, retention, engagement.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SKILLS ═══════════════ -->
+  <section class="skills-section" id="skills">
+    <div class="container">
+      <div class="section-label reveal">Technical Arsenal</div>
+      <h2 class="section-heading reveal d1"
+        style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3.5rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:1rem;line-height:1.05;">
+        Core Competencies</h2>
+      <p style="color:var(--text-secondary);font-size:1rem;max-width:500px;line-height:1.75;margin-bottom:3rem;"
+        class="reveal d2">The tools and patterns I trust in production environments - at scale, under pressure.</p>
+
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <div class="sk-cat">Languages</div>
+          <div class="sk-title">Primary Stack</div>
+          <div class="pill-row">
+            <span class="pill">Swift 5.x</span><span class="pill">SwiftUI</span><span class="pill">Objective-C</span>
+          </div>
+        </div>
+        <div class="skill-group reveal d1">
+          <div class="sk-cat">Apple Frameworks</div>
+          <div class="sk-title">Platform Expertise</div>
+          <div class="pill-row">
+            <span class="pill">UIKit</span><span class="pill">Core Data</span><span class="pill">Core
+              Graphics</span><span class="pill">Core Animation</span><span class="pill">MapKit</span><span
+              class="pill">Core Location</span><span class="pill">Combine</span><span class="pill">WatchKit</span><span
+              class="pill">HealthKit</span><span class="pill">AVFoundation</span>
+          </div>
+        </div>
+        <div class="skill-group reveal d2">
+          <div class="sk-cat">Architecture & Patterns</div>
+          <div class="sk-title">Design Decisions</div>
+          <div class="pill-row">
+            <span class="pill">MVVM</span><span class="pill">Clean Architecture</span><span class="pill">Modular
+              Design</span><span class="pill">MVC</span><span class="pill">SOLID Principles</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <div class="sk-cat">Networking & Protocols</div>
+          <div class="sk-title">Connectivity Layer</div>
+          <div class="pill-row">
+            <span class="pill">RESTful APIs</span><span class="pill">XMPP</span><span class="pill">WebRTC</span><span
+              class="pill">APNS</span><span class="pill">JSON/XML</span>
+          </div>
+        </div>
+        <div class="skill-group reveal d1">
+          <div class="sk-cat">DevOps & CI/CD</div>
+          <div class="sk-title">Delivery Pipeline</div>
+          <div class="pill-row">
+            <span class="pill">Fastlane</span><span class="pill">TestFlight</span><span class="pill">App Store
+              Connect</span><span class="pill">Git</span><span class="pill">CocoaPods</span><span class="pill">Swift
+              PM</span>
+          </div>
+        </div>
+        <div class="skill-group reveal d2">
+          <div class="sk-cat">Leadership & Process</div>
+          <div class="sk-title">Beyond the Code</div>
+          <div class="pill-row">
+            <span class="pill">Agile / Scrum</span><span class="pill">Code Review</span><span class="pill">Tech
+              Mentorship</span><span class="pill">Product Discovery</span><span class="pill">XCTest / TDD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ EXPERIENCE ═══════════════ -->
+  <section class="exp-section" id="experience">
+    <div class="container">
+      <div class="section-label reveal">Career</div>
+      <h2
+        style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3.5rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:1rem;line-height:1.05;color:var(--text-primary);"
+        class="reveal d1">Professional Timeline</h2>
+      <p style="color:var(--text-secondary);font-size:1rem;max-width:500px;line-height:1.75;margin-bottom:4rem;"
+        class="reveal d2">A decade of building, shipping, and leading - at startups, freelance, and product companies.
       </p>
 
-      <div class="contact-cards reveal d2">
-        <a href="mailto:avinashamanjha@gmail.com" class="contact-card">
-          <div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div>
-          <div class="contact-card-label">Email</div>
-          <div class="contact-card-val">avinashamanjha@gmail.com</div>
-        </a>
-        <a href="https://linkedin.com/in/avinashamanjha" target="_blank" class="contact-card">
-          <div class="contact-card-icon"><i class="fa-brands fa-linkedin-in"></i></div>
-          <div class="contact-card-label">LinkedIn</div>
-          <div class="contact-card-val">in/avinashamanjha</div>
-        </a>
-        <a href="https://github.com/avinashamanjha251" target="_blank" class="contact-card">
-          <div class="contact-card-icon"><i class="fa-brands fa-github"></i></div>
-          <div class="contact-card-label">GitHub</div>
-          <div class="contact-card-val">avinashamanjha251</div>
-        </a>
-        <div class="contact-card" onclick="copyToClipboard('Delhi, India','Location')" style="cursor:pointer;">
-          <div class="contact-card-icon"><i class="fa-solid fa-location-dot"></i></div>
-          <div class="contact-card-label">Location</div>
-          <div class="contact-card-val">Delhi, India · Open to Relocation</div>
+      <div class="exp-list">
+        <!-- LivWell -->
+        <div class="exp-entry reveal">
+          <div class="exp-date-col">
+            <div class="exp-yr">Feb 2021<br>- Present</div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-role">Senior iOS Engineer & Tech Lead</div>
+            <div class="exp-co">LivWell - Move. Burn. Earn. Repeat.</div>
+            <div class="story-card">
+              <p>A wellness platform with <strong>200,000+ active users</strong> needed a differentiated retention
+                strategy. Led the design and delivery of a blockchain-based coin-reward engine where physical activity
+                translates to spendable tokens. Architected the modular SwiftUI interface and coordinated wearable SDK
+                integrations, resulting in <span class="metric">+40% DAU growth</span>.</p>
+            </div>
+            <div class="story-card">
+              <p>Overhauled the push notification infrastructure - moving from batch blasts to intelligent, contextual
+                delivery using APNS and cloud messaging APIs with time-based triggers. Result: <span class="metric">+30%
+                  retention</span> within two release cycles.</p>
+            </div>
+            <div class="story-card">
+              <p>Owned the entire release engineering pipeline - certificates, provisioning profiles, CI/CD flows via
+                <strong>Fastlane</strong> automation - achieving <span class="metric">0 deployment failures</span>
+                across all major releases.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Freelance -->
+        <div class="exp-entry reveal">
+          <div class="exp-date-col">
+            <div class="exp-yr">Oct 2017<br>- Feb 2021</div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-role">Freelance iOS Developer & Mobile Consultant</div>
+            <div class="exp-co">Self-Employed - 5+ Client Projects</div>
+            <div class="story-card">
+              <p>Delivered <strong>5+ production iOS applications</strong> across fintech, social, and retail domains. I
+                owned everything from architecture decisions to App Store submission. Built reusable UIKit component
+                libraries that cut client UI development cycles by <span class="metric">35% faster delivery</span>
+                across engagements.</p>
+            </div>
+            <div class="story-card">
+              <p>Standardised backend integration patterns across projects - RESTful APIs, JSON/XML parsing, and offline
+                data sync - creating consistent, maintainable codebases that significantly reduced QA overhead.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- AppRoutes -->
+        <div class="exp-entry reveal">
+          <div class="exp-date-col">
+            <div class="exp-yr">Feb 2016<br>- Oct 2017</div>
+          </div>
+          <div class="exp-body">
+            <div class="exp-role">iOS Developer</div>
+            <div class="exp-co">AppRoutes Services Pvt. Ltd.</div>
+            <div class="story-card">
+              <p>Took ownership of real-time chat infrastructure using <strong>XMPP protocol</strong> - architecting
+                offline queuing, message threading, and read receipts - supporting <span class="metric">10,000+
+                  concurrent users</span> with sub-second delivery.</p>
+            </div>
+            <div class="story-card">
+              <p>Implemented location-aware features using <strong>MapKit and Core Location</strong> - custom pin
+                clustering, geo-tagged content, and proximity search - forming the foundation for the Tiplr travel
+                discovery product.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PROJECTS ═══════════════ -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <div class="section-label reveal">Portfolio</div>
+      <h2
+        style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3.5rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:1rem;line-height:1.05;color:var(--text-primary);"
+        class="reveal d1">Products I've Built</h2>
+      <p style="color:var(--text-secondary);font-size:1rem;max-width:500px;line-height:1.75;margin-bottom:2.5rem;"
+        class="reveal d2">Enterprise products I've led in production, and personal R&D projects exploring ideas beyond
+        the day job.</p>
+
+      <div class="proj-tabs reveal d2">
+        <button class="tab active" data-tab="enterprise">
+          <i class="fa-solid fa-building-user"></i> Enterprise & Flagship
+        </button>
+        <button class="tab" data-tab="rd">
+          <i class="fa-solid fa-flask-vial"></i> R&D & Open Source
+        </button>
+      </div>
+
+      <!-- ── Enterprise ── -->
+      <div class="ent-grid" id="entGrid">
+        <!-- LivWell -->
+        <div class="ent-card reveal">
+          <div class="ent-head">
+            <div class="app-icon">
+              <img src="images/livwell.jpg" alt="LivWell" onerror="this.parentNode.innerHTML='💪'">
+            </div>
+            <div>
+              <div class="app-name">LivWell</div>
+              <div class="app-cat">Health · Blockchain · Feb 2021 – Present</div>
+            </div>
+          </div>
+          <div class="ent-body">
+            <p class="ent-context">Wellness-meets-Web3 platform rewarding 200,000+ users with blockchain-backed health
+              coins for physical activity - turning fitness into a daily habit with tangible rewards.</p>
+            <div class="outcomes">
+              <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Architected coin-reward engine, social
+                  leaderboard, and wearable integration from scratch.</span></div>
+              <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>DAU grew <strong>+40%</strong>
+                  post-launch; user retention improved <strong>+30%</strong>.</span></div>
+              <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Social API integrations lifted
+                  engagement signals by +25%.</span></div>
+            </div>
+          </div>
+          <div class="ent-foot">
+            <div class="tags"><span class="tag">Swift</span><span class="tag">SwiftUI</span><span
+                class="tag">APNS</span><span class="tag">Fastlane</span></div>
+            <a href="https://apps.apple.com/in/app/livwell-s%E1%BB%A9c-kh%E1%BB%8Fe-th%E1%BB%8Bnh-v%C6%B0%E1%BB%A3ng/id1509195628"
+              target="_blank" rel="noopener" class="store-link"><i class="fa-brands fa-apple"></i> App Store</a>
+          </div>
+        </div>
+
+        <!-- Pebble Go -->
+        <div class="ent-card reveal d1">
+          <div class="ent-head">
+            <div class="app-icon">
+              <img src="images/pebble-go.jpg" alt="Pebble Go" onerror="this.parentNode.innerHTML='⌚'">
+            </div>
+            <div>
+              <div class="app-name">Pebble Go</div>
+              <div class="app-cat">Health & Wearables · Jan 2023 – Jun 2026</div>
+            </div>
+          </div>
+          <div class="ent-body">
+            <p class="ent-context">Smartwatch companion for the Pebble Squad ecosystem. Users needed a unified interface
+              to monitor physical activity and maintain data integrity across Apple Watch and iPhone - without sync
+              failures.</p>
+            <div class="outcomes">
+              <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Background connectivity layer that
+                  eliminated data-gap events during workout sessions.</span></div>
+              <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Core Data schema with conflict
+                  resolution for bidirectional Watch–iPhone sync with zero data loss.</span></div>
+              <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Zero regression across all App Store
+                  updates on distributed user base.</span></div>
+            </div>
+          </div>
+          <div class="ent-foot">
+            <div class="tags"><span class="tag">Swift</span><span class="tag">Watch SDK</span><span class="tag">Core
+                Data</span><span class="tag">HealthKit</span></div>
+            <a href="https://apps.apple.com/in/app/pebble-go-pebblesquad/id6452240092" target="_blank" rel="noopener"
+              class="store-link"><i class="fa-brands fa-apple"></i> App Store</a>
+          </div>
+        </div>
+
+        <!-- Oodles -->
+        <div class="ent-card reveal d2">
+          <div class="ent-head">
+            <div class="app-icon" style="font-size:1.4rem;">🎁</div>
+            <div>
+              <div class="app-name">Oodles Rewards</div>
+              <div class="app-cat">Fintech · Loyalty · Oct 2017 – Aug 2020</div>
+            </div>
+          </div>
+          <div class="ent-body">
+            <p class="ent-context">Retail loyalty and cashback platform connecting shoppers to partner merchants. Users
+              needed a seamless way to track rewards and redeem cashback across a fragmented ecosystem.</p>
+            <div class="outcomes">
+              <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Scalable reward tracking engine with
+                  real-time balance updates and partner API integrations.</span></div>
+              <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Swift/Objective-C hybrid codebase
+                  supporting gradual migration without service disruption.</span></div>
+            </div>
+          </div>
+          <div class="ent-foot">
+            <div class="tags"><span class="tag">Swift</span><span class="tag">Objective-C</span><span
+                class="tag">CocoaPods</span></div>
+          </div>
+        </div>
+
+        <!-- CiaoIM -->
+        <div class="ent-card reveal">
+          <div class="ent-head">
+            <div class="app-icon" style="font-size:1.4rem;">💬</div>
+            <div>
+              <div class="app-name">CiaoIM</div>
+              <div class="app-cat">Messaging · Real-time · Dec 2016 – Mar 2017</div>
+            </div>
+          </div>
+          <div class="ent-body">
+            <p class="ent-context">Enterprise real-time IM with text, audio, and video for 10,000+ concurrent users.
+              Needed reliable low-latency communication with offline queuing.</p>
+            <div class="outcomes">
+              <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Full XMPP messaging engine with Core
+                  Data offline queue and AVFoundation media pipeline.</span></div>
+              <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Sub-second message delivery at scale -
+                  10,000+ concurrent active users.</span></div>
+            </div>
+          </div>
+          <div class="ent-foot">
+            <div class="tags"><span class="tag">Objective-C</span><span class="tag">XMPP</span><span class="tag">Core
+                Data</span><span class="tag">AVFoundation</span></div>
+          </div>
+        </div>
+
+        <!-- Tiplr -->
+        <div class="ent-card reveal d1">
+          <div class="ent-head">
+            <div class="app-icon" style="font-size:1.4rem;">📍</div>
+            <div>
+              <div class="app-name">Tiplr</div>
+              <div class="app-cat">Location · Travel · Aug 2017 – Dec 2017</div>
+            </div>
+          </div>
+          <div class="ent-body">
+            <p class="ent-context">Geo-tagged travel discovery platform - users share, discover, and bookmark
+              hyper-local tips with precise GPS overlaid on interactive maps.</p>
+            <div class="outcomes">
+              <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Custom MapKit pin clustering for 10K+
+                  pins without UI degradation.</span></div>
+              <div class="outcome"><i class="fa-solid fa-circle-check"></i><span>Distance-based proximity queries using
+                  Core Location for real-time recommendation sorting.</span></div>
+            </div>
+          </div>
+          <div class="ent-foot">
+            <div class="tags"><span class="tag">Swift</span><span class="tag">MapKit</span><span class="tag">Core
+                Location</span></div>
+          </div>
         </div>
       </div>
 
-      <div class="reveal d3">
-        <a href="mailto:avinashamanjha@gmail.com" class="cta-magnetic">
-          <i class="fa-solid fa-paper-plane"></i>
-          <span>Start a conversation</span>
-        </a>
+      <!-- ── R&D Accordion ── -->
+      <div class="rd-list" id="rdList" style="display:none;">
+        <!-- habbitTracker -->
+        <div class="rd-item">
+          <div class="rd-trigger">
+            <div class="rd-left">
+              <div class="rd-ico" style="background:rgba(124,58,237,0.1);color:var(--violet-light);"><i
+                  class="fa-solid fa-calendar-check"></i></div>
+              <div>
+                <div class="rd-name">Habbit Tracker</div>
+                <div class="rd-sub">SwiftUI · Combine · Core Data · UserNotifications</div>
+              </div>
+            </div>
+            <button class="rd-toggle"><i class="fa-solid fa-plus"></i></button>
+          </div>
+          <div class="rd-panel">
+            <div class="rd-panel-inner">
+              <div
+                style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;margin-bottom:1.5rem;">
+                <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#f87171;margin-bottom:0.5rem;">
+                    The Problem</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    Rigid Templates Kill Habit Apps</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Existing trackers force
+                    daily-only habits with preset metrics. Users abandon within 14 days.</div>
+                </div>
+                <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#60a5fa;margin-bottom:0.5rem;">
+                    Discovery</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    Flexibility is the Product</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">73% of users want habits
+                    configurable by frequency, target type, and multiple metrics.</div>
+                </div>
+                <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#a78bfa;margin-bottom:0.5rem;">
+                    Build</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    SwiftUI + Combine + Core Data</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Reactive UI with Combine
+                    streams, flexible schema, and local UNNotifications for offline reminders.</div>
+                </div>
+                <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--orange-accent);margin-bottom:0.5rem;">
+                    Decision Layer</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    Offline-First vs Cloud</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Chose Core Data over Firebase
+                    for privacy, zero latency, and no infrastructure cost.</div>
+                </div>
+                <div style="padding:1.2rem 1rem;">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--green-accent);margin-bottom:0.5rem;">
+                    Impact</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    100% Custom, Zero Friction</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Track any habit, any
+                    schedule, any metric - with smart reminders and zero cloud dependency.</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+                <div class="tags"><span class="tag">SwiftUI</span><span class="tag">Combine</span><span class="tag">Core
+                    Data</span><span class="tag">UserNotifications</span><span class="tag">MVVM</span></div>
+                <a href="https://github.com/avinashamanjha251" target="_blank" class="store-link"><i
+                    class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- dailyExpenseTracker -->
+        <div class="rd-item">
+          <div class="rd-trigger">
+            <div class="rd-left">
+              <div class="rd-ico" style="background:rgba(251,146,60,0.1);color:var(--orange-accent);"><i
+                  class="fa-solid fa-wallet"></i></div>
+              <div>
+                <div class="rd-name">Daily Expense Tracker</div>
+                <div class="rd-sub">Swift · Core Data · UNNotifications</div>
+              </div>
+            </div>
+            <button class="rd-toggle"><i class="fa-solid fa-plus"></i></button>
+          </div>
+          <div class="rd-panel">
+            <div class="rd-panel-inner">
+              <div
+                style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;margin-bottom:1.5rem;">
+                <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#f87171;margin-bottom:0.5rem;">
+                    The Problem</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    Expenses Without Evidence</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Manual logs have no receipt
+                    proof, no recurring bill alerts, no budget warning before overspending.</div>
+                </div>
+                <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#60a5fa;margin-bottom:0.5rem;">
+                    Discovery</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    5 Core User Needs</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Income tracking, receipt
+                    attachments, recurring reminders, budget limit alerts, and future OCR import.</div>
+                </div>
+                <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#a78bfa;margin-bottom:0.5rem;">
+                    Build</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    Core Data + Vision Roadmap</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">External Binary Storage for
+                    receipts, UNNotificationCenter for recurring bills, threshold alerts at 80% and 90% of budget.</div>
+                </div>
+                <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--orange-accent);margin-bottom:0.5rem;">
+                    Decision Layer</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    SQLite Blob vs External Storage</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">External Binary Storage keeps
+                    DB lightweight for fast queries while storing receipt images efficiently on disk.</div>
+                </div>
+                <div style="padding:1.2rem 1rem;">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--green-accent);margin-bottom:0.5rem;">
+                    Impact</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    Zero Missed Bills</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Proactive budget alerts and
+                    recurring payment reminders with visual receipt evidence per transaction.</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+                <div class="tags"><span class="tag">Swift</span><span class="tag">Core Data</span><span
+                    class="tag">Vision OCR</span><span class="tag">UNNotifications</span></div>
+                <a href="https://github.com/avinashamanjha251" target="_blank" class="store-link"><i
+                    class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- StrangerChatApp -->
+        <div class="rd-item">
+          <div class="rd-trigger">
+            <div class="rd-left">
+              <div class="rd-ico" style="background:rgba(167,139,250,0.1);color:#a78bfa;"><i
+                  class="fa-solid fa-comments"></i></div>
+              <div>
+                <div class="rd-name">Stranger Chat App</div>
+                <div class="rd-sub">Swift · HealthKit · Core Location · WebRTC · XMPP</div>
+              </div>
+            </div>
+            <button class="rd-toggle"><i class="fa-solid fa-plus"></i></button>
+          </div>
+          <div class="rd-panel">
+            <div class="rd-panel-inner">
+              <div
+                style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;margin-bottom:1.5rem;">
+                <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#f87171;margin-bottom:0.5rem;">
+                    The Problem</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    Bot Spam & Low Stakes</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Anonymous platforms fill with
+                    bots because account creation is frictionless and interactions cost nothing.</div>
+                </div>
+                <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#60a5fa;margin-bottom:0.5rem;">
+                    Discovery</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    Fitness as Proof of Work</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Chats, calls, and friend
+                    requests cost coins earned exclusively by completing health challenges.</div>
+                </div>
+                <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#a78bfa;margin-bottom:0.5rem;">
+                    Build</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    HealthKit + Location + WebRTC</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">HealthKit for activity
+                    verification, Core Location geo-hash proximity, WebRTC for audio/video, XMPP for messaging.</div>
+                </div>
+                <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--orange-accent);margin-bottom:0.5rem;">
+                    Decision Layer</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    Anti-Cheat & Privacy</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Step velocity validation
+                    prevents spoofing. Geo-hashing obfuscates exact coordinates while enabling proximity discovery.
+                  </div>
+                </div>
+                <div style="padding:1.2rem 1rem;">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--green-accent);margin-bottom:0.5rem;">
+                    Impact</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    Fitness-Powered Social</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Social interaction and daily
+                    movement reinforce each other - eliminating spam while driving real-world health behavior.</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+                <div class="tags"><span class="tag">Swift</span><span class="tag">HealthKit</span><span class="tag">Core
+                    Location</span><span class="tag">WebRTC</span><span class="tag">XMPP</span></div>
+                <a href="https://github.com/avinashamanjha251" target="_blank" class="store-link"><i
+                    class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- outdoorWorkout -->
+        <div class="rd-item">
+          <div class="rd-trigger">
+            <div class="rd-left">
+              <div class="rd-ico" style="background:rgba(52,211,153,0.1);color:var(--green-accent);"><i
+                  class="fa-solid fa-person-running"></i></div>
+              <div>
+                <div class="rd-name">Outdoor Workout</div>
+                <div class="rd-sub">Swift · Core Location · MapKit · HealthKit</div>
+              </div>
+            </div>
+            <button class="rd-toggle"><i class="fa-solid fa-plus"></i></button>
+          </div>
+          <div class="rd-panel">
+            <div class="rd-panel-inner">
+              <div
+                style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;margin-bottom:1.5rem;">
+                <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#f87171;margin-bottom:0.5rem;">
+                    The Problem</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    Battery vs Precision</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Continuous GPS route logging
+                    and elevation data drain battery in minutes on standard config.</div>
+                </div>
+                <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#60a5fa;margin-bottom:0.5rem;">
+                    Discovery</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    Adaptive Sampling</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Core Location's distance
+                    filter and accuracy modes can tune dynamically based on activity speed.</div>
+                </div>
+                <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#a78bfa;margin-bottom:0.5rem;">
+                    Build</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    Dynamic GPS + HealthKit</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Adaptive Core Location
+                    filter, MapKit real-time polyline overlays, and HKWorkoutSession integration.</div>
+                </div>
+                <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--orange-accent);margin-bottom:0.5rem;">
+                    Decision Layer</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    Accuracy Mode Switch</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Dynamic accuracy switching to
+                    balance sub-meter precision with significant battery savings.</div>
+                </div>
+                <div style="padding:1.2rem 1rem;">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--green-accent);margin-bottom:0.5rem;">
+                    Impact</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    30% Less Battery</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Sub-meter route accuracy with
+                    30% less battery drain vs always-on high-accuracy GPS.</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+                <div class="tags"><span class="tag">Swift</span><span class="tag">Core Location</span><span
+                    class="tag">MapKit</span><span class="tag">HealthKit</span></div>
+                <a href="https://github.com/avinashamanjha251" target="_blank" class="store-link"><i
+                    class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- customCamera -->
+        <div class="rd-item">
+          <div class="rd-trigger">
+            <div class="rd-left">
+              <div class="rd-ico" style="background:rgba(248,113,113,0.1);color:#f87171;"><i
+                  class="fa-solid fa-camera"></i></div>
+              <div>
+                <div class="rd-name">Custom Camera</div>
+                <div class="rd-sub">AVFoundation · Metal · Core Media</div>
+              </div>
+            </div>
+            <button class="rd-toggle"><i class="fa-solid fa-plus"></i></button>
+          </div>
+          <div class="rd-panel">
+            <div class="rd-panel-inner">
+              <div
+                style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;margin-bottom:1.5rem;">
+                <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#f87171;margin-bottom:0.5rem;">
+                    The Problem</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    UIImagePicker's Ceiling</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">No manual exposure control,
+                    no raw format access, no real-time shader processing.</div>
+                </div>
+                <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#60a5fa;margin-bottom:0.5rem;">
+                    Discovery</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    AVFoundation + Metal</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">AVCaptureSession exposes
+                    hardware-level camera controls. Metal allows GPU-accelerated filter rendering at 60 FPS.</div>
+                </div>
+                <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#a78bfa;margin-bottom:0.5rem;">
+                    Build</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    Full Capture Pipeline</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">AVCaptureVideoDataOutput,
+                    Metal fragment shaders for real-time previews, manual hardware ISO and shutter controls.</div>
+                </div>
+                <div style="padding:1.2rem 1rem;border-right:1px solid var(--border);">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--orange-accent);margin-bottom:0.5rem;">
+                    Decision Layer</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    Core Image vs Metal</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Metal shaders run directly on
+                    GPU - the only path to true 60 FPS zero-lag preview.</div>
+                </div>
+                <div style="padding:1.2rem 1rem;">
+                  <div
+                    style="font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--green-accent);margin-bottom:0.5rem;">
+                    Impact</div>
+                  <div
+                    style="font-size:0.78rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;line-height:1.3;">
+                    60 FPS, Zero Latency</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.55;">Real-time filter rendering
+                    with full manual hardware control - matching professional camera apps on iOS.</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+                <div class="tags"><span class="tag">AVFoundation</span><span class="tag">Metal</span><span
+                    class="tag">Core Media</span><span class="tag">UIKit</span></div>
+                <a href="https://github.com/avinashamanjha251" target="_blank" class="store-link"><i
+                    class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /rdList -->
+    </div>
+  </section>
+
+  <!-- ═══════════════ CASE STUDIES ═══════════════ -->
+  <section class="casestudy-section" id="casestudies">
+    <div class="container">
+      <!-- Case Studies Header + Folder Tabs -->
+      <div class="cs-header-top reveal">
+        <div class="section-label">In-depth</div>
+        <h2
+          style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3.5rem);font-weight:800;letter-spacing:-0.04em;line-height:1.05;color:var(--text-primary);margin-bottom:0.5rem;">
+          Case Studies</h2>
+        <p style="color:var(--text-secondary);font-size:0.95rem;max-width:440px;line-height:1.75;">Deep-dives into how I
+          discovered, designed, and shipped solutions - from problem to production impact.</p>
       </div>
 
-      <div class="roles-block reveal d3">
-        <span class="role-chip">Mobile Engineering Manager</span>
-        <span class="role-chip">iOS Tech Lead</span>
-        <span class="role-chip">Senior iOS Engineer</span>
-        <span class="role-chip">Technical Project Manager</span>
+      <!-- Folder Tabs strip -->
+      <div class="cs-tabs-strip reveal d1">
+        <button class="cs-tab active" data-cs="cs-habbit">
+          <div class="cs-tab-row1">
+            <span class="cs-tab-num">01</span>
+            <span class="cs-tab-title">Habbit Tracker</span>
+          </div>
+          <div class="cs-tab-desc">SwiftUI · RealmSwift · RESTful APIs</div>
+        </button>
+        <button class="cs-tab" data-cs="cs-expense">
+          <div class="cs-tab-row1">
+            <span class="cs-tab-num">02</span>
+            <span class="cs-tab-title">Daily Expense Tracker</span>
+          </div>
+          <div class="cs-tab-desc">Swift · Notifications</div>
+        </button>
+        <button class="cs-tab" data-cs="cs-stranger">
+          <div class="cs-tab-row1">
+            <span class="cs-tab-num">03</span>
+            <span class="cs-tab-title">Stranger Chat</span>
+          </div>
+          <div class="cs-tab-desc">HealthKit · WebRTC · XMPP</div>
+        </button>
+      </div>
+
+      <!-- Tab content area -->
+      <div class="cs-tab-content-area">
+
+        <!-- ─ habbitTracker ─ -->
+        <article class="cs-article active" id="cs-habbit">
+          <div class="cs-top-row reveal">
+            <div>
+              <div class="section-label">Case Study - 01</div>
+              <h3 class="cs-app-name"><span class="violet-text">Habbit</span><br>Tracker</h3>
+              <p class="cs-tagline">
+                A habit tracking app that doesn't tell you what habits to track or how often - giving users total
+                ownership over their routines for the first time.
+              </p>
+              <div class="cs-meta-grid">
+                <div class="cs-meta-item">
+                  <div class="cs-meta-label">Platform</div>
+                  <div class="cs-meta-val">iOS 16+ · SwiftUI</div>
+                </div>
+                <div class="cs-meta-item">
+                  <div class="cs-meta-label">Architecture</div>
+                  <div class="cs-meta-val">MVVM · RESTful APIs · RealmSwift</div>
+                </div>
+                <div class="cs-meta-item">
+                  <div class="cs-meta-label">Key Challenge</div>
+                  <div class="cs-meta-val">Flexible schema vs performance</div>
+                </div>
+              </div>
+            </div>
+            <div class="cs-preview-frame">
+              <div class="cs-carousel">
+                <div class="cs-carousel-track">
+                  <img class="cs-slide" src="images/habbit-preview.png" alt="habbitTracker 1"
+                    onerror="this.style.visibility='hidden'">
+                  <img class="cs-slide" src="images/habbit-preview-1.png" alt="habbitTracker 2"
+                    onerror="this.style.visibility='hidden'">
+                  <img class="cs-slide" src="images/habbit-preview-2.png" alt="habbitTracker 3"
+                    onerror="this.style.visibility='hidden'">
+                  <img class="cs-slide" src="images/habbit-preview-3.png" alt="habbitTracker 4"
+                    onerror="this.style.visibility='hidden'">
+                  <img class="cs-slide" src="images/habbit-preview-4.png" alt="habbitTracker 5"
+                    onerror="this.style.visibility='hidden'">
+                </div>
+                <div class="cs-carousel-dots"></div>
+              </div>
+            </div>
+          </div>
+          <div class="cs-journey reveal d1">
+            <div class="cs-journey-line"></div>
+            <div class="cs-steps">
+              <div class="cs-step">
+                <div class="cs-step-dot-wrap">
+                  <div class="cs-step-dot"></div>
+                </div>
+                <div class="cs-step-num s1">The Problem</div>
+                <div class="cs-step-head">Every habit app assumes it knows you</div>
+                <div class="cs-step-body">Streaks for daily push-ups. Weekly meditation. Rigid presets. Real users have
+                  custom rhythms - run MWF, meditate weekends, journal when inspired. When the app doesn't bend, users
+                  stop using it. Existing solutions have a drop-off rate exceeding 70% after day 14.</div>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-dot-wrap">
+                  <div class="cs-step-dot"></div>
+                </div>
+                <div class="cs-step-num s2">Discovery</div>
+                <div class="cs-step-head">Three configurations decide success</div>
+                <div class="cs-step-body">Through personal use and pattern analysis, I found three variables determine
+                  habit adherence: <strong>schedule flexibility</strong> (not just daily), <strong>metric type</strong>
+                  (count, duration, boolean, numeric), and <strong>contextual reminders</strong> (not fixed-time
+                  alerts). Most apps only solve one.</div>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-dot-wrap">
+                  <div class="cs-step-dot"></div>
+                </div>
+                <div class="cs-step-num s3">Build</div>
+                <div class="cs-step-head">Reactive schema that flexes with users</div>
+                <div class="cs-step-body">Core Data entity model: <code>HabitEntity</code> (name, iconKey, colorHex),
+                  <code>ScheduleRule</code> (weekdays bitmask, interval, startDate), <code>CompletionLog</code> (date,
+                  metricValue). Combine binds the ViewModel to the SwiftUI view layer with zero boilerplate.
+                  UNNotificationCenter schedules per-rule reminders offline - no backend needed.
+                </div>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-dot-wrap">
+                  <div class="cs-step-dot"></div>
+                </div>
+                <div class="cs-step-num s4">Decision Layer</div>
+                <div class="cs-step-head">Why offline-first over Firebase</div>
+                <div class="cs-step-body">Firebase would require an account, a network round-trip for every log, and
+                  raised privacy concerns for personal routine data. Core Data runs entirely on-device - under 2ms query
+                  time for habit history, zero cold-start latency, and no monthly cost. iCloud sync is a future
+                  enhancement via NSPersistentCloudKitContainer.</div>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-dot-wrap">
+                  <div class="cs-step-dot"></div>
+                </div>
+                <div class="cs-step-num s5">Impact</div>
+                <div class="cs-step-head">Zero friction, any routine</div>
+                <div class="cs-step-body">Users can configure any habit - 3x weekly, every 4 days, weekends only - with
+                  any metric and smart contextual reminders. The app adapts to the user's life instead of forcing the
+                  user to adapt to the app. No server. No account. No excuses.</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ─ dailyExpenseTracker ─ -->
+        <article class="cs-article" id="cs-expense">
+          <div class="cs-top-row reveal">
+            <div>
+              <div class="section-label">Case Study - 02</div>
+              <h3 class="cs-app-name"><span class="violet-text">Daily</span><br>Expense</h3>
+              <p class="cs-tagline">
+                An expense tracker that treats every transaction as evidence - with proactive budget alerts, receipt
+                attachments, and a roadmap to auto-import from bank statements via OCR.
+              </p>
+              <div class="cs-meta-grid">
+                <div class="cs-meta-item">
+                  <div class="cs-meta-label">Platform</div>
+                  <div class="cs-meta-val">iOS 15+ · SwiftUI / Swift</div>
+                </div>
+                <div class="cs-meta-item">
+                  <div class="cs-meta-label">Data Layer</div>
+                  <div class="cs-meta-val">RealmSwift · RESTful APIs</div>
+                </div>
+                <div class="cs-meta-item">
+                  <div class="cs-meta-label">Key Challenge</div>
+                  <div class="cs-meta-val">Receipt image storage strategy</div>
+                </div>
+              </div>
+            </div>
+            <div class="cs-preview-frame">
+              <div class="cs-carousel">
+                <div class="cs-carousel-track">
+                  <img class="cs-slide" src="images/expense-preview.png" alt="dailyExpense 1"
+                    onerror="this.style.visibility='hidden'">
+                  <img class="cs-slide" src="images/expense-preview-1.png" alt="dailyExpense 2"
+                    onerror="this.style.visibility='hidden'">
+                  <img class="cs-slide" src="images/expense-preview-2.png" alt="dailyExpense 3"
+                    onerror="this.style.visibility='hidden'">
+                  <img class="cs-slide" src="images/expense-preview-3.png" alt="dailyExpense 4"
+                    onerror="this.style.visibility='hidden'">
+                  <img class="cs-slide" src="images/expense-preview-4.png" alt="dailyExpense 5"
+                    onerror="this.style.visibility='hidden'">
+                </div>
+                <div class="cs-carousel-dots"></div>
+              </div>
+            </div>
+          </div>
+          <div class="cs-journey reveal d1">
+            <div class="cs-journey-line"></div>
+            <div class="cs-steps">
+              <div class="cs-step">
+                <div class="cs-step-dot-wrap">
+                  <div class="cs-step-dot"></div>
+                </div>
+                <div class="cs-step-num s1">The Problem</div>
+                <div class="cs-step-head">Logs without accountability</div>
+                <div class="cs-step-body">Manual expense apps are retrospective by nature - you record what you already
+                  spent and learn nothing until it's too late. No receipt evidence means disputed claims during audits.
+                  No recurring reminders means missed subscription renewals. No proactive alerts means budget overrun
+                  discovered at month-end.</div>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-dot-wrap">
+                  <div class="cs-step-dot"></div>
+                </div>
+                <div class="cs-step-num s2">Discovery</div>
+                <div class="cs-step-head">Five user needs mapped to features</div>
+                <div class="cs-step-body">1) Income logging with source tags (salary, freelance, rental). 2) Expense
+                  entries with multi-image receipt proof. 3) Recurring payment reminders (subscriptions, EMIs, rent). 4)
+                  Budget threshold alerts at 80% and 90% spend. 5) Future: auto-import transactions via Vision OCR
+                  parsing of uploaded bank statements.</div>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-dot-wrap">
+                  <div class="cs-step-dot"></div>
+                </div>
+                <div class="cs-step-num s3">Build</div>
+                <div class="cs-step-head">Core Data with External Binary Storage</div>
+                <div class="cs-step-body"><code>TransactionEntity</code> stores amount, category, date, and notes.
+                  Receipt images use Core Data's External Binary Storage attribute - keeping the SQLite file under 10MB
+                  while images are managed on disk automatically. <code>UNNotificationCenter</code> schedules recurring
+                  reminders per transaction. Budget engine runs threshold evaluation on every new entry.</div>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-dot-wrap">
+                  <div class="cs-step-dot"></div>
+                </div>
+                <div class="cs-step-num s4">Decision Layer</div>
+                <div class="cs-step-head">Why not store images as BLOB in SQLite</div>
+                <div class="cs-step-body">Storing images inline causes Core Data to load every row's binary data during
+                  fetch - dramatically slowing list queries as the database grows. External Binary Storage offloads
+                  files to the file system, keeping DB reads under 5ms even at 1000+ transactions, while Core Data still
+                  manages the lifecycle and cleanup automatically.</div>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-dot-wrap">
+                  <div class="cs-step-dot"></div>
+                </div>
+                <div class="cs-step-num s5">Impact</div>
+                <div class="cs-step-head">Never miss a bill. Never lose a receipt.</div>
+                <div class="cs-step-body">Users receive proactive alerts before exceeding budgets, get reminded of every
+                  recurring payment before it hits, and have a timestamped image trail for every expense. The Vision OCR
+                  pipeline is architected and ready - bank statement auto-import will drop manual data entry to near
+                  zero.</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ─ StrangerChatApp ─ -->
+        <article class="cs-article" id="cs-stranger">
+          <div class="cs-top-row reveal">
+            <div>
+              <div class="section-label">Case Study - 03</div>
+              <h3 class="cs-app-name"><span class="violet-text">Stranger</span><br>Chat</h3>
+              <p class="cs-tagline">
+                A social discovery app where your social currency is earned through real physical activity - making
+                bot-spam structurally impossible and turning fitness into a social habit.
+              </p>
+              <div class="cs-meta-grid">
+                <div class="cs-meta-item">
+                  <div class="cs-meta-label">Platform</div>
+                  <div class="cs-meta-val">iOS 15+ · Swift</div>
+                </div>
+                <div class="cs-meta-item">
+                  <div class="cs-meta-label">Protocols</div>
+                  <div class="cs-meta-val">WebRTC · XMPP · HealthKit</div>
+                </div>
+                <div class="cs-meta-item">
+                  <div class="cs-meta-label">Key Challenge</div>
+                  <div class="cs-meta-val">Anti-cheat step verification</div>
+                </div>
+              </div>
+            </div>
+            <div class="cs-preview-frame">
+              <div class="cs-carousel">
+                <div class="cs-carousel-track">
+                  <img class="cs-slide" src="images/stranger-preview.png" alt="StrangerChat 1"
+                    onerror="this.style.visibility='hidden'">
+                  <!-- Add more: <img class="cs-slide" src="images/stranger-preview-2.png" alt="StrangerChat 2"> -->
+                </div>
+                <div class="cs-carousel-dots"></div>
+              </div>
+            </div>
+          </div>
+          <div class="cs-journey reveal d1">
+            <div class="cs-journey-line"></div>
+            <div class="cs-steps">
+              <div class="cs-step">
+                <div class="cs-step-dot-wrap">
+                  <div class="cs-step-dot"></div>
+                </div>
+                <div class="cs-step-num s1">The Problem</div>
+                <div class="cs-step-head">Frictionless = worthless</div>
+                <div class="cs-step-body">Every anonymous chat app faces the same failure: bots, abuse, and dead
+                  conversations because there is no cost to participate. Existing platforms respond with human
+                  moderation - expensive, slow, and imperfect. The fundamental issue is that interactions carry no
+                  weight.</div>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-dot-wrap">
+                  <div class="cs-step-dot"></div>
+                </div>
+                <div class="cs-step-num s2">Discovery</div>
+                <div class="cs-step-head">Physical effort as social capital</div>
+                <div class="cs-step-body">The insight: make social interactions cost something real that a bot cannot
+                  fake - physical movement. Steps, distance, and calories burned are verified via HealthKit and
+                  converted into an in-app coin balance. Text conversations, audio/video calls, and friend requests each
+                  deduct coins. Earn more by moving more.</div>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-dot-wrap">
+                  <div class="cs-step-dot"></div>
+                </div>
+                <div class="cs-step-num s3">Build</div>
+                <div class="cs-step-head">Four integrated systems</div>
+                <div class="cs-step-body"><strong>HealthKit telemetry</strong> - reads HKQuantityType.stepCount and
+                  HKWorkoutActivityType with cadence validation. <strong>Core Location geo-hash</strong> - converts GPS
+                  to geohash for proximity search without exposing exact coordinates. <strong>WebRTC
+                    peer-to-peer</strong> - audio and video call channels with STUN/TURN server configuration.
+                  <strong>XMPP with Core Data</strong> - text messaging with offline queue, read receipts, and thread
+                  management.
+                </div>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-dot-wrap">
+                  <div class="cs-step-dot"></div>
+                </div>
+                <div class="cs-step-num s4">Decision Layer</div>
+                <div class="cs-step-head">Preventing step spoofing</div>
+                <div class="cs-step-body">A naive implementation trusts the HealthKit step count - easily gamed by
+                  shaking the phone. The solution: <strong>step cadence validation</strong> using CMPedometer alongside
+                  HKWorkoutSession - cross-referencing step frequency, accelerometer rhythm, and session duration.
+                  Implausible step rates (>5 steps/second sustained) are flagged and zeroed. Geo-hash radius is
+                  obfuscated to prevent exact location triangulation.</div>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-dot-wrap">
+                  <div class="cs-step-dot"></div>
+                </div>
+                <div class="cs-step-num s5">Impact</div>
+                <div class="cs-step-head">Movement powers connection</div>
+                <div class="cs-step-body">The app creates a natural feedback loop: active users earn more coins, can
+                  make more connections, which motivates more movement. Bot accounts cannot accumulate coins without
+                  genuine physical activity. The ecosystem is self-reinforcing - real users attract real users, spam
+                  costs too much to be worth it.</div>
+              </div>
+            </div>
+          </div>
+        </article><!-- /cs-stranger -->
+
+      </div><!-- /cs-tab-content-area -->
+
+    </div><!-- /container -->
+  </section>
+
+  <!-- ═══════════════ EDUCATION ═══════════════ -->
+  <section class="edu-section" id="education">
+    <div class="container">
+      <div class="section-label reveal">Background</div>
+      <h2
+        style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,3rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:2.5rem;line-height:1.05;color:var(--text-primary);"
+        class="reveal d1">Education & Recognition</h2>
+      <div class="edu-grid">
+        <div class="edu-card reveal">
+          <div class="edu-deg">B.Tech - Electrical, Electronics & Communications</div>
+          <div class="edu-school">RVSCET, Jamshedpur</div>
+          <div class="edu-yr">2010 – 2014</div>
+          <div class="edu-desc">Foundation in embedded systems, microprocessors, and C/C++ - the technical grounding
+            that drives my deep understanding of device-level iOS APIs like Core Bluetooth, CoreMotion, and
+            AVFoundation.</div>
+        </div>
+        <div class="edu-card reveal d1">
+          <div class="edu-deg">Leadership & Community</div>
+          <div class="edu-school">Professional & Academic Involvement</div>
+          <div class="edu-yr">2012 – 2015</div>
+          <div class="edu-desc">Member of IETE (Institution of Electronics and Telecommunication Engineers) 2013–2015.
+            Co-ordinator for College Annual Day Events 2012 and 2013 - an early signal of the cross-functional
+            leadership I carry into engineering management roles today.</div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════ FOOTER ═══════════════ -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-copy">© <span id="year">2026</span> Avinash Aman</div>
-    <div class="footer-links">
-      <a href="https://github.com/avinashamanjha251" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/avinashamanjha" target="_blank">LinkedIn</a>
-      <a href="mailto:avinashamanjha@gmail.com">Email</a>
-      <a href="Avinash_Aman_CV.pdf" download>Resume PDF</a>
+  <!-- ═══════════════ CONTACT ═══════════════ -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-spotlight">
+        <div class="contact-eyebrow reveal">Let's Talk</div>
+        <h2 class="contact-headline reveal d1">
+          Open to the<br><span class="violet-text">right role.</span>
+        </h2>
+        <p class="contact-sub reveal d2">
+          10+ years of iOS engineering. Now focused on leading teams and driving architectural vision. If you're
+          building something ambitious on Apple platforms - let's connect.
+        </p>
+
+        <div class="contact-cards reveal d2">
+          <a href="mailto:avinashamanjha@gmail.com" class="contact-card">
+            <div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="contact-card-label">Email</div>
+            <div class="contact-card-val">avinashamanjha@gmail.com</div>
+          </a>
+          <a href="https://linkedin.com/in/avinashamanjha" target="_blank" class="contact-card">
+            <div class="contact-card-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+            <div class="contact-card-label">LinkedIn</div>
+            <div class="contact-card-val">in/avinashamanjha</div>
+          </a>
+          <a href="https://github.com/avinashamanjha251" target="_blank" class="contact-card">
+            <div class="contact-card-icon"><i class="fa-brands fa-github"></i></div>
+            <div class="contact-card-label">GitHub</div>
+            <div class="contact-card-val">avinashamanjha251</div>
+          </a>
+          <div class="contact-card" onclick="copyToClipboard('Delhi, India','Location')" style="cursor:pointer;">
+            <div class="contact-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="contact-card-label">Location</div>
+            <div class="contact-card-val">Delhi, India · Open to Relocation</div>
+          </div>
+        </div>
+
+        <div class="reveal d3">
+          <a href="mailto:avinashamanjha@gmail.com" class="cta-magnetic">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>Start a conversation</span>
+          </a>
+        </div>
+
+        <div class="roles-block reveal d3">
+          <span class="role-chip">Mobile Engineering Manager</span>
+          <span class="role-chip">iOS Tech Lead</span>
+          <span class="role-chip">Senior iOS Engineer</span>
+          <span class="role-chip">Technical Project Manager</span>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
+  </section>
 
-<script src="script.js"></script>
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-copy">© <span id="year">2026</span> Avinash Aman</div>
+      <div class="footer-links">
+        <a href="https://github.com/avinashamanjha251" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/avinashamanjha" target="_blank">LinkedIn</a>
+        <a href="mailto:avinashamanjha@gmail.com">Email</a>
+        <a href="Avinash_Aman_CV.pdf" download>Resume PDF</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
