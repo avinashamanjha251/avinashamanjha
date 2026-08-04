@@ -17,7 +17,7 @@
 
   --text-primary: #f4f0ff;
   --text-secondary: #9d8fc2;
-  --text-muted: #4a3f6b;
+  --text-muted: #a497c2;
 
   --violet: #7c3aed;
   --violet-light: #a855f7;
@@ -1251,7 +1251,7 @@ body::after {
 
 .app-cat {
   font-size: 0.72rem;
-  color: var(--text-muted);
+  color: rgba(244, 240, 255, 0.75);
   font-family: var(--font-mono);
 }
 
@@ -1296,6 +1296,7 @@ body::after {
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
+  color: rgba(244, 240, 255, 0.85);
 }
 
 .tags {
@@ -1306,11 +1307,11 @@ body::after {
 
 .tag {
   padding: 0.18rem 0.55rem;
-  background: rgba(124, 58, 237, 0.06);
-  border: 1px solid rgba(124, 58, 237, 0.12);
+  background: rgba(124, 58, 237, 0.14);
+  border: 1px solid rgba(168, 85, 247, 0.28);
   border-radius: 5px;
   font-size: 0.68rem;
-  color: var(--text-muted);
+  color: rgba(244, 240, 255, 0.88);
   font-family: var(--font-mono);
 }
 
@@ -2298,7 +2299,7 @@ body::after {
   height: clamp(200px, 22vw, 280px);
   margin: 0 auto 0;
   animation: avatar-entrance 0.7s var(--ease-spring) forwards,
-             intro-idle-float 5s ease-in-out 0.7s infinite;
+    intro-idle-float 5s ease-in-out 0.7s infinite;
 }
 
 @keyframes avatar-entrance {
@@ -2306,6 +2307,7 @@ body::after {
     transform: scale(0.88) translateY(20px);
     opacity: 0;
   }
+
   to {
     transform: scale(1) translateY(0);
     opacity: 1;
@@ -2313,8 +2315,15 @@ body::after {
 }
 
 @keyframes intro-idle-float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 /* Spinning outer ring */
@@ -2335,8 +2344,13 @@ body::after {
 }
 
 @keyframes ring-spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Orbit dot on outer ring */
@@ -2355,8 +2369,13 @@ body::after {
 }
 
 @keyframes orbit-spin {
-  from { transform: translateX(-50%) rotate(0deg); }
-  to   { transform: translateX(-50%) rotate(360deg); }
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
 }
 
 /* Circular profile photo frame */
@@ -2369,7 +2388,7 @@ body::after {
   box-shadow:
     0 0 0 6px rgba(124, 58, 237, 0.08),
     0 0 60px rgba(124, 58, 237, 0.4),
-    inset 0 0 30px rgba(0,0,0,0.2);
+    inset 0 0 30px rgba(0, 0, 0, 0.2);
 }
 
 .intro-photo-frame img {
@@ -2387,7 +2406,7 @@ body::after {
   right: -6px;
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   transform-origin: 65% 80%;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
   line-height: 1;
   transition: transform 0.2s ease;
 }
@@ -2398,12 +2417,29 @@ body::after {
 }
 
 @keyframes wave-emoji {
-  0%   { transform: rotate(0deg); }
-  15%  { transform: rotate(28deg); }
-  35%  { transform: rotate(-12deg); }
-  55%  { transform: rotate(22deg); }
-  75%  { transform: rotate(-8deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  15% {
+    transform: rotate(28deg);
+  }
+
+  35% {
+    transform: rotate(-12deg);
+  }
+
+  55% {
+    transform: rotate(22deg);
+  }
+
+  75% {
+    transform: rotate(-8deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 /* Ground glow */
